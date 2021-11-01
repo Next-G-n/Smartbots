@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="Login/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="Login/css/iofrm-style.css">
     <link rel="stylesheet" type="text/css" href="Login/css/iofrm-theme13.css">
+    <link rel="stylesheet" type="text/css" href="Login/css/Tabs.css">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <div class="form-body">
@@ -33,6 +38,7 @@
                         <div class="page-links">
                             <a href="login13.html" class="active">Login</a><a href="register13.html">Register</a>
                         </div>
+
                         <form>
                             <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
                             <input class="form-control" type="password" name="password" placeholder="Password" required>
@@ -43,14 +49,54 @@
                         <div class="other-links">
                             <span>Or login with</span><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
+
+                        <div class="tabs">
+                            <div class="tab-header">
+                                <div class="active">
+                                    <i class="fa fa-code"></i> Code
+                                </div>
+                                <div>
+                                    <i class="fa fa-pencil-square-o"></i> About
+                                </div>
+                                <div>
+                                    <i class="fa fa-bar-chart"></i> Services
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope-o"></i> Contact
+                                </div>
+                            </div>
+                            <div class="tab-indicator"></div>
+                            <div class="tab-body">
+                                <div class="active">
+                                    <h2>This is code section</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error neque saepe commodi blanditiis fugiat nisi aliquam ratione porro quibusdam in, eveniet accusantium cumque. Dolore officia reprehenderit perferendis quod libero omnis.</p>
+                                </div>
+                                <div>
+                                    <h2>This is about section</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+                                </div>
+                                <div>
+                                    <h2>This is services section</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+                                </div>
+                                <div>
+                                    <h2>This is contact section</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 <script src="Login/js/jquery.min.js"></script>
 <script src="Login/js/popper.min.js"></script>
 <script src="Login/js/bootstrap.min.js"></script>
 <script src="Login/js/main.js"></script>
+    <script src="Login/js/Tabs.js"></script>
 </body>
 </html>
