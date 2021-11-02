@@ -1,22 +1,10 @@
-.tabs {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:500px;
-    height:250px;
-    background:#f5f5f5;
-    padding:20px 30px;
-    overflow:hidden;
-    border-radius:50px;
-    box-shadow:5px 10px 5px #ccc;
-}
+
 .tabs .tab-header {
     height:60px;
     display:flex;
     align-items:center;
 }
-.tabs .tab-header > div {
+.tabs .tab-header > a {
     width:calc(100% / 4);
     text-align:center;
     color:#888;
@@ -26,11 +14,11 @@
     text-transform:uppercase;
     outline:none;
 }
-.tabs .tab-header > div > i {
+.tabs .tab-header > a {
     display:block;
     margin-bottom:5px;
 }
-.tabs .tab-header > div.active {
+.tabs .tab-header > a.active {
     color:#00acee;
 }
 .tabs .tab-indicator {
