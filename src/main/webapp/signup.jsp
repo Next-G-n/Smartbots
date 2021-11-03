@@ -59,9 +59,12 @@
 				</div>
 				<div class="clearfix"></div>
 			</header>
-			
+
+
 			<!-- Main Content -->
 			<div class="page-wrapper pa-0 ma-0 auth-page">
+
+
 				<div class="container-fluid">
 					<!-- Row -->
 					<div class="table-struct full-width full-height">
@@ -77,14 +80,13 @@
 										<div class="panel panel-default card-view">
 											<div class="panel-wrapper collapse in">
 												<div class="panel-body">
-													<form id="example-advanced-form" method="post" action="${pageContext.request.contextPath}/ServletDwmpc">
+													<form id="example-advanced-form" method="post" action="ServletSmartBots">
 														<h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">Setting Up</span></h3>
 														<fieldset>
 															<div class="row">
 																<div class="col-sm-12">
 																	<div class="form-wrap" >
-																		<input class="inputs" type="hidden" name="command" value="Registering_User">
-																		<input class="inputs" type="hidden" name="User_Type" value="Client">
+																		<input class="inputs" type="hidden" name="command" value="Registering User">
 																		<input class="inputs" type="hidden" name="action" value="Registration">
 																		<div class="form-group">
 																			<div class="row">
@@ -135,6 +137,13 @@
 																				<option value="Male">Male</option>
 																				<option value="Female">Female</option>
 																				<option value="Other">Other</option>
+																			</select>
+																		</div>
+																		<div class="form-group">
+																			<label class="control-label mb-10" for="userType">User Type (required):</label>
+																			<select id="userType" name="userType" class="selectpicker" data-style="form-control btn-default btn-outline" >
+																				<option value="Graduate">Graduate</option>
+																				<option value="Company Representative">Company Representative</option>
 																			</select>
 																		</div>
 																		<div class="form-group">
@@ -276,20 +285,6 @@
 																			</datalist>
 																		</div>
 
-																		<div class="form-group">
-																			<label class="control-label mb-10" for="DateOfBirth">Date Of Birth (required):</label>
-																			<input class="form-control input-group-addon" type="text" id="DateOfBirth" name="DateOfBirth" value=""/>
-																		</div>
-																		<div class="form-group">
-																			<label class="control-label mb-10 text-left">date thsi time pick</label>
-																			<div class='input-group date' id='datetimepicker1'>
-																				<input type='text' class="form-control" />
-																				<span class="input-group-addon">
-																	<span class="fa fa-calendar"></span>
-																</span>
-																			</div>
-																		</div>
-
 																		<div class="form-group mb-0">
 																			<div class="checkbox checkbox-success">
 																				<input id="checkbox_1" type="checkbox">
@@ -301,66 +296,6 @@
 															</div>
 														</fieldset>
 														</form>
-
-													<!-- Row -->
-													<div class="row" style="display: none;">
-														<div class="col-md-12">
-															<div class="panel panel-default card-view">
-																<div class="panel-heading">
-																	<div class="pull-left">
-																		<h6 class="panel-title txt-dark">Date time picker</h6>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
-																<div class="panel-wrapper collapse in">
-																	<div class="panel-body">
-																		<div class="form-wrap">
-																			<form>
-																				<div class="row">
-																					<div class="col-sm-6">
-																						<div class="form-group">
-																							<label class="control-label mb-10 text-left">date time pick</label>
-																							<div class='input-group date' id='datetimepicker7'>
-																								<input type='text' class="form-control" />
-																								<span class="input-group-addon">
-																	<span class="fa fa-calendar"></span>
-																</span>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-sm-6">
-																						<div class="form-group">
-																							<label class="control-label mb-10 text-left">time pick</label>
-																							<div class='input-group date' id='datetimepicker2'>
-																								<input type='text' class="form-control" />
-																								<span class="input-group-addon">
-																	<span class="fa fa-clock-o"></span>
-																</span>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="col-sm-6">
-																						<label class="control-label mb-10 text-left">inline date pick</label>
-																						<div class="form-group">
-																							<div class='input-group date' id='datetimepicker3'></div>
-																						</div>
-																					</div>
-																					<div class="col-sm-6">
-																						<label class="control-label mb-10 text-left">inline date time pick</label>
-																						<div class="form-group">
-																							<div class='input-group date' id='datetimepicker4'></div>
-																						</div>
-																					</div>
-																				</div>
-																			</form>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<!-- /Row -->
-
 
 												</div>
 											</div>
@@ -393,10 +328,19 @@
 		
 		<!-- jQuery -->
 		<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-		
+
+
+		<!-- Bootstrap Colorpicker JavaScript -->
+		<!-- Bootstrap Datetimepicker JavaScript -->
+		<!-- Bootstrap Daterangepicker JavaScript -->
 		<!-- Bootstrap Core JavaScript -->
 		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+		<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+		<script src="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+		<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 		
 		<!-- Slimscroll JavaScript -->
 		<script src="dist/js/jquery.slimscroll.js"></script>
@@ -413,24 +357,14 @@
 		<!-- Form Wizard Data JavaScript -->
 		<script src="dist/js/form-wizard-data.js"></script>
 
-		<!-- Bootstrap Colorpicker JavaScript -->
-		<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
-
-		<!-- Bootstrap Datetimepicker JavaScript -->
-		<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-
-		<!-- Bootstrap Daterangepicker JavaScript -->
-		<script src="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 		<!-- Form Picker Init JavaScript -->
 		<script src="dist/js/form-picker-data.js"></script>
 
 
 		<!-- Bootstrap Colorpicker JavaScript -->
-		<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
-		<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 
 	</body>
 </html>

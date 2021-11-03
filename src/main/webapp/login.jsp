@@ -64,7 +64,7 @@
 											<div class="panel panel-default card-view">
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
-											<form method="post" id="login_test" action="ServletDwmpc">
+											<form method="post" id="login_test" action="ServletSmartBots">
 												<input class="inputs" type="hidden" name="command" value="Login">
 												<div class="form-group">
 													<label class="control-label mb-10" for="exampleInputEmail_2">Email address</label>
