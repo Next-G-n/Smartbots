@@ -184,4 +184,90 @@ public class ConnectionUtil {
         return error;
 
     }
+
+    public String getTesting() throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        String test="There is Nothing";
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "select `Brief Description` from request where `Request Id`=4";
+            myStmt = myConn.prepareStatement(sql2);
+
+
+            myRS = myStmt.executeQuery();
+            while (myRS.next()) {
+                test = myRS.getString("Brief Description");
+            }
+
+        } finally {
+            close(myConn,myStmt,myRS);
+        }
+        return test;
+    }
+
+    public void submitApplication(Application application, String action) throws Exception{
+        Connection myConn=null;
+        PreparedStatement myStmt=null;
+        String error="Successful";
+        try {
+            myConn = dataSource.getConnection();
+            String sql2;
+            if (action.equals("Registration")) {
+                sql2 = "INSERT INTO `smartbots`.`Aplication` (`User Id`, `field`," +
+                        " `Type Of Intern`," +
+                        " `Major`, `Level`," +
+                        " `Programme`, `Date of Completing`," +
+                        " `School`, `Status`," +
+                        " `Qualification`, `CV`) " +
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                myStmt = myConn.prepareStatement(sql2);
+                myStmt.setInt(1, application.getUser_id());
+                myStmt.setString(2, application.getField());
+                myStmt.setString(3, application.getTypeOfIntern());
+                myStmt.setString(4, application.getMajor());
+                myStmt.setString(5, application.getLevel());
+                myStmt.setString(6, application.getProgramme());
+                myStmt.setString(7, application.getDateOfCompletion());
+                myStmt.setString(8, application.getSchool());
+                myStmt.setString(9, application.getStatus());
+                myStmt.setString(10, application.getQualification());
+                myStmt.setString(11, application.getCV());
+                myStmt.execute();
+            }
+        }finally {
+                close(myConn,myStmt,null);
+            }
+
+    }
+
+    public List<UserTracker> startTrack(int id, String field, String level) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        String test="There is Nothing";
+        List<UserTracker> tracker= new ArrayList<>();
+        int count=1;
+        int position=0;
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "select * from Aplication where `Level`='"+level+"' and `field`='"+field+"' and not `Status`='working'";
+            myStmt = myConn.prepareStatement(sql2);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()) {
+                int User_id=myRS.getInt("User Id");
+                if (User_id == id){
+                    position=count;
+                }
+                count=count+1;
+            }
+           UserTracker tracker1 =new UserTracker(count,position);
+            tracker.add(tracker1);
+
+        } finally {
+            close(myConn,myStmt,myRS);
+        }
+        return tracker;
+    }
 }

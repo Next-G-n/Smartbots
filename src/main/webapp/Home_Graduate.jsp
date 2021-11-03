@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,20 @@
 </head>
 <body>
 <h1><%= "Hello World!" %>
+
+
+
 </h1>
+<p>
+</p>
+
+
+    <c:forEach var="Employee" items="${Test}">
+        <c:set var="countEmployee" value="${countEmployee+1}" scope="page"/>
+        <p>${Employee}</p>
+    </c:forEach>
+
+
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 </body>

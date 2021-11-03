@@ -7,9 +7,13 @@
 		<meta name="description" content="Zapily is a Dashboard & Admin Site Responsive Template by hencework." />
 		<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 		<meta name="author" content="hencework"/>
+		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		
+		<!-- vector map CSS -->
+		<link href="vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		
 		<!-- Custom CSS -->
 		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
@@ -21,8 +25,9 @@
 			<div class="la-anim-1"></div>
 		</div>
 		<!--/Preloader-->
+		
 		<div class="wrapper theme-1-active pimary-color-gold">
-			
+		
 			<!-- Top Menu Items -->
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<div class="mobile-only-brand pull-left">
@@ -445,7 +450,7 @@
 						<i class="zmdi zmdi-more"></i>
 					</li>
 					<li>
-						<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">UI Elements</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">UI Elements</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 						<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
 							<li>
 								<a href="panels-wells.html">Panels & Wells</a>
@@ -466,7 +471,7 @@
 								<a href="buttons.html">Buttons</a>
 							</li>
 							<li>
-								<a class="active-page" href="accordion-toggle.html">Accordion / Toggles</a>
+								<a href="accordion-toggle.html">Accordion / Toggles</a>
 							</li>
 							<li>
 								<a href="tabs.html">Tabs</a>
@@ -504,13 +509,13 @@
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+						<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 						<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
 							<li>
 								<a href="ApplicationForm.jsp">Basic Forms</a>
 							</li>
 							<li>
-								<a href="form-layout.html">form Layout</a>
+								<a class="active-page" href="form-layout.html">form Layout</a>
 							</li>
 							<li>
 								<a href="form-advanced.html">Form Advanced</a>
@@ -1167,146 +1172,197 @@
 				<!-- Title -->	
 					<div class="row heading-bg">
 						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						  <h5 class="txt-dark">Accordion/Toggle</h5>
+							<h5 class="txt-dark">form layout</h5>
 						</div>
+					
 						<!-- Breadcrumb -->
 						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-						  <ol class="breadcrumb">
-							<li><a href="index.html">Dashboard</a></li>
-							<li><a href="#"><span>UI element</span></a></li>
-							<li class="active"><span>accordion / toggle</span></li>
-						  </ol>
+							<ol class="breadcrumb">
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="#"><span>form</span></a></li>
+								<li class="active"><span>form-layout</span></li>
+							</ol>
 						</div>
 						<!-- /Breadcrumb -->
+					
 					</div>
 					<!-- /Title -->
-
 					
+
+
 					<!-- Row -->
 					<div class="row">
 						<div class="col-md-12">
 							<div class="panel panel-default card-view">
 								<div class="panel-heading">
 									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Monthly Report</h6>
+										<h6 class="panel-title txt-dark">Performance Appraisal Form</h6>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
-										<div class="panel-group accordion-struct"  role="tablist" aria-multiselectable="true">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-wrap">
+													<form action="#" class="form-horizontal">
+														<div class="form-body">
+															<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-account mr-10"></i>Objectives / duties from database</h6>
+															<hr class="light-grey-hr"/>
+															<div class="col-md-push-9">
+																<div class="form-group">
+																	<label class="control-label col-md-6">info from database</label>
+																	<div class="col-md-2">
+																		<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																			<option value="5">Excellent</option>
+																			<option value="4">V.Good</option>
+																			<option value="3">Good</option>
+																			<option value="2">Satisfactory</option>
+																			<option value="1">Unsatisfactory</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+																<!--/span-->
+															</div>
+															
+															<div class="seprator-block"></div>
+															
+															<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-account-box mr-10"></i>Personality</h6>
+															<hr class="light-grey-hr"/>
+															<!-- /Row -->
+															<div class="row">
 
 
-											<div class="panel panel-default">
-												<div class="panel-heading activestate" role="tab" id="heading_5">
-												<a role="button" data-toggle="collapse" href="#collapse_5" aria-expanded="true" >Week one<p style="float:right" onclick="toggleModal()" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												<div class="clearfix"></div>
-												</div>
-												<div id="collapse_5" class="panel-collapse collapse in" role="tabpanel">
-													<div class="panel-body pa-15">
-														<p id="test">
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
-													</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Time Management (punctuality, meeting deadlines, keeping appointments)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Appearence (cleanliness & dress Code)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Communication Skills (Verbal & Written)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Reliability (How much  work is done on time?, Is it accurate and reliable?)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Ability to learn (adaptability, receptiveness, making an effort to learn)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Initiative (creativity, contributes new ideas)</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-push-9">
+																	<div class="form-group">
+																		<label class="control-label col-md-6">Teamwork (Participation in, team effort, Has ability to get along with co-workers</label>
+																		<div class="col-md-2">
+																			<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																				<option value="5">Excellent</option>
+																				<option value="4">V.Good</option>
+																				<option value="3">Good</option>
+																				<option value="2">Satisfactory</option>
+																				<option value="1">Unsatisfactory</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<!--/span-->
+															</div>
+															<!-- /Row -->
+														</div>
+														<div class="form-actions mt-10">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="row">
+																		<div class="col-md-offset-3 col-md-9">
+																			<button type="submit" class="btn btn-success  mr-10">Submit</button>
+																			<button type="button" class="btn btn-default">Cancel</button>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6"> </div>
+															</div>
+														</div>
+													</form>
 												</div>
 											</div>
-
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_6">
-													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse_6" aria-expanded="false" >week two<p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p> </a>
-												</div>
-												<div id="collapse_6" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15">
-														<p>
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
-													</div>
-												</div>
-											</div>
-
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_7">
-													<a class="collapsed" role="button" data-toggle="collapse"  href="#collapse_7" aria-expanded="false">week three <p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												</div>
-												<div id="collapse_7" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
-												</div>
-											</div>
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_8">
-													<a class="collapsed" role="button" data-toggle="collapse"
-													 href="#collapse_8" aria-expanded="false" > week four  <p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												</div>
-												<div id="collapse_8" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
-												</div>
-											</div>
-
-											<div class="checkbox checkbox-primary">
-												<input id="checkbox2" type="checkbox" checked="">
-												<label for="checkbox2">
-													I Agree that the report i have submitted are the weekly tasks that i have been doing
-												</label>
-											</div>
-											<button class="btn  btn-success" style="float: right">Submit</button>
 										</div>
-
-
-
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- /Row -->
+					
 
-				<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-								<h5 class="modal-title">Weekly Plan</h5>
-							</div>
-							<div class="modal-body">
-								<form>
-									<div class="form-group">
-										<label class="control-label mb-10 text-left">Tasks (required):</label>
-										<textarea class="form-control" id="test1" rows="13"></textarea>
-									</div>
-
-								</form>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-								<button type="button" class="btn btn-danger" style="background-color: #6CBB3C">Save changes</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<script>
-					function toggleModal() {
-
-						const Region = document.getElementById('test').innerHTML;
-						document.getElementById('test1').value = Region.replace('\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>*', '');
-
-					}
-				</script>
-
+				
 				</div>
 				
 				<!-- Footer -->
@@ -1318,7 +1374,7 @@
 					</div>
 				</footer>
 				<!-- /Footer -->
-				
+			
 			</div>
 			<!-- /Main Content -->
 		
@@ -1332,7 +1388,7 @@
 		
 		<!-- Bootstrap Core JavaScript -->
 		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="dist/js/modal-data.js"></script>
+		<script src="vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 		
 		<!-- Slimscroll JavaScript -->
 		<script src="dist/js/jquery.slimscroll.js"></script>
@@ -1342,12 +1398,11 @@
 		
 		<!-- Owl JavaScript -->
 		<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-		
+	
 		<!-- Switchery JavaScript -->
 		<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
-		
+	
 		<!-- Init JavaScript -->
 		<script src="dist/js/init.js"></script>
-		
 	</body>
 </html>

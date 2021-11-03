@@ -8,13 +8,54 @@
 		<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 		<meta name="author" content="hencework"/>
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		
+		<link rel="shortcut icon" href="icon.ico">
+		<link rel="icon" href="icon.ico" type="image/x-icon">
+
+		<!--alerts CSS -->
+		<link href="vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+
+
+		<!-- vector map CSS -->
+		<link href="vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+		<!-- Bootstrap Colorpicker CSS -->
+		<link href="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Bootstrap Datetimepicker CSS -->
+		<link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Bootstrap Dropify CSS -->
+		<link href="vendors/bower_components/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Bootstrap Daterangepicker CSS -->
+		<link href="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+
+
+		<!-- select2 CSS -->
+		<link href="vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
+		<!-- bootstrap-select CSS -->
+		<link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("select").change(function(){
+					$(this).find("option:selected").each(function(){
+						var optionValue = $(this).attr("value");
+						if(optionValue){
+							$(".box").not("." + optionValue).hide();
+							$("." + optionValue).show();
+						} else{
+							$(".box").hide();
+						}
+					});
+				}).change();
+			});
+		</script>
+
+		<!-- Footable CSS -->
+		<link href="vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		<!-- Custom CSS -->
 		<link href="dist/css/style.css" rel="stylesheet" type="text/css">
 	</head>
-	
 	<body>
 		<!--Preloader-->
 		<div class="preloader-it">
@@ -22,7 +63,6 @@
 		</div>
 		<!--/Preloader-->
 		<div class="wrapper theme-1-active pimary-color-gold">
-			
 			<!-- Top Menu Items -->
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<div class="mobile-only-brand pull-left">
@@ -445,7 +485,7 @@
 						<i class="zmdi zmdi-more"></i>
 					</li>
 					<li>
-						<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">UI Elements</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">UI Elements</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 						<ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
 							<li>
 								<a href="panels-wells.html">Panels & Wells</a>
@@ -466,7 +506,7 @@
 								<a href="buttons.html">Buttons</a>
 							</li>
 							<li>
-								<a class="active-page" href="accordion-toggle.html">Accordion / Toggles</a>
+								<a href="accordion-toggle.html">Accordion / Toggles</a>
 							</li>
 							<li>
 								<a href="tabs.html">Tabs</a>
@@ -504,10 +544,10 @@
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+						<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 						<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
 							<li>
-								<a href="ApplicationForm.jsp">Basic Forms</a>
+								<a class="active-page" href="ApplicationForm.jsp">Basic Forms</a>
 							</li>
 							<li>
 								<a href="form-layout.html">form Layout</a>
@@ -1167,146 +1207,366 @@
 				<!-- Title -->	
 					<div class="row heading-bg">
 						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						  <h5 class="txt-dark">Accordion/Toggle</h5>
+						  <h5 class="txt-dark">form element</h5>
 						</div>
 						<!-- Breadcrumb -->
 						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						  <ol class="breadcrumb">
 							<li><a href="index.html">Dashboard</a></li>
-							<li><a href="#"><span>UI element</span></a></li>
-							<li class="active"><span>accordion / toggle</span></li>
+							<li><a href="#"><span>form</span></a></li>
+							<li class="active"><span>form-element</span></li>
 						  </ol>
 						</div>
 						<!-- /Breadcrumb -->
 					</div>
 					<!-- /Title -->
 
-					
-					<!-- Row -->
-					<div class="row">
-						<div class="col-md-12">
+
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-warning card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-light"><i class="icon-note txt-black"></i>Application Form</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-wrap">
+												<form data-toggle="validator" id="" method="post" action="ServletSmartBots" role="form">
+													<input class="inputs" type="hidden" name="command" value="Application">
+													<input class="inputs" type="hidden" name="action" value="Registration">
+													<input class="inputs" type="hidden" name="User_id" value="${UserInfo[0].user_id}">
+													<input class="inputs" type="hidden" name="Name" value="${UserInfo[0].first_Name}_${UserInfo[0].last_name}">
+													<div class="form-group">
+														<label for="field" class="control-label mb-10">Field Of Interest (required):</label>
+														<select class="selectpicker" id="field" name="field" data-style="form-control btn-default btn-outline" >
+															<option value="Architecture and engineering">Architecture and engineering</option>
+															<option value="Business, management and administration">Business, management and administration</option>
+															<option value="Communications">Communications</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<div class="row">
+																<div class="col-md-6 col-xs-12">
+																	<label class="control-label mb-10" for="Type">Select where appropriate (required):</label>
+																	<select class="selectpicker" id="Type" name="TypeOf" data-style="form-control btn-default btn-outline" >
+																		<option value="BNSP">BNSP</option>
+																		<option value="Internship">Internship</option>
+																		<option value="GVS">GVS</option>
+																	</select>
+																</div>
+															<div class="span1"></div>
+																<div class="col-md-6 col-xs-12">
+															<label class="control-label mb-10" for="example-input-major">Major (required):</label>
+															<input type="text" id="example-input-major" name="major" class="form-control" placeholder="">
+																</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-6 col-xs-12">
+																<label class="control-label mb-10" data-name="Test" for="level">Level (required):</label>
+																<select class="selectpicker" id="level" name="level" data-style="form-control btn-default btn-outline" >
+																	<option value="Certificate">Certificate</option>
+																	<option value="Diploma">Diploma</option>
+																	<option value="Degree">Degree</option>
+																	<option value="Degree">(Hons)Degree</option>
+																</select>
+															</div>
+															<div class="span1"></div>
+															<div class="col-md-6 col-xs-12">
+																<label class="control-label mb-10" for="programme">Programme Name(required):</label>
+																<input type="text" id="programme" name="pm" class="form-control" placeholder="">
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-6 col-xs-12">
+															<label class="control-label mb-10 text-left">date time pick</label>
+															<div class='input-group date' id='datetimepicker8'>
+																<input type='text' name="date of Completion" class="form-control" />
+																<span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+															</div>
+															</div>
+														<div class="span1"></div>
+														<div class="col-md-6 col-xs-12">
+															<label class="control-label mb-10" for="School">Name Of Ins(required):</label>
+															<input type="text" id="School" name="School" class="form-control" placeholder="">
+														</div>
+														</div>
+														</div>
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-6 col-xs-12">
+																<label class="control-label mb-10" for="Disability">Any Disability (required):</label>
+																<select class="selectpicker" id="Disability" name="Disability" data-style="form-control btn-default btn-outline" >
+																	<option value="Yes">Yes</option>
+																	<option value="No">No</option>
+																</select>
+															</div>
+															<div class="span1"></div>
+															<div class="col-md-6 col-xs-12">
+																<label class="control-label mb-10" for="Vehicle_Attachment">Attachment(required):</label>
+																<button href="#Application-Attachment" data-toggle="modal" id="Vehicle_Attachment" class="btn btn-default btn-block btn-outline btn-anim"><i class="icon-paper-clip"></i><span class="btn-text">Upload Attachments</span></button>
+															</div>
+														</div>
+													</div>
+
+
+													<div class="form-group mb-0" style="float: right">
+														<button type="submit" class="btn btn-primary btn-anim btn-rounded"><i class="ti-save"></i><span class="btn-text">submit</span></button>
+													</div>
+
+													<div id="Application-Attachment" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+																	<h5 class="modal-title">Upload All The Following</h5>
+																</div>
+																<div class="modal-body">
+
+																	<div class="form-group">
+																		<label class="control-label mb-10" for="Academic">Academic Qualification(required):</label>
+																		<input type="file" id="Academic" name="Academic" class="dropify"  required/>
+																	</div>
+																	<div class="form-group">
+																		<label class="control-label mb-10" for="CV">CV(required):</label>
+																		<input type="file" id="CV" name="CV" class="dropify"  required/>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-primary btn-anim btn-rounded" data-dismiss="modal"><i class="ti-save"></i><span class="btn-text">Done</span></button>
+																</div>
+
+															</div>
+														</div>
+													</div>
+
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+						<div class="col-sm-6">
 							<div class="panel panel-default card-view">
 								<div class="panel-heading">
 									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Monthly Report</h6>
+										<h6 class="panel-title txt-dark">Application Form</h6>
 									</div>
 									<div class="clearfix"></div>
 								</div>
+
+
+
+
+								<div class="form-group mb-30">
+
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
-										<div class="panel-group accordion-struct"  role="tablist" aria-multiselectable="true">
+										<div class="form-wrap">
+											<form role="form" class="form-horizontal">
+												<div class="form-group">
 
-
-											<div class="panel panel-default">
-												<div class="panel-heading activestate" role="tab" id="heading_5">
-												<a role="button" data-toggle="collapse" href="#collapse_5" aria-expanded="true" >Week one<p style="float:right" onclick="toggleModal()" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												<div class="clearfix"></div>
 												</div>
-												<div id="collapse_5" class="panel-collapse collapse in" role="tabpanel">
-													<div class="panel-body pa-15">
-														<p id="test">
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
-													</div>
+												<div class="form-group">
+
+												</div>
+												<div class="form-group">
+
+												</div>
+												<div class="form-group ">
+
+												</div>
+												<div class="form-group ">
+
+												</div>
+												<div class="form-group">
+
+												</div>
+											</form>
+											<div class="form-group ">
+												<label class="col-sm-3 control-label " for="example-input-ni">Copy of ID</label>
+
+												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+
+													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
+														<input type="file" name="...">
+														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
+												</div>
+											</div>
+											<div class="form-group ">
+												<label class="col-sm-3 control-label " for="example-input-ni">Academic Qualification</label>
+
+												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+
+													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
+														<input type="file" name="...">
+														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
+												</div>
+											</div>
+											<div class="form-group ">
+												<label class="col-sm-3 control-label " for="example-input-ni">CV</label>
+
+												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
+
+													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
+														<input type="file" name="...">
+														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
 												</div>
 											</div>
 
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_6">
-													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse_6" aria-expanded="false" >week two<p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p> </a>
-												</div>
-												<div id="collapse_6" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15">
-														<p>
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
-													</div>
-												</div>
-											</div>
-
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_7">
-													<a class="collapsed" role="button" data-toggle="collapse"  href="#collapse_7" aria-expanded="false">week three <p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												</div>
-												<div id="collapse_7" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
-												</div>
-											</div>
-
-											<div class="panel panel-default">
-												<div class="panel-heading" role="tab" id="heading_8">
-													<a class="collapsed" role="button" data-toggle="collapse"
-													 href="#collapse_8" aria-expanded="false" > week four  <p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												</div>
-												<div id="collapse_8" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
-												</div>
-											</div>
-
-											<div class="checkbox checkbox-primary">
-												<input id="checkbox2" type="checkbox" checked="">
-												<label for="checkbox2">
-													I Agree that the report i have submitted are the weekly tasks that i have been doing
-												</label>
-											</div>
-											<button class="btn  btn-success" style="float: right">Submit</button>
-										</div>
-
-
-
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- /Row -->
 
-				<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-								<h5 class="modal-title">Weekly Plan</h5>
-							</div>
-							<div class="modal-body">
-								<form>
-									<div class="form-group">
-										<label class="control-label mb-10 text-left">Tasks (required):</label>
-										<textarea class="form-control" id="test1" rows="13"></textarea>
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">Allowance Confirmation Form</h6>
 									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="form-wrap">
+											<form class="form-horizontal">
 
-								</form>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<div class="form-group">
+													<label class="control-label mb-10 col-sm-2" for="om_hr">ID no</label>
+												<div class="col-sm-10"> 
+													<input type="text" class="form-control" id="om_hr" placeholder="Add ID">
+												</div>
+												</div>
+												<div class="form-group">
+												<label class="control-label mb-10 col-sm-2" for="ac_hr">A/C Details</label>
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="ac_hr" placeholder="Bank Details">
+												</div>
+										</div>
+												<form action="/action_page.php">
+													<label for="Date">Date of Commencement</label>
+													<input type="date" id="Date" name="Date">
+												</form>
 
-								<button type="button" class="btn btn-danger" style="background-color: #6CBB3C">Save changes</button>
+												<form action="/action_page.php">
+													<p>Status</p>
+													  <input type="radio" id="trip" name="fav_language" value="Trip">
+													  <label for="trip">Trip</label><br>
+													  <input type="radio" id="duty" name="fav_language" value="Duty">
+													  <label for="duty">Duty Station</label><br>
+													  <input type="radio" id="home" name="fav_language" value="Home">
+													  <label for="home">Home</label>
+													  <input type="radio" id="others" name="fav_language" value="Others">
+													  <label for="others">Others</label>
+
+												<div class="form-group"> 
+													<div class="col-sm-offset-2 col-sm-10">
+													<div class="checkbox checkbox-success">
+														<input id="checkbox_hr" type="checkbox">
+														<label for="checkbox_hr">
+															I as the surpervisor confirm the payements for te
+														</label>
+													</div>
+													</div>
+												</div>
+												<div class="form-group mb-0"> 
+													<div class="col-sm-offset-2 col-sm-10">
+													  <button type="button" class="btn btn-success btn-anim"><i class="icon-rocket"></i><span class="btn-text">submit</span></button>
+													</div>
+												</div>
+												</form>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div>	
+					<!-- /Row -->
 
-				<script>
-					function toggleModal() {
+							<!-- Row -->
+							<div class="row" style="">
+								<div class="col-md-12">
+									<div class="panel panel-default card-view">
+										<div class="panel-heading">
+											<div class="pull-left">
+												<h6 class="panel-title txt-dark">Date time picker</h6>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+										<div class="panel-wrapper collapse in">
+											<div class="panel-body">
+												<div class="form-wrap">
+													<form>
+														<div class="row">
+															<div class="col-sm-6">
+																<div class="form-group">
+																	<label class="control-label mb-10 text-left">date time pick</label>
+																	<div class='input-group date' id='datetimepicker1'>
+																		<input type='text' class="form-control" />
+																		<span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group">
+																	<label class="control-label mb-10 text-left">time pick</label>
+																	<div class='input-group date' id='datetimepicker2'>
+																		<input type='text' class="form-control" />
+																		<span class="input-group-addon">
+																	<span class="fa fa-clock-o"></span>
+																</span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<label class="control-label mb-10 text-left">inline date pick</label>
+																<div class="form-group">
+																	<div class='input-group date' id='datetimepicker3'></div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<label class="control-label mb-10 text-left">inline date time pick</label>
+																<div class="form-group">
+																	<div class='input-group date' id='datetimepicker4'></div>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Row -->
 
-						const Region = document.getElementById('test').innerHTML;
-						document.getElementById('test1').value = Region.replace('\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>*', '');
-
-					}
-				</script>
-
+					
 				</div>
 				
 				<!-- Footer -->
@@ -1321,33 +1581,63 @@
 				
 			</div>
 			<!-- /Main Content -->
-		
 		</div>
-		<!-- /#wrapper -->
-		
-		<!-- JavaScript -->
-		
-		<!-- jQuery -->
-		<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-		
-		<!-- Bootstrap Core JavaScript -->
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="dist/js/modal-data.js"></script>
-		
-		<!-- Slimscroll JavaScript -->
-		<script src="dist/js/jquery.slimscroll.js"></script>
-	
-		<!-- Fancy Dropdown JS -->
-		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
-		
-		<!-- Owl JavaScript -->
-		<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-		
-		<!-- Switchery JavaScript -->
-		<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
-		
-		<!-- Init JavaScript -->
-		<script src="dist/js/init.js"></script>
-		
+			<!-- /#wrapper -->
+
+			<!-- JavaScript -->
+
+			<!-- jQuery -->
+			<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+			<!-- Bootstrap Core JavaScript -->
+			<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+			<!-- Data table JavaScript -->
+			<script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+			<script src="vendors/bower_components/editable-table/mindmup-editabletable.js"></script>
+			<script src="dist/js/Monthly-Report-numeric-input.js"></script>
+			<script src="dist/js/editable-table-data.js"></script>
+
+			<!-- Data table JavaScript -->
+			<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+			<script src="vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
+			<script src="dist/js/Monthly-Report-Footable.js"></script>
+
+			<!-- Slimscroll JavaScript -->
+			<script src="dist/js/jquery.slimscroll.js"></script>
+
+			<!-- Fancy Dropdown JS -->
+			<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+
+			<!-- Owl JavaScript -->
+			<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+			<!-- Switchery JavaScript -->
+			<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+
+			<!-- Bootstrap Datetimepicker JavaScript -->
+			<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+			<!-- Bootstrap Daterangepicker JavaScript -->
+			<script src="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+			<!-- Bootstrap Daterangepicker JavaScript -->
+			<script src="vendors/bower_components/dropify/dist/js/dropify.min.js"></script>
+
+			<!-- Form Picker Init JavaScript -->
+			<script src="dist/js/form-picker-data.js"></script>
+
+
+			<!-- Bootstrap Colorpicker JavaScript -->
+			<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+
+			<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+			<!-- Init JavaScript -->
+			<script src="dist/js/init.js"></script>
+			<script src="dist/js/toast-data.js"></script>
+
+			<!-- Form Flie Upload Data JavaScript -->
+			<script src="dist/js/form-file-upload-data.js"></script>
+
 	</body>
 </html>
