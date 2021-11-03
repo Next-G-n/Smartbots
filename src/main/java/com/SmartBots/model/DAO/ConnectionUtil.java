@@ -156,4 +156,43 @@ public class ConnectionUtil {
     }
 
 
+    public String request(Request requestInfo, String action) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        String error = "Successful";
+        try {
+            myConn = dataSource.getConnection();
+            String sql3;
+            System.out.println(requestInfo.getQualification_Requirements());
+            if (action.equals("Submit")) {
+                sql3 = "INSERT INTO `smartbots`.`request` (`Company Id`,`Number Of Positions Required`, `Qualification Requirements`, `Duty Station`, `Department / Division`, `Brief Description`, `Date Unix`, `Status`)" +
+                        " VALUES('"+requestInfo.getCompany_Id()+"',?,?,?,?,?,?,?)";
+                myStmt = myConn.prepareStatement(sql3);
+
+
+            }else if(action.equals("Edit")){
+                sql3= "Update request set `Company Id`,`Number Of Positions Required`=?, `Qualification Requirements`=?, `Duty Station`=?, `Department / Division`=?, `Brief Description`=?, `Date Unix`=?,`Status`=? where `Request Id`=?";
+                myStmt = myConn.prepareStatement(sql3);
+                myStmt.setInt(8, requestInfo.getRequest_Id());
+
+
+            }
+
+            myStmt.setInt(1, requestInfo.getNumber_Of_Positions_Required());
+            myStmt.setString(2, requestInfo.getQualification_Requirements());
+            myStmt.setString(3, requestInfo.getDuty_Station());
+            myStmt.setString(4, requestInfo.getDepartment_Division());
+            myStmt.setString(5, requestInfo.getBrief_Description());
+            myStmt.setString(6, requestInfo.getDate_Unix());
+            myStmt.setString(7, requestInfo.getStatus());
+            myStmt.execute();
+
+        } catch (Exception ex) {
+            System.out.println("There is an error" + ex);
+        }finally {
+            close(myConn,myStmt,null);
+        }
+        System.out.println("error "+error);
+        return error;
+    }
 }

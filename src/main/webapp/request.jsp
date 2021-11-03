@@ -1,4 +1,5 @@
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
 <head>
@@ -835,7 +836,7 @@
                                     <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
 
                                         <div class="modal-dialog" role="document">
-                                            <form class="modal-content form-horizontal" id="editor" action="ServletDwmpc" method="post">
+                                            <form class="modal-content form-horizontal" id="editor" action="ServletSmartBots" method="post">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                                     <h5 class="modal-title" id="editor-title">Add Row</h5>
@@ -843,36 +844,39 @@
                                                 <div class="modal-body">
 
 
-
+                                                    <input type="hidden" name="command" value="Request">
+                                                    <input type="hidden" name="action" id="sub" value="">
+                                                    <input type="hidden" name="Request_Id" id="req" value="">
+                                                    <input type="hidden" name="company_Id" value="1">
                                                     <div class="form-group required">
                                                         <label for="NumberOfPositionsRequired" class="col-sm-3 control-label">Number Of Positions Required</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="NumberOfPositionsRequired" name="NumberOfPositionsRequired" placeholder="Number Of Positions Required" required>
+                                                            <input type="text" class="form-control" id="NumberOfPositionsRequired" name="Number_Of_Positions_Required" placeholder="Number Of Positions Required" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="QualificationRequirements" class="col-sm-3 control-label">Qualification Requirements</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="QualificationRequirements" name="QualificationRequirements" placeholder="Qualification Requirements">
+                                                            <input type="text" class="form-control" id="QualificationRequirements" name="Qualification_Requirements" placeholder="Qualification Requirements">
                                                         </div>
                                                     </div>
                                                     <div class="form-group required">
                                                         <label for="DutyStation" class="col-sm-3 control-label">Duty Station</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="DutyStation" name="DutyStation" placeholder="Duty Station" required>
+                                                            <input type="text" class="form-control" id="DutyStation" name="Duty_Station" placeholder="Duty Station" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group required">
                                                         <label for="DepartmentDivision" class="col-sm-3 control-label">Department Division</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="DepartmentDivision" name="DutyStation" placeholder="Department Division" required>
+                                                            <input type="text" class="form-control" id="DepartmentDivision" name="Department_Division" placeholder="Department Division" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-group required">
                                                         <label for="BriefDescription" class="col-sm-3 control-label">Brief Description</label>
                                                         <div class="col-sm-9">
-                                                            <textarea class="form-control" id="BriefDescription" name="BriefDescription" placeholder="Brief Description" required></textarea>
+                                                            <textarea class="form-control" id="BriefDescription" name="Brief_Description" placeholder="Brief Description" required></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

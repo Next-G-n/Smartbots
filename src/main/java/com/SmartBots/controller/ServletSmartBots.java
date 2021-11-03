@@ -2,6 +2,7 @@ package com.SmartBots.controller;
 
 import com.SmartBots.model.DAO.ConnectionUtil;
 import com.SmartBots.model.DAO.hash;
+import com.SmartBots.model.bean.Request;
 import com.SmartBots.model.bean.User;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -83,6 +84,10 @@ public class ServletSmartBots extends HttpServlet {
                 case "Login":
                     login(request,response);
                     break;
+
+                case "Request":
+                    Request(request,response);
+                    break;
             }
 
         }
@@ -91,6 +96,31 @@ public class ServletSmartBots extends HttpServlet {
             exc.printStackTrace();
 
         }
+    }
+
+    private void Request(HttpServletRequest request, HttpServletResponse response)throws Exception {
+       int companyId=Integer.parseInt(request.getParameter("company_Id"));
+        int numberOfPositionsRequired=Integer.parseInt(request.getParameter("Number_Of_Positions_Required"));
+        String qualificatonRequirements=request.getParameter("Qualification_Requirements");
+        String dutyStaton=request.getParameter("Duty_Station");
+        String department=request.getParameter("Department_Division");
+        String briefDescription=request.getParameter("Brief_Description");
+        String dateUnix="nothing";
+        String status="request";
+        String action=request.getParameter("action");
+        int requestId=0;
+        if (action.equals("Edit")) {
+            requestId=Integer.parseInt(request.getParameter("Request_Id"));
+
+        }
+        Request requestInfo = new Request(requestId,companyId,
+                numberOfPositionsRequired,qualificatonRequirements,
+                dutyStaton,department,
+                briefDescription,dateUnix,status);
+        System.out.println(qualificatonRequirements);
+        String requestResult=connectionUtil.request(requestInfo,action);
+        System.out.println(qualificatonRequirements);
+
     }
 
     private void login(HttpServletRequest request, HttpServletResponse response) throws Exception {
