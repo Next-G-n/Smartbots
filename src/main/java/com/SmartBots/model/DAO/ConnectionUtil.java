@@ -156,4 +156,32 @@ public class ConnectionUtil {
     }
 
 
+    public String registerCompany(Companyinfo companyinfo, String action) throws  Exception{
+        Connection myConn=null;
+        PreparedStatement myStmt=null;
+        String error="Successful";
+        try {
+            myConn = dataSource.getConnection();
+            String sql2;
+            sql2= "INSERT INTO `smartbots`.`company_information` (`Company Name`," +
+                    " `Company Email`, `Sector`," +
+                    " `Organization Registration Number`, " +
+                    "`Physical Address`, `Telephone`) VALUES " +
+                    "(?,?,?,?,?,?)";
+            myStmt = myConn.prepareStatement(sql2);
+            myStmt.setString(1, companyinfo.getCompanyName());
+            myStmt.setString(2, companyinfo.getEmail());
+            myStmt.setString(3, companyinfo.getSector());
+            myStmt.setString(4, companyinfo.getRegistration_Number());
+            myStmt.setString(5, companyinfo.getPhysical_address());
+            myStmt.setString(6, companyinfo.getTel());
+            myStmt.execute();
+
+        }finally {
+            close(myConn,myStmt,null);
+        }
+
+        return error;
+
+    }
 }

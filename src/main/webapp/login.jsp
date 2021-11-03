@@ -66,6 +66,7 @@
 													<div class="panel-body">
 											<form method="post" id="login_test" action="ServletSmartBots">
 												<input class="inputs" type="hidden" name="command" value="Login">
+												<input class="inputs" type="hidden" name="action" value="login">
 												<div class="form-group">
 													<label class="control-label mb-10" for="exampleInputEmail_2">Email address</label>
 													<input type="email" class="form-control" name="email" required="" id="exampleInputEmail_2" value="${LoginError.email}" placeholder="Enter email">

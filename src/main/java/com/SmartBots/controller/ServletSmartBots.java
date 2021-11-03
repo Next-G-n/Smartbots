@@ -2,6 +2,7 @@ package com.SmartBots.controller;
 
 import com.SmartBots.model.DAO.ConnectionUtil;
 import com.SmartBots.model.DAO.hash;
+import com.SmartBots.model.bean.Companyinfo;
 import com.SmartBots.model.bean.User;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -83,6 +84,9 @@ public class ServletSmartBots extends HttpServlet {
                 case "Login":
                     login(request,response);
                     break;
+                case "Company Registration":
+                    registerCompany(request,response);
+                    break;
             }
 
         }
@@ -93,16 +97,44 @@ public class ServletSmartBots extends HttpServlet {
         }
     }
 
+    private void registerCompany(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session=request.getSession();
+        String action=request.getParameter("action");
+        int id= Integer.parseInt(request.getParameter("User_id"));
+        String companyName=request.getParameter("Company name");
+        String City_Town_Village=request.getParameter("City");
+        String Com_email=request.getParameter("Company_Email");
+        String Sector=request.getParameter("Sector");
+        String vat="None";
+        String Registration_Number="None";
+        if(Sector.equals("Private")){
+            vat=request.getParameter("vat");
+            Registration_Number=request.getParameter("Registration_Number");
+        }
+
+        String Physical_address=request.getParameter("Physical Address");
+        String telephone=request.getParameter("telephone");
+        String email=request.getParameter("Company_Email");
+
+        Companyinfo companyinfo=new Companyinfo(0,id,companyName,
+                City_Town_Village,Com_email,Sector,vat,Registration_Number,Physical_address,telephone);
+
+        String error=connectionUtil.registerCompany(companyinfo,action);
+
+
+    }
+
     private void login(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session=request.getSession();
         String email=request.getParameter("email");
         String password=request.getParameter("password");
         String action=request.getParameter("action");
+        System.out.println(action);
         List<User> loginUser=connectionUtil.loginUser(email,password,action);
         if(!loginUser.isEmpty()){
             if(loginUser.get(0).getUserType().equals("Graduate")){
                 session.setAttribute("UserInfo", loginUser);
-                request.getRequestDispatcher("Home_Graduate.jsp").forward(request, response);
+                request.getRequestDispatcher("companyForm.jsp").forward(request, response);
             }
         }
     }
@@ -130,5 +162,6 @@ public class ServletSmartBots extends HttpServlet {
 
 
     }
+
 
 }
