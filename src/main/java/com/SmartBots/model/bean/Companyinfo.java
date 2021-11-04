@@ -11,6 +11,8 @@ public class Companyinfo {
     String registration_Number;
     String Physical_address;
     String tel;
+    int position;
+    int request_id;
 
     public Companyinfo(int companyId, int user_id, String companyName, String city, String email, String sector, String vat, String registration_Number, String physical_address, String tel) {
         this.companyId = companyId;
@@ -23,6 +25,22 @@ public class Companyinfo {
         this.registration_Number = registration_Number;
         Physical_address = physical_address;
         this.tel = tel;
+    }
+
+    public Companyinfo(int companyId, String companyName, int position,int request_id) {
+        this.companyId = companyId;
+        this.companyName = companyName;
+        this.position = position;
+        this.request_id = request_id;
+
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public int getCompanyId() {

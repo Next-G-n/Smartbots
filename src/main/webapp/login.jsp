@@ -117,9 +117,9 @@
 																			alert("this 1")
 																			document.getElementById("Error-Login").click();
 																		}else if(data==="Client"){
-																			window.open('Home.jsp', '_parent');
+																			window.open('MYSC_Home.jsp', '_parent');
 																		}else if(data==="Officer"){
-																			window.open('Officer-Home.jsp', '_parent');
+																			window.open('Officer-MYSC_Home.jsp', '_parent');
 																		}
 
 																	}

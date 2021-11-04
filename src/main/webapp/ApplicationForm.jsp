@@ -1238,8 +1238,8 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-wrap">
-												<form data-toggle="validator" id="" method="post" action="ServletSmartBots" role="form">
-													<input class="inputs" type="hidden" name="command" value="Application">
+												<form data-toggle="validator" role="form" action="ServletSmartBots" method="post" enctype="multipart/form-data">
+													<input type="hidden" name="command" value="Application">
 													<input class="inputs" type="hidden" name="action" value="Registration">
 													<input class="inputs" type="hidden" name="User_id" value="${UserInfo[0].user_id}">
 													<input class="inputs" type="hidden" name="Name" value="${UserInfo[0].first_Name}_${UserInfo[0].last_name}">
@@ -1364,210 +1364,6 @@
 				</div>
 
 
-
-						<div class="col-sm-6">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Application Form</h6>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-
-
-
-
-								<div class="form-group mb-30">
-
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div class="form-wrap">
-											<form role="form" class="form-horizontal">
-												<div class="form-group">
-
-												</div>
-												<div class="form-group">
-
-												</div>
-												<div class="form-group">
-
-												</div>
-												<div class="form-group ">
-
-												</div>
-												<div class="form-group ">
-
-												</div>
-												<div class="form-group">
-
-												</div>
-											</form>
-											<div class="form-group ">
-												<label class="col-sm-3 control-label " for="example-input-ni">Copy of ID</label>
-
-												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-
-													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
-														<input type="file" name="...">
-														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
-												</div>
-											</div>
-											<div class="form-group ">
-												<label class="col-sm-3 control-label " for="example-input-ni">Academic Qualification</label>
-
-												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-
-													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
-														<input type="file" name="...">
-														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
-												</div>
-											</div>
-											<div class="form-group ">
-												<label class="col-sm-3 control-label " for="example-input-ni">CV</label>
-
-												<div class="fileinput fileinput-new input-group" data-provides="fileinput">
-
-													<div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-													<span class="input-group-addon fileupload btn btn-default btn-anim btn-file"><i class="fa fa-upload"></i> <span class="fileinput-new btn-text">Select file</span> <span class="fileinput-exists btn-text">Change</span>
-														<input type="file" name="...">
-														</span> <a href="#" class="input-group-addon btn btn-danger btn-anim fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i><span class="btn-text"> Remove</span></a>
-												</div>
-											</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Row -->
-
-						<div class="col-sm-12">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Allowance Confirmation Form</h6>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div class="form-wrap">
-											<form class="form-horizontal">
-
-												<div class="form-group">
-													<label class="control-label mb-10 col-sm-2" for="om_hr">ID no</label>
-												<div class="col-sm-10"> 
-													<input type="text" class="form-control" id="om_hr" placeholder="Add ID">
-												</div>
-												</div>
-												<div class="form-group">
-												<label class="control-label mb-10 col-sm-2" for="ac_hr">A/C Details</label>
-												<div class="col-sm-10">
-													<input type="text" class="form-control" id="ac_hr" placeholder="Bank Details">
-												</div>
-										</div>
-												<form action="/action_page.php">
-													<label for="Date">Date of Commencement</label>
-													<input type="date" id="Date" name="Date">
-												</form>
-
-												<form action="/action_page.php">
-													<p>Status</p>
-													  <input type="radio" id="trip" name="fav_language" value="Trip">
-													  <label for="trip">Trip</label><br>
-													  <input type="radio" id="duty" name="fav_language" value="Duty">
-													  <label for="duty">Duty Station</label><br>
-													  <input type="radio" id="home" name="fav_language" value="Home">
-													  <label for="home">Home</label>
-													  <input type="radio" id="others" name="fav_language" value="Others">
-													  <label for="others">Others</label>
-
-												<div class="form-group"> 
-													<div class="col-sm-offset-2 col-sm-10">
-													<div class="checkbox checkbox-success">
-														<input id="checkbox_hr" type="checkbox">
-														<label for="checkbox_hr">
-															I as the surpervisor confirm the payements for te
-														</label>
-													</div>
-													</div>
-												</div>
-												<div class="form-group mb-0"> 
-													<div class="col-sm-offset-2 col-sm-10">
-													  <button type="button" class="btn btn-success btn-anim"><i class="icon-rocket"></i><span class="btn-text">submit</span></button>
-													</div>
-												</div>
-												</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>	
-					<!-- /Row -->
-
-							<!-- Row -->
-							<div class="row" style="">
-								<div class="col-md-12">
-									<div class="panel panel-default card-view">
-										<div class="panel-heading">
-											<div class="pull-left">
-												<h6 class="panel-title txt-dark">Date time picker</h6>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="panel-wrapper collapse in">
-											<div class="panel-body">
-												<div class="form-wrap">
-													<form>
-														<div class="row">
-															<div class="col-sm-6">
-																<div class="form-group">
-																	<label class="control-label mb-10 text-left">date time pick</label>
-																	<div class='input-group date' id='datetimepicker1'>
-																		<input type='text' class="form-control" />
-																		<span class="input-group-addon">
-																	<span class="fa fa-calendar"></span>
-																</span>
-																	</div>
-																</div>
-															</div>
-															<div class="col-sm-6">
-																<div class="form-group">
-																	<label class="control-label mb-10 text-left">time pick</label>
-																	<div class='input-group date' id='datetimepicker2'>
-																		<input type='text' class="form-control" />
-																		<span class="input-group-addon">
-																	<span class="fa fa-clock-o"></span>
-																</span>
-																	</div>
-																</div>
-															</div>
-															<div class="col-sm-6">
-																<label class="control-label mb-10 text-left">inline date pick</label>
-																<div class="form-group">
-																	<div class='input-group date' id='datetimepicker3'></div>
-																</div>
-															</div>
-															<div class="col-sm-6">
-																<label class="control-label mb-10 text-left">inline date time pick</label>
-																<div class="form-group">
-																	<div class='input-group date' id='datetimepicker4'></div>
-																</div>
-															</div>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Row -->
-
-					
-				</div>
 				
 				<!-- Footer -->
 				<footer class="footer container-fluid pl-30 pr-30">
@@ -1639,5 +1435,6 @@
 			<!-- Form Flie Upload Data JavaScript -->
 			<script src="dist/js/form-file-upload-data.js"></script>
 
+		</div>
 	</body>
 </html>

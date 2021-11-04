@@ -39,6 +39,9 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 @WebServlet(name = "ServletSmartBots", value = "/ServletSmartBots")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 14, // 10 MB
+        maxFileSize = 1024 * 1024 * 1000000, // 1 GB
+        maxRequestSize = 1024 * 1024 * 1000000)
 public class ServletSmartBots extends HttpServlet {
 
 
@@ -75,6 +78,7 @@ public class ServletSmartBots extends HttpServlet {
         try {
             String theCommand = request.getParameter("command");
 
+            System.out.println("this Command: "+theCommand);
             if (theCommand == null) {
 
                 theCommand = "display_List";
@@ -92,6 +96,9 @@ public class ServletSmartBots extends HttpServlet {
                 case "Application":
                     applicationGraduate(request,response);
                     break;
+                case "getRequest":
+                    getRequest(request,response);
+                    break;
             }
 
         }
@@ -102,11 +109,21 @@ public class ServletSmartBots extends HttpServlet {
         }
     }
 
+    private void getRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        int Request_id= Integer.parseInt(request.getParameter("Request_id"));
+        int company_id= Integer.parseInt(request.getParameter("company_id"));
+        Companyinfo getCompanyInfo=connectionUtil.getCompanyInfo(company_id);
+        Companyinfo getReqest=connectionUtil.getRequestSp(Request_id);
+
+        List<User> users=connectionUtil.loginUser(,"Nothing","Admin");
+
+    }
+
     private void applicationGraduate(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session=request.getSession();
         String action=request.getParameter("action");
         int id= Integer.parseInt(request.getParameter("User_id"));
-        String field=request.getParameter("Field");
+        String field=request.getParameter("field");
         String tpeOfIntern=request.getParameter("TypeOf");
         String major=request.getParameter("major");
         String level=request.getParameter("level");
@@ -115,6 +132,8 @@ public class ServletSmartBots extends HttpServlet {
         String disability=request.getParameter("Disability");
         String school=request.getParameter("School");
         String userName=request.getParameter("Name");
+
+        System.out.println("plz");
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String ApplicationDate= String.valueOf(timestamp.getTime());
@@ -154,11 +173,13 @@ public class ServletSmartBots extends HttpServlet {
     private void getTrack(HttpServletRequest request, HttpServletResponse response, int id, String field, String level) throws Exception {
         HttpSession session=request.getSession();
         List<UserTracker> trackers=connectionUtil.startTrack(id,field,level);
+        System.out.println("Well");
         if(!trackers.isEmpty()){
+            System.out.println("greate");
             session.setAttribute("Track", trackers);
-            request.getRequestDispatcher("companyForm.jsp").forward(request, response);
+            request.getRequestDispatcher("track.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("companyForm.jsp").forward(request, response);
+            request.getRequestDispatcher("ApplicationForm.jsp").forward(request, response);
         }
 
 
@@ -212,11 +233,32 @@ public class ServletSmartBots extends HttpServlet {
         if(!loginUser.isEmpty()){
             if(loginUser.get(0).getUserType().equals("Graduate")){
                 session.setAttribute("UserInfo", loginUser);
+
+                List<Application> applications=connectionUtil.getApplicationInfo(loginUser.get(0).getUser_id());
+
+                if(!applications.isEmpty()){
+                    getTrack(request,response,loginUser.get(0).getUser_id(),applications.get(0).getField(),applications.get(0).getLevel());
+                }else{
+                    System.out.println("This is Null");
+                    request.getRequestDispatcher("ApplicationForm.jsp").forward(request, response);
+                }
+
             } else if(loginUser.get(0).getUserType().equals("Company Representative")){
                 session.setAttribute("UserInfo", loginUser);
                 request.getRequestDispatcher("companyForm.jsp").forward(request, response);
+            }else if(loginUser.get(0).getUserType().equals("MYSC")){
+
+                CompanyRequest(request,response);
+                request.getRequestDispatcher("MYSC_Home.jsp").forward(request, response);
+
             }
         }
+    }
+
+    private void CompanyRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session=request.getSession();
+        List<Companyinfo> requests=connectionUtil.getRequest();
+        session.setAttribute("Requests", requests);
     }
 
     private void user_Registration(HttpServletRequest request, HttpServletResponse response) throws Exception {

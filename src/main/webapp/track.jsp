@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +47,7 @@
             <div class="nav-header pull-left">
                 <div class="logo-wrap">
                     <a href="index.html">
-                        <img class="brand-img" src="../img/logo.png" alt="brand"/>
+                        <img class="brand-img" src="img/logo.png" alt="brand"/>
                     </a>
                 </div>
             </div>
@@ -874,7 +876,7 @@
                             <div class="panel-body sm-data-box-1">
                                 <span class="uppercase-font weight-500 font-15 block text-center txt-dark">TRACKING</span>
                                 <div class="cus-sat-stat weight-500 txt-grey text-center mt-5">
-                                    <span class="counter-anim">93</span><span>/103</span>
+                                    <span class="counter-anim">${Track[0].position}</span><span>/${Track[0].total}</span>
                                 </div>
                                 <div class="progress-anim mt-20">
                                     <div class="progress">

@@ -102,7 +102,6 @@ public class ConnectionUtil {
             myConn = dataSource.getConnection();
             String sql;
             if (action.equals("Admin")) {
-                System.out.println("thiss this");
                 em="Admin";
                 sql = "select * from user where not `User Type`='Client'";
                 myStmt = myConn.prepareStatement(sql);
@@ -220,8 +219,8 @@ public class ConnectionUtil {
                         " `Major`, `Level`," +
                         " `Programme`, `Date of Completing`," +
                         " `School`, `Status`," +
-                        " `Qualification`, `CV`) " +
-                        "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                        " `Qualification`, `CV`, `disability`) " +
+                        "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
                 myStmt = myConn.prepareStatement(sql2);
                 myStmt.setInt(1, application.getUser_id());
                 myStmt.setString(2, application.getField());
@@ -234,6 +233,7 @@ public class ConnectionUtil {
                 myStmt.setString(9, application.getStatus());
                 myStmt.setString(10, application.getQualification());
                 myStmt.setString(11, application.getCV());
+                myStmt.setString(12, application.getDisability());
                 myStmt.execute();
             }
         }finally {
@@ -248,7 +248,7 @@ public class ConnectionUtil {
         ResultSet myRS = null;
         String test="There is Nothing";
         List<UserTracker> tracker= new ArrayList<>();
-        int count=1;
+        int count=0;
         int position=0;
         try {
             myConn = dataSource.getConnection();
@@ -257,10 +257,11 @@ public class ConnectionUtil {
             myRS = myStmt.executeQuery();
             while (myRS.next()) {
                 int User_id=myRS.getInt("User Id");
+                count=count+1;
                 if (User_id == id){
                     position=count;
                 }
-                count=count+1;
+
             }
            UserTracker tracker1 =new UserTracker(count,position);
             tracker.add(tracker1);
@@ -269,5 +270,111 @@ public class ConnectionUtil {
             close(myConn,myStmt,myRS);
         }
         return tracker;
+    }
+
+    public List<Application> getApplicationInfo(int user_id) throws Exception{
+
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        String test="There is Nothing";
+        List<Application> app= new ArrayList<>();
+        int count=1;
+        int position=0;
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "select * from Aplication where `User Id`='"+user_id+"'";
+            myStmt = myConn.prepareStatement(sql2);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()) {
+                int User_id=myRS.getInt("User Id");
+                int Appication_id=myRS.getInt("idAplication");
+                String field=myRS.getString("field");
+                String Type=myRS.getString("Type Of Intern");
+                String Major=myRS.getString("Major");
+                String Level=myRS.getString("Level");
+                String Programme=myRS.getString("Programme");
+                String Date=myRS.getString("Date of Completing");
+                String School=myRS.getString("School");
+                String Status=myRS.getString("Status");
+                String Qualification=myRS.getString("Qualification");
+                String CV=myRS.getString("CV");
+                String disability=myRS.getString("disability");
+
+                Application application =new Application(Appication_id,User_id,field,Type,Major,Level,Programme,Date,disability,School,Status,Qualification,CV);
+                app.add(application);
+            }
+
+
+        } finally {
+            close(myConn,myStmt,myRS);
+        }
+        return app;
+    }
+
+    public List<Companyinfo> getRequest() throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        List<Companyinfo> tracker= new ArrayList<>();
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "SELECT * FROM smartbots.request r left join smartbots.company_information c on c.`Company Id`=r.`Company Id` where not `Number Of Positions Required`=0;'";
+            myStmt = myConn.prepareStatement(sql2);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()) {
+                int companyId=myRS.getInt("Company Id");
+                String CompanyName=myRS.getString("Company Name");
+                int position=myRS.getInt("Number Of Positions Required");
+                int Request_Id=myRS.getInt("Request Id");
+                Companyinfo companyinfo=new Companyinfo(companyId,CompanyName,position,Request_Id);
+                tracker.add(companyinfo);
+            }
+
+        } finally {
+            close(myConn,myStmt,myRS);
+        }
+        return tracker;
+    }
+
+    public Companyinfo getCompanyInfo(int company_id) throws Exception{
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        Companyinfo companyinfo = null;
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "SELECT * FROM smartbots.company_information where `Company Id`="+company_id;
+            myStmt = myConn.prepareStatement(sql2);
+            myRS = myStmt.executeQuery();
+
+            while (myRS.next()) {
+                int User_id=myRS.getInt("User Id");
+                String companyName= myRS.getString("");
+                String city= myRS.getString("");
+                String email= myRS.getString("");
+                String sector= myRS.getString("");
+                String vat= myRS.getString("");
+                String registration_Number= myRS.getString("");
+                String physical= myRS.getString("");
+                String tel= myRS.getString("");
+
+                companyinfo=new Companyinfo(company_id,User_id
+                        ,companyName,city,email,
+                        sector,vat,registration_Number,
+                        physical,tel);
+
+
+            }
+
+        }finally {
+
+        }
+        return companyinfo;
+    }
+
+    public Companyinfo getRequestSp(int request_id) throws Exception {
+        Companyinfo test=new Companyinfo(1,"ths",2,5);
+        return test;
     }
 }

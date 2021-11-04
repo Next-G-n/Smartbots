@@ -77,7 +77,7 @@ Project:	Zapily
 /** Imports **/
 /****************************/
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
-@import url(../../vendors/bower_components/bootstrap/dist/css/bootstrap.min.css);
+@import url(../../../vendors/bower_components/bootstrap/dist/css/bootstrap.min.css);
 @import url(font-awesome.min.css);
 @import url(themify-icons.css);
 @import url(animate.css);
@@ -87,11 +87,11 @@ Project:	Zapily
 @import url(pe-icon-7-styles.css);
 @import url(material-design-iconic-font.min.css);
 @import url(filter.css);
-@import url(../../vendors/bower_components/switchery/dist/switchery.min.css);
-@import url(../../vendors/bower_components/owl.carousel/dist/assets/owl.carousel.min.css);
-@import url(../../vendors/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css);
+@import url(../../../vendors/bower_components/switchery/dist/switchery.min.css);
+@import url(../../../vendors/bower_components/owl.carousel/dist/assets/owl.carousel.min.css);
+@import url(../../../vendors/bower_components/owl.carousel/dist/assets/owl.theme.default.min.css);
 @import url(lightgallery.css);
-@import url(../../vendors/bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css);
+@import url(../../../vendors/bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css);
 /****************************/
 /** Reset **/
 /****************************/
@@ -618,7 +618,7 @@ code {
 
 .bg-yellow,
 .bg-warning {
-  background: #487C5F !important; }
+  background: #f8b32d !important; }
 
 .bg-red,
 .bg-danger {
@@ -639,16 +639,16 @@ code {
   background: #ff6300 !important; }
 
 .bg-gold {
-  background: #487C5F !important; }
+  background: #d6ae71 !important; }
 
 .bg-light-gold {
-  background: #487C5F !important; }
+  background: #efd7b1 !important; }
 
 .bg-brown {
   background: #6d300e !important; }
 
 .bg-beige {
-  background: #487C5F !important; }
+  background: #f7ce99 !important; }
 
 .bg-light {
   background: #fff !important; }
@@ -677,7 +677,7 @@ code {
 
 .txt-warning,
 .text-warning {
-  color: #487C5F !important; }
+  color: #f8b32d !important; }
 
 .txt-primary,
 .text-primary {
@@ -698,13 +698,13 @@ code {
   color: #ac235c !important; }
 
 .txt-beige {
-  color: #487C5F !important; }
+  color: #f7ce99 !important; }
 
 .txt-gold {
-  color: #487C5F !important; }
+  color: #d6ae71 !important; }
 
 .txt-light-gold {
-  color: #487C5F !important; }
+  color: #efd7b1 !important; }
 
 .txt-orange {
   color: #ff6300 !important; }
@@ -942,8 +942,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   .btn.btn-info, .wizard > .actions a.btn-info, .dt-buttons .btn-info.dt-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-info, .sweet-alert button.btn-info, .owl-theme .owl-nav .btn-info[class*="owl-"], button.btn-info.fc-agendaDay-button.fc-state-default.fc-corner-right,
   button.btn-info.fc-month-button.fc-state-default.fc-corner-left,
   button.btn-info.fc-agendaWeek-button, .btn-info.fc-prev-button, .btn-info.fc-next-button, .btn-info.fc-today-button {
-    background: #e7368d;
-    border: solid 1px #e7368d; }
+    background: #2a3e4c;
+    border: solid 1px #2a3e4c }
     .btn.btn-info:hover, .wizard > .actions a.btn-info:hover, .dt-buttons .btn-info.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-info:hover, .sweet-alert button.btn-info:hover, .owl-theme .owl-nav .btn-info[class*="owl-"]:hover, button.btn-info.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
     button.btn-info.fc-month-button.fc-state-default.fc-corner-left:hover,
     button.btn-info.fc-agendaWeek-button:hover, .btn-info.fc-prev-button:hover, .btn-info.fc-next-button:hover, .btn-info.fc-today-button:hover, .btn.btn-info:active, .wizard > .actions a.btn-info:active, .dt-buttons .btn-info.dt-button:active, .tablesaw-sortable th.tablesaw-sortable-head button.btn-info:active, .sweet-alert button.btn-info:active, .owl-theme .owl-nav .btn-info[class*="owl-"]:active, button.btn-info.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
@@ -957,11 +957,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   button.btn-primary.fc-month-button.fc-state-default.fc-corner-left,
   .dt-buttons button.fc-month-button.fc-state-default.fc-corner-left.dt-button,
   button.btn-primary.fc-agendaWeek-button, .btn-primary.fc-prev-button, .btn-primary.fc-next-button, .btn-primary.fc-today-button {
-    background: #487C5F;
-    border: solid 1px #487C5F; }
-.btn.btn-primary, .wizard > .actions .disabled a, .wizard > .actions .disabled a:hover, .wizard > .actions .disabled a:active, .wizard > .actions a, .wizard > .actions a:hover, .wizard > .actions a:active{
-  border-radius: 60px;
-}
+    background: #2196f3;
+    border: solid 1px #2196f3; }
     .btn.btn-primary:hover, .wizard > .actions a:hover, .dt-buttons .dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-primary:hover, .sweet-alert button.btn-primary:hover, .owl-theme .owl-nav .btn-primary[class*="owl-"]:hover, button.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:hover, .dt-buttons button.fc-agendaDay-button.fc-state-default.fc-corner-right.dt-button:hover,
     button.btn-primary.fc-month-button.fc-state-default.fc-corner-left:hover,
     .dt-buttons button.fc-month-button.fc-state-default.fc-corner-left.dt-button:hover,
@@ -972,8 +969,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
     button.btn-primary.fc-month-button.fc-state-default.fc-corner-left:focus,
     .dt-buttons button.fc-month-button.fc-state-default.fc-corner-left.dt-button:focus,
     button.btn-primary.fc-agendaWeek-button:focus, .btn-primary.fc-prev-button:focus, .btn-primary.fc-next-button:focus, .btn-primary.fc-today-button:focus {
-      background: #6c967e;
-      border: solid 1px #6c967e; }
+      background: rgba(33, 150, 243, 0.85);
+      border: solid 1px rgba(33, 150, 243, 0.1); }
   .btn.btn-success, .wizard > .actions a.btn-success, .wizard > .actions a.fc-prev-button, .wizard > .actions a.fc-next-button, .wizard > .actions a.fc-today-button, .dt-buttons .btn-success.dt-button,
   .dt-buttons button.dt-button.fc-agendaWeek-button, .dt-buttons .dt-button.fc-prev-button, .dt-buttons .dt-button.fc-next-button, .dt-buttons .dt-button.fc-today-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-success,
   .tablesaw-sortable th.tablesaw-sortable-head button.fc-agendaWeek-button, .tablesaw-sortable th.tablesaw-sortable-head button.fc-prev-button, .tablesaw-sortable th.tablesaw-sortable-head button.fc-next-button, .tablesaw-sortable th.tablesaw-sortable-head button.fc-today-button, .sweet-alert button.btn-success, .sweet-alert button.fc-prev-button, .sweet-alert button.fc-next-button, .sweet-alert button.fc-today-button, .owl-theme .owl-nav .btn-success[class*="owl-"],
@@ -1000,8 +997,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   .btn.btn-gold, .wizard > .actions a.btn-gold, .dt-buttons .btn-gold.dt-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold, .sweet-alert button.btn-gold, .owl-theme .owl-nav .btn-gold[class*="owl-"], button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right,
   button.btn-gold.fc-month-button.fc-state-default.fc-corner-left,
   button.btn-gold.fc-agendaWeek-button, .btn-gold.fc-prev-button, .btn-gold.fc-next-button, .btn-gold.fc-today-button {
-    background: #487C5F;
-    border: solid 1px #487C5F; }
+    background: #d6ae71;
+    border: solid 1px #d6ae71; }
     .btn.btn-gold:hover, .wizard > .actions a.btn-gold:hover, .dt-buttons .btn-gold.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold:hover, .sweet-alert button.btn-gold:hover, .owl-theme .owl-nav .btn-gold[class*="owl-"]:hover, button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
     button.btn-gold.fc-month-button.fc-state-default.fc-corner-left:hover,
     button.btn-gold.fc-agendaWeek-button:hover, .btn-gold.fc-prev-button:hover, .btn-gold.fc-next-button:hover, .btn-gold.fc-today-button:hover, .btn.btn-gold:active, .wizard > .actions a.btn-gold:active, .dt-buttons .btn-gold.dt-button:active, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold:active, .sweet-alert button.btn-gold:active, .owl-theme .owl-nav .btn-gold[class*="owl-"]:active, button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
@@ -1029,8 +1026,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   .btn.btn-warning, .wizard > .actions a.btn-warning, .dt-buttons .btn-warning.dt-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-warning, .sweet-alert button.btn-warning, .owl-theme .owl-nav .btn-warning[class*="owl-"], button.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right,
   button.btn-warning.fc-month-button.fc-state-default.fc-corner-left,
   button.btn-warning.fc-agendaWeek-button, .btn-warning.fc-prev-button, .btn-warning.fc-next-button, .btn-warning.fc-today-button {
-    background: #487C5F;
-    border: solid 1px #487C5F; }
+    background: #f8b32d;
+    border: solid 1px #f8b32d; }
     .btn.btn-warning:hover, .wizard > .actions a.btn-warning:hover, .dt-buttons .btn-warning.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-warning:hover, .sweet-alert button.btn-warning:hover, .owl-theme .owl-nav .btn-warning[class*="owl-"]:hover, button.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
     button.btn-warning.fc-month-button.fc-state-default.fc-corner-left:hover,
     button.btn-warning.fc-agendaWeek-button:hover, .btn-warning.fc-prev-button:hover, .btn-warning.fc-next-button:hover, .btn-warning.fc-today-button:hover, .btn.btn-warning:active, .wizard > .actions a.btn-warning:active, .dt-buttons .btn-warning.dt-button:active, .tablesaw-sortable th.tablesaw-sortable-head button.btn-warning:active, .sweet-alert button.btn-warning:active, .owl-theme .owl-nav .btn-warning[class*="owl-"]:active, button.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
@@ -1250,8 +1247,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
     .dt-buttons button.fc-today-button.dt-button.fc-agendaWeek-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-primary.fc-today-button, button.btn-primary.fc-today-button.fc-agendaDay-button.fc-state-default.fc-corner-right,
     button.btn-primary.fc-today-button.fc-month-button.fc-state-default.fc-corner-left,
     button.btn-primary.fc-today-button.fc-agendaWeek-button {
-      border: solid 1px #487C5F;
-      color: #487C5F; }
+      border: solid 1px rgba(33, 150, 243, 0.5);
+      color: #2196F3; }
       .btn.btn-outline.btn-primary:hover, .wizard > .actions .disabled a.btn-outline:hover, ul.wysihtml5-toolbar .wizard > .actions .disabled a:hover, .wizard > .actions .disabled ul.wysihtml5-toolbar a:hover, .wizard > .actions ul.wysihtml5-toolbar .disabled a:hover, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm:hover, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm:hover, .wizard > .actions .disabled a.btn-outline:hover:active, ul.wysihtml5-toolbar .wizard > .actions .disabled a:hover:active, .wizard > .actions .disabled ul.wysihtml5-toolbar a:hover:active, .wizard > .actions ul.wysihtml5-toolbar .disabled a:hover:active, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm:hover:active, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm:hover:active, .wizard > .actions a.btn-outline:hover, ul.wysihtml5-toolbar .wizard > .actions a:hover, .wizard > .actions ul.wysihtml5-toolbar a:hover, .wizard > .actions .note-editor a.note-btn.btn-sm:hover, .note-editor .wizard > .actions a.note-btn.btn-sm:hover, .wizard > .actions a.btn-outline:hover:active, ul.wysihtml5-toolbar .wizard > .actions a:hover:active, .wizard > .actions ul.wysihtml5-toolbar a:hover:active, .wizard > .actions .note-editor a.note-btn.btn-sm:hover:active, .note-editor .wizard > .actions a.note-btn.btn-sm:hover:active, ul.wysihtml5-toolbar a.btn.btn-primary:hover, ul.wysihtml5-toolbar .dt-buttons a.dt-button:hover, .dt-buttons ul.wysihtml5-toolbar a.dt-button:hover, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-primary[class*="owl-"]:hover, .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-primary[class*="owl-"]:hover, ul.wysihtml5-toolbar a.btn-primary.fc-prev-button:hover, ul.wysihtml5-toolbar a.btn-primary.fc-next-button:hover, ul.wysihtml5-toolbar a.btn-primary.fc-today-button:hover, .note-editor .btn.btn-primary.note-btn.btn-sm:hover, .note-editor .dt-buttons .note-btn.btn-sm.dt-button:hover, .dt-buttons .note-editor .note-btn.btn-sm.dt-button:hover, .note-editor .tablesaw-sortable th.tablesaw-sortable-head button.btn-primary.note-btn.btn-sm:hover, .tablesaw-sortable th.tablesaw-sortable-head .note-editor button.btn-primary.note-btn.btn-sm:hover, .note-editor .sweet-alert button.btn-primary.note-btn.btn-sm:hover, .sweet-alert .note-editor button.btn-primary.note-btn.btn-sm:hover, .note-editor .owl-theme .owl-nav .btn-primary.note-btn.btn-sm[class*="owl-"]:hover, .owl-theme .owl-nav .note-editor .btn-primary.note-btn.btn-sm[class*="owl-"]:hover, .note-editor button.btn-primary.note-btn.btn-sm.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
       .note-editor button.btn-primary.note-btn.btn-sm.fc-month-button.fc-state-default.fc-corner-left:hover,
       .note-editor button.btn-primary.note-btn.btn-sm.fc-agendaWeek-button:hover, .note-editor .btn-primary.note-btn.btn-sm.fc-prev-button:hover, .note-editor .btn-primary.note-btn.btn-sm.fc-next-button:hover, .note-editor .btn-primary.note-btn.btn-sm.fc-today-button:hover, .dt-buttons .btn-outline.dt-button:hover, .dt-buttons .tablesaw-sortable th.tablesaw-sortable-head button.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head .dt-buttons button.dt-button:hover, .dt-buttons button.dt-button.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
@@ -1343,7 +1340,7 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
       .dt-buttons button.fc-today-button.dt-button.fc-agendaWeek-button:active, .tablesaw-sortable th.tablesaw-sortable-head button.btn-primary.fc-today-button:active, button.btn-primary.fc-today-button.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
       button.btn-primary.fc-today-button.fc-month-button.fc-state-default.fc-corner-left:active,
       button.btn-primary.fc-today-button.fc-agendaWeek-button:active {
-        border: solid 1px #487C5F; }
+        border: solid 1px #2196f3; }
     .btn.btn-outline.btn-success, .wizard > .actions .disabled a.btn-outline.btn-success, .wizard > .actions .disabled ul.wysihtml5-toolbar a.btn-success.btn, ul.wysihtml5-toolbar .wizard > .actions .disabled a.btn-success.btn, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-prev-button, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-prev-button, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-next-button, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-next-button, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-today-button, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-today-button, .wizard > .actions .disabled .note-editor a.btn-success.note-btn.btn-sm, .note-editor .wizard > .actions .disabled a.btn-success.note-btn.btn-sm, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-prev-button, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-prev-button, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-next-button, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-next-button, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-today-button, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-today-button, .wizard > .actions .disabled a.btn-outline.fc-prev-button, .wizard > .actions .disabled a.btn-outline.fc-next-button, .wizard > .actions .disabled a.btn-outline.fc-today-button, .wizard > .actions .disabled a.btn-outline.btn-success:hover, .wizard > .actions .disabled ul.wysihtml5-toolbar a.btn-success.btn:hover, ul.wysihtml5-toolbar .wizard > .actions .disabled a.btn-success.btn:hover, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-prev-button:hover, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-prev-button:hover, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-next-button:hover, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-next-button:hover, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-today-button:hover, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-today-button:hover, .wizard > .actions .disabled .note-editor a.btn-success.note-btn.btn-sm:hover, .note-editor .wizard > .actions .disabled a.btn-success.note-btn.btn-sm:hover, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-prev-button:hover, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-prev-button:hover, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-next-button:hover, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-next-button:hover, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-today-button:hover, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-today-button:hover, .wizard > .actions .disabled a.btn-outline.fc-prev-button:hover, .wizard > .actions .disabled a.btn-outline.fc-next-button:hover, .wizard > .actions .disabled a.btn-outline.fc-today-button:hover, .wizard > .actions .disabled a.btn-outline.btn-success:active, .wizard > .actions .disabled ul.wysihtml5-toolbar a.btn-success.btn:active, ul.wysihtml5-toolbar .wizard > .actions .disabled a.btn-success.btn:active, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-prev-button:active, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-prev-button:active, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-next-button:active, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-next-button:active, .wizard > .actions .disabled ul.wysihtml5-toolbar a.fc-today-button:active, ul.wysihtml5-toolbar .wizard > .actions .disabled a.fc-today-button:active, .wizard > .actions .disabled .note-editor a.btn-success.note-btn.btn-sm:active, .note-editor .wizard > .actions .disabled a.btn-success.note-btn.btn-sm:active, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-prev-button:active, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-prev-button:active, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-next-button:active, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-next-button:active, .wizard > .actions .disabled .note-editor a.note-btn.btn-sm.fc-today-button:active, .note-editor .wizard > .actions .disabled a.note-btn.btn-sm.fc-today-button:active, .wizard > .actions .disabled a.btn-outline.fc-prev-button:active, .wizard > .actions .disabled a.btn-outline.fc-next-button:active, .wizard > .actions .disabled a.btn-outline.fc-today-button:active, .wizard > .actions a.btn-outline.btn-success, .wizard > .actions ul.wysihtml5-toolbar a.btn-success.btn, ul.wysihtml5-toolbar .wizard > .actions a.btn-success.btn, .wizard > .actions ul.wysihtml5-toolbar a.fc-prev-button, ul.wysihtml5-toolbar .wizard > .actions a.fc-prev-button, .wizard > .actions ul.wysihtml5-toolbar a.fc-next-button, ul.wysihtml5-toolbar .wizard > .actions a.fc-next-button, .wizard > .actions ul.wysihtml5-toolbar a.fc-today-button, ul.wysihtml5-toolbar .wizard > .actions a.fc-today-button, .wizard > .actions .note-editor a.btn-success.note-btn.btn-sm, .note-editor .wizard > .actions a.btn-success.note-btn.btn-sm, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-prev-button, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-prev-button, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-next-button, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-next-button, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-today-button, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-today-button, .wizard > .actions a.btn-outline.fc-prev-button, .wizard > .actions a.btn-outline.fc-next-button, .wizard > .actions a.btn-outline.fc-today-button, .wizard > .actions a.btn-outline.btn-success:hover, .wizard > .actions ul.wysihtml5-toolbar a.btn-success.btn:hover, ul.wysihtml5-toolbar .wizard > .actions a.btn-success.btn:hover, .wizard > .actions ul.wysihtml5-toolbar a.fc-prev-button:hover, ul.wysihtml5-toolbar .wizard > .actions a.fc-prev-button:hover, .wizard > .actions ul.wysihtml5-toolbar a.fc-next-button:hover, ul.wysihtml5-toolbar .wizard > .actions a.fc-next-button:hover, .wizard > .actions ul.wysihtml5-toolbar a.fc-today-button:hover, ul.wysihtml5-toolbar .wizard > .actions a.fc-today-button:hover, .wizard > .actions .note-editor a.btn-success.note-btn.btn-sm:hover, .note-editor .wizard > .actions a.btn-success.note-btn.btn-sm:hover, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-prev-button:hover, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-prev-button:hover, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-next-button:hover, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-next-button:hover, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-today-button:hover, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-today-button:hover, .wizard > .actions a.btn-outline.fc-prev-button:hover, .wizard > .actions a.btn-outline.fc-next-button:hover, .wizard > .actions a.btn-outline.fc-today-button:hover, .wizard > .actions a.btn-outline.btn-success:active, .wizard > .actions ul.wysihtml5-toolbar a.btn-success.btn:active, ul.wysihtml5-toolbar .wizard > .actions a.btn-success.btn:active, .wizard > .actions ul.wysihtml5-toolbar a.fc-prev-button:active, ul.wysihtml5-toolbar .wizard > .actions a.fc-prev-button:active, .wizard > .actions ul.wysihtml5-toolbar a.fc-next-button:active, ul.wysihtml5-toolbar .wizard > .actions a.fc-next-button:active, .wizard > .actions ul.wysihtml5-toolbar a.fc-today-button:active, ul.wysihtml5-toolbar .wizard > .actions a.fc-today-button:active, .wizard > .actions .note-editor a.btn-success.note-btn.btn-sm:active, .note-editor .wizard > .actions a.btn-success.note-btn.btn-sm:active, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-prev-button:active, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-prev-button:active, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-next-button:active, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-next-button:active, .wizard > .actions .note-editor a.note-btn.btn-sm.fc-today-button:active, .note-editor .wizard > .actions a.note-btn.btn-sm.fc-today-button:active, .wizard > .actions a.btn-outline.fc-prev-button:active, .wizard > .actions a.btn-outline.fc-next-button:active, .wizard > .actions a.btn-outline.fc-today-button:active, ul.wysihtml5-toolbar a.btn.btn-success, ul.wysihtml5-toolbar .wizard > .actions a.btn-success, .wizard > .actions ul.wysihtml5-toolbar a.btn-success, ul.wysihtml5-toolbar .dt-buttons a.btn-success.dt-button, .dt-buttons ul.wysihtml5-toolbar a.btn-success.dt-button, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-success[class*="owl-"], .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-success[class*="owl-"], ul.wysihtml5-toolbar .owl-theme .owl-nav a[class*="owl-"].fc-prev-button, .owl-theme .owl-nav ul.wysihtml5-toolbar a[class*="owl-"].fc-prev-button, ul.wysihtml5-toolbar .owl-theme .owl-nav a[class*="owl-"].fc-next-button, .owl-theme .owl-nav ul.wysihtml5-toolbar a[class*="owl-"].fc-next-button, ul.wysihtml5-toolbar .owl-theme .owl-nav a[class*="owl-"].fc-today-button, .owl-theme .owl-nav ul.wysihtml5-toolbar a[class*="owl-"].fc-today-button, ul.wysihtml5-toolbar a.fc-prev-button, ul.wysihtml5-toolbar a.fc-next-button, ul.wysihtml5-toolbar a.fc-today-button, .note-editor .btn.btn-success.note-btn.btn-sm, .note-editor .dt-buttons .btn-success.note-btn.btn-sm.dt-button, .dt-buttons .note-editor .btn-success.note-btn.btn-sm.dt-button, .note-editor .tablesaw-sortable th.tablesaw-sortable-head button.btn-success.note-btn.btn-sm, .tablesaw-sortable th.tablesaw-sortable-head .note-editor button.btn-success.note-btn.btn-sm, .note-editor .sweet-alert button.btn-success.note-btn.btn-sm, .sweet-alert .note-editor button.btn-success.note-btn.btn-sm, .note-editor .owl-theme .owl-nav .btn-success.note-btn.btn-sm[class*="owl-"], .owl-theme .owl-nav .note-editor .btn-success.note-btn.btn-sm[class*="owl-"], .note-editor button.note-btn.btn-sm.fc-agendaDay-button.fc-state-default.fc-corner-right,
     .note-editor button.note-btn.btn-sm.fc-month-button.fc-state-default.fc-corner-left,
     .note-editor button.note-btn.btn-sm.fc-agendaWeek-button, .note-editor .note-btn.btn-sm.fc-prev-button, .note-editor .note-btn.btn-sm.fc-next-button, .note-editor .note-btn.btn-sm.fc-today-button, .dt-buttons .btn-outline.btn-success.dt-button, .dt-buttons ul.wysihtml5-toolbar a.btn-success.dt-button.btn, ul.wysihtml5-toolbar .dt-buttons a.btn-success.dt-button.btn, .dt-buttons ul.wysihtml5-toolbar a.dt-button.fc-prev-button, ul.wysihtml5-toolbar .dt-buttons a.dt-button.fc-prev-button, .dt-buttons ul.wysihtml5-toolbar a.dt-button.fc-next-button, ul.wysihtml5-toolbar .dt-buttons a.dt-button.fc-next-button, .dt-buttons ul.wysihtml5-toolbar a.dt-button.fc-today-button, ul.wysihtml5-toolbar .dt-buttons a.dt-button.fc-today-button, .dt-buttons .note-editor .dt-button.note-btn.btn-sm.fc-prev-button, .note-editor .dt-buttons .dt-button.note-btn.btn-sm.fc-prev-button, .dt-buttons .note-editor .dt-button.note-btn.btn-sm.fc-next-button, .note-editor .dt-buttons .dt-button.note-btn.btn-sm.fc-next-button, .dt-buttons .note-editor .dt-button.note-btn.btn-sm.fc-today-button, .note-editor .dt-buttons .dt-button.note-btn.btn-sm.fc-today-button, .dt-buttons .tablesaw-sortable th.tablesaw-sortable-head button.btn-success.dt-button, .tablesaw-sortable th.tablesaw-sortable-head .dt-buttons button.btn-success.dt-button, .dt-buttons .tablesaw-sortable th.tablesaw-sortable-head button.dt-button.fc-prev-button, .tablesaw-sortable th.tablesaw-sortable-head .dt-buttons button.dt-button.fc-prev-button, .dt-buttons .tablesaw-sortable th.tablesaw-sortable-head button.dt-button.fc-next-button, .tablesaw-sortable th.tablesaw-sortable-head .dt-buttons button.dt-button.fc-next-button, .dt-buttons .tablesaw-sortable th.tablesaw-sortable-head button.dt-button.fc-today-button, .tablesaw-sortable th.tablesaw-sortable-head .dt-buttons button.dt-button.fc-today-button, .dt-buttons button.dt-button.fc-agendaDay-button.fc-state-default.fc-corner-right,
@@ -1431,7 +1428,7 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
     button.btn-gold.fc-month-button.fc-state-default.fc-corner-left,
     button.btn-gold.fc-agendaWeek-button, .btn-outline.btn-gold.fc-prev-button, .btn-outline.btn-gold.fc-next-button, .btn-outline.btn-gold.fc-today-button {
       border: solid 1px rgba(214, 174, 113, 0.5);
-      color: #487C5F; }
+      color: #d6ae71; }
       .btn.btn-outline.btn-gold:hover, .wizard > .actions a.btn-outline.btn-gold:hover, .wizard > .actions .note-editor a.btn-gold.note-btn.btn-sm:hover, .note-editor .wizard > .actions a.btn-gold.note-btn.btn-sm:hover, ul.wysihtml5-toolbar a.btn.btn-gold:hover, ul.wysihtml5-toolbar .wizard > .actions a.btn-gold:hover, .wizard > .actions ul.wysihtml5-toolbar a.btn-gold:hover, ul.wysihtml5-toolbar .dt-buttons a.btn-gold.dt-button:hover, .dt-buttons ul.wysihtml5-toolbar a.btn-gold.dt-button:hover, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-gold[class*="owl-"]:hover, .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-gold[class*="owl-"]:hover, ul.wysihtml5-toolbar a.btn-gold.fc-prev-button:hover, ul.wysihtml5-toolbar a.btn-gold.fc-next-button:hover, ul.wysihtml5-toolbar a.btn-gold.fc-today-button:hover, .note-editor .btn.btn-gold.note-btn.btn-sm:hover, .note-editor .dt-buttons .btn-gold.note-btn.btn-sm.dt-button:hover, .dt-buttons .note-editor .btn-gold.note-btn.btn-sm.dt-button:hover, .note-editor .sweet-alert button.btn-gold.note-btn.btn-sm:hover, .sweet-alert .note-editor button.btn-gold.note-btn.btn-sm:hover, .note-editor .owl-theme .owl-nav .btn-gold.note-btn.btn-sm[class*="owl-"]:hover, .owl-theme .owl-nav .note-editor .btn-gold.note-btn.btn-sm[class*="owl-"]:hover, .note-editor .btn-gold.note-btn.btn-sm.fc-prev-button:hover, .note-editor .btn-gold.note-btn.btn-sm.fc-next-button:hover, .note-editor .btn-gold.note-btn.btn-sm.fc-today-button:hover, .dt-buttons .btn-outline.btn-gold.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold:hover, .sweet-alert button.btn-outline.btn-gold:hover, .owl-theme .owl-nav .btn-outline.btn-gold[class*="owl-"]:hover, button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
       button.btn-gold.fc-month-button.fc-state-default.fc-corner-left:hover,
       button.btn-gold.fc-agendaWeek-button:hover, .btn-outline.btn-gold.fc-prev-button:hover, .btn-outline.btn-gold.fc-next-button:hover, .btn-outline.btn-gold.fc-today-button:hover, .btn.btn-outline.btn-gold:active, .wizard > .actions a.btn-outline.btn-gold:active, .wizard > .actions .note-editor a.btn-gold.note-btn.btn-sm:active, .note-editor .wizard > .actions a.btn-gold.note-btn.btn-sm:active, ul.wysihtml5-toolbar a.btn.btn-gold:active, ul.wysihtml5-toolbar .wizard > .actions a.btn-gold:active, .wizard > .actions ul.wysihtml5-toolbar a.btn-gold:active, ul.wysihtml5-toolbar .dt-buttons a.btn-gold.dt-button:active, .dt-buttons ul.wysihtml5-toolbar a.btn-gold.dt-button:active, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-gold[class*="owl-"]:active, .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-gold[class*="owl-"]:active, ul.wysihtml5-toolbar a.btn-gold.fc-prev-button:active, ul.wysihtml5-toolbar a.btn-gold.fc-next-button:active, ul.wysihtml5-toolbar a.btn-gold.fc-today-button:active, .note-editor .btn.btn-gold.note-btn.btn-sm:active, .note-editor .dt-buttons .btn-gold.note-btn.btn-sm.dt-button:active, .dt-buttons .note-editor .btn-gold.note-btn.btn-sm.dt-button:active, .note-editor .sweet-alert button.btn-gold.note-btn.btn-sm:active, .sweet-alert .note-editor button.btn-gold.note-btn.btn-sm:active, .note-editor .owl-theme .owl-nav .btn-gold.note-btn.btn-sm[class*="owl-"]:active, .owl-theme .owl-nav .note-editor .btn-gold.note-btn.btn-sm[class*="owl-"]:active, .note-editor .btn-gold.note-btn.btn-sm.fc-prev-button:active, .note-editor .btn-gold.note-btn.btn-sm.fc-next-button:active, .note-editor .btn-gold.note-btn.btn-sm.fc-today-button:active, .dt-buttons .btn-outline.btn-gold.dt-button:active, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold:active, .sweet-alert button.btn-outline.btn-gold:active, .owl-theme .owl-nav .btn-outline.btn-gold[class*="owl-"]:active, button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
@@ -1439,8 +1436,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
       button.btn-gold.fc-agendaWeek-button:active, .btn-outline.btn-gold.fc-prev-button:active, .btn-outline.btn-gold.fc-next-button:active, .btn-outline.btn-gold.fc-today-button:active, .btn.btn-outline.btn-gold:focus, .wizard > .actions a.btn-outline.btn-gold:focus, .wizard > .actions .note-editor a.btn-gold.note-btn.btn-sm:focus, .note-editor .wizard > .actions a.btn-gold.note-btn.btn-sm:focus, ul.wysihtml5-toolbar a.btn.btn-gold:focus, ul.wysihtml5-toolbar .wizard > .actions a.btn-gold:focus, .wizard > .actions ul.wysihtml5-toolbar a.btn-gold:focus, ul.wysihtml5-toolbar .dt-buttons a.btn-gold.dt-button:focus, .dt-buttons ul.wysihtml5-toolbar a.btn-gold.dt-button:focus, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-gold[class*="owl-"]:focus, .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-gold[class*="owl-"]:focus, ul.wysihtml5-toolbar a.btn-gold.fc-prev-button:focus, ul.wysihtml5-toolbar a.btn-gold.fc-next-button:focus, ul.wysihtml5-toolbar a.btn-gold.fc-today-button:focus, .note-editor .btn.btn-gold.note-btn.btn-sm:focus, .note-editor .dt-buttons .btn-gold.note-btn.btn-sm.dt-button:focus, .dt-buttons .note-editor .btn-gold.note-btn.btn-sm.dt-button:focus, .note-editor .sweet-alert button.btn-gold.note-btn.btn-sm:focus, .sweet-alert .note-editor button.btn-gold.note-btn.btn-sm:focus, .note-editor .owl-theme .owl-nav .btn-gold.note-btn.btn-sm[class*="owl-"]:focus, .owl-theme .owl-nav .note-editor .btn-gold.note-btn.btn-sm[class*="owl-"]:focus, .note-editor .btn-gold.note-btn.btn-sm.fc-prev-button:focus, .note-editor .btn-gold.note-btn.btn-sm.fc-next-button:focus, .note-editor .btn-gold.note-btn.btn-sm.fc-today-button:focus, .dt-buttons .btn-outline.btn-gold.dt-button:focus, .tablesaw-sortable th.tablesaw-sortable-head button.btn-gold:focus, .sweet-alert button.btn-outline.btn-gold:focus, .owl-theme .owl-nav .btn-outline.btn-gold[class*="owl-"]:focus, button.btn-gold.fc-agendaDay-button.fc-state-default.fc-corner-right:focus,
       button.btn-gold.fc-month-button.fc-state-default.fc-corner-left:focus,
       button.btn-gold.fc-agendaWeek-button:focus, .btn-outline.btn-gold.fc-prev-button:focus, .btn-outline.btn-gold.fc-next-button:focus, .btn-outline.btn-gold.fc-today-button:focus {
-        color: #487C5F;
-        border: solid 1px #487C5F; }
+        color: #d6ae71;
+        border: solid 1px #d6ae71; }
     .btn.btn-outline.btn-danger, .wizard > .actions a.btn-outline.btn-danger, .wizard > .actions .note-editor a.btn-danger.note-btn.btn-sm, .note-editor .wizard > .actions a.btn-danger.note-btn.btn-sm, ul.wysihtml5-toolbar a.btn.btn-danger, ul.wysihtml5-toolbar .wizard > .actions a.btn-danger, .wizard > .actions ul.wysihtml5-toolbar a.btn-danger, ul.wysihtml5-toolbar .dt-buttons a.btn-danger.dt-button, .dt-buttons ul.wysihtml5-toolbar a.btn-danger.dt-button, ul.wysihtml5-toolbar .owl-theme .owl-nav a.btn-danger[class*="owl-"], .owl-theme .owl-nav ul.wysihtml5-toolbar a.btn-danger[class*="owl-"], ul.wysihtml5-toolbar a.btn-danger.fc-prev-button, ul.wysihtml5-toolbar a.btn-danger.fc-next-button, ul.wysihtml5-toolbar a.btn-danger.fc-today-button, .note-editor .btn.btn-danger.note-btn.btn-sm, .note-editor .dt-buttons .btn-danger.note-btn.btn-sm.dt-button, .dt-buttons .note-editor .btn-danger.note-btn.btn-sm.dt-button, .note-editor .sweet-alert button.btn-danger.note-btn.btn-sm, .sweet-alert .note-editor button.btn-danger.note-btn.btn-sm, .note-editor .owl-theme .owl-nav .btn-danger.note-btn.btn-sm[class*="owl-"], .owl-theme .owl-nav .note-editor .btn-danger.note-btn.btn-sm[class*="owl-"],
     .note-editor button.btn-danger.note-btn.btn-sm.fc-agendaWeek-button, .note-editor .btn-danger.note-btn.btn-sm.fc-prev-button, .note-editor .btn-danger.note-btn.btn-sm.fc-next-button, .note-editor .btn-danger.note-btn.btn-sm.fc-today-button, .dt-buttons .btn-outline.btn-danger.dt-button, .tablesaw-sortable th.tablesaw-sortable-head button.btn-danger, .sweet-alert button.btn-outline.btn-danger, .owl-theme .owl-nav .btn-outline.btn-danger[class*="owl-"],
     .owl-theme .owl-nav button.btn-danger[class*="owl-"].fc-agendaWeek-button, button.btn-danger.fc-agendaDay-button.fc-state-default.fc-corner-right,
@@ -1678,15 +1675,15 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
     .btn.btn-icon-anim.btn-primary:before, .wizard > .actions a.btn-icon-anim:before, .dt-buttons .btn-icon-anim.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-primary:before, .sweet-alert button.btn-icon-anim.btn-primary:before, .owl-theme .owl-nav .btn-icon-anim.btn-primary[class*="owl-"]:before, button.btn-icon-anim.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
     button.btn-icon-anim.btn-primary.fc-month-button.fc-state-default.fc-corner-left:before,
     button.btn-icon-anim.btn-primary.fc-agendaWeek-button:before, .btn-icon-anim.btn-primary.fc-prev-button:before, .btn-icon-anim.btn-primary.fc-next-button:before, .btn-icon-anim.btn-primary.fc-today-button:before {
-      box-shadow: 0 0 0 35px #487C5F inset; }
+      box-shadow: 0 0 0 35px #2196F3 inset; }
     .btn.btn-icon-anim.btn-primary:hover, .wizard > .actions a.btn-icon-anim:hover, .dt-buttons .btn-icon-anim.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-primary:hover, .sweet-alert button.btn-icon-anim.btn-primary:hover, .owl-theme .owl-nav .btn-icon-anim.btn-primary[class*="owl-"]:hover, button.btn-icon-anim.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
     button.btn-icon-anim.btn-primary.fc-month-button.fc-state-default.fc-corner-left:hover,
     button.btn-icon-anim.btn-primary.fc-agendaWeek-button:hover, .btn-icon-anim.btn-primary.fc-prev-button:hover, .btn-icon-anim.btn-primary.fc-next-button:hover, .btn-icon-anim.btn-primary.fc-today-button:hover {
-      color: #487C5F !important; }
+      color: #2196F3 !important; }
       .btn.btn-icon-anim.btn-primary:hover:before, .wizard > .actions a.btn-icon-anim:hover:before, .dt-buttons .btn-icon-anim.dt-button:hover:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-primary:hover:before, .sweet-alert button.btn-icon-anim.btn-primary:hover:before, .owl-theme .owl-nav .btn-icon-anim.btn-primary[class*="owl-"]:hover:before, button.btn-icon-anim.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:hover:before,
       button.btn-icon-anim.btn-primary.fc-month-button.fc-state-default.fc-corner-left:hover:before,
       button.btn-icon-anim.btn-primary.fc-agendaWeek-button:hover:before, .btn-icon-anim.btn-primary.fc-prev-button:hover:before, .btn-icon-anim.btn-primary.fc-next-button:hover:before, .btn-icon-anim.btn-primary.fc-today-button:hover:before {
-        box-shadow: 0 0 0 1px #487C5F inset; }
+        box-shadow: 0 0 0 1px #2196F3 inset; }
     .btn.btn-icon-anim.btn-success:before, .wizard > .actions a.btn-icon-anim.btn-success:before, .wizard > .actions a.btn-icon-anim.fc-prev-button:hover:before, .wizard > .actions a.btn-icon-anim.fc-next-button:hover:before, .wizard > .actions a.btn-icon-anim.fc-today-button:hover:before, .wizard > .actions a.btn-icon-anim.fc-prev-button:active:before, .wizard > .actions a.btn-icon-anim.fc-next-button:active:before, .wizard > .actions a.btn-icon-anim.fc-today-button:active:before, .dt-buttons .btn-icon-anim.btn-success.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-success:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.fc-prev-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.fc-next-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.fc-today-button:before, .sweet-alert button.btn-icon-anim.btn-success:before, .owl-theme .owl-nav .btn-icon-anim.btn-success[class*="owl-"]:before,
     .owl-theme .owl-nav button.btn-icon-anim[class*="owl-"].fc-agendaWeek-button:before, .owl-theme .owl-nav .btn-icon-anim[class*="owl-"].fc-prev-button:before, .owl-theme .owl-nav .btn-icon-anim[class*="owl-"].fc-next-button:before, .owl-theme .owl-nav .btn-icon-anim[class*="owl-"].fc-today-button:before, button.btn-icon-anim.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
     button.btn-icon-anim.fc-month-button.fc-state-default.fc-corner-left:before,
@@ -1715,15 +1712,15 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
     .btn.btn-icon-anim.btn-warning:before, .wizard > .actions a.btn-icon-anim.btn-warning:before, .dt-buttons .btn-icon-anim.btn-warning.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-warning:before, .sweet-alert button.btn-icon-anim.btn-warning:before, .owl-theme .owl-nav .btn-icon-anim.btn-warning[class*="owl-"]:before, button.btn-icon-anim.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
     button.btn-icon-anim.btn-warning.fc-month-button.fc-state-default.fc-corner-left:before,
     button.btn-icon-anim.btn-warning.fc-agendaWeek-button:before, .btn-icon-anim.btn-warning.fc-prev-button:before, .btn-icon-anim.btn-warning.fc-next-button:before, .btn-icon-anim.btn-warning.fc-today-button:before {
-      box-shadow: 0 0 0 35px #487C5F inset; }
+      box-shadow: 0 0 0 35px #f8b32d inset; }
     .btn.btn-icon-anim.btn-warning:hover, .wizard > .actions a.btn-icon-anim.btn-warning:hover, .dt-buttons .btn-icon-anim.btn-warning.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-warning:hover, .sweet-alert button.btn-icon-anim.btn-warning:hover, .owl-theme .owl-nav .btn-icon-anim.btn-warning[class*="owl-"]:hover, button.btn-icon-anim.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
     button.btn-icon-anim.btn-warning.fc-month-button.fc-state-default.fc-corner-left:hover,
     button.btn-icon-anim.btn-warning.fc-agendaWeek-button:hover, .btn-icon-anim.btn-warning.fc-prev-button:hover, .btn-icon-anim.btn-warning.fc-next-button:hover, .btn-icon-anim.btn-warning.fc-today-button:hover {
-      color: #487C5F !important; }
+      color: #f8b32d !important; }
       .btn.btn-icon-anim.btn-warning:hover:before, .wizard > .actions a.btn-icon-anim.btn-warning:hover:before, .dt-buttons .btn-icon-anim.btn-warning.dt-button:hover:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-warning:hover:before, .sweet-alert button.btn-icon-anim.btn-warning:hover:before, .owl-theme .owl-nav .btn-icon-anim.btn-warning[class*="owl-"]:hover:before, button.btn-icon-anim.btn-warning.fc-agendaDay-button.fc-state-default.fc-corner-right:hover:before,
       button.btn-icon-anim.btn-warning.fc-month-button.fc-state-default.fc-corner-left:hover:before,
       button.btn-icon-anim.btn-warning.fc-agendaWeek-button:hover:before, .btn-icon-anim.btn-warning.fc-prev-button:hover:before, .btn-icon-anim.btn-warning.fc-next-button:hover:before, .btn-icon-anim.btn-warning.fc-today-button:hover:before {
-        box-shadow: 0 0 0 1px #487C5F inset; }
+        box-shadow: 0 0 0 1px #f8b32d inset; }
     .btn.btn-icon-anim.btn-facebook:before, .wizard > .actions a.btn-icon-anim.btn-facebook:before, .dt-buttons .btn-icon-anim.btn-facebook.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.btn-icon-anim.btn-facebook:before, .sweet-alert button.btn-icon-anim.btn-facebook:before, .owl-theme .owl-nav .btn-icon-anim.btn-facebook[class*="owl-"]:before, button.btn-icon-anim.btn-facebook.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
     button.btn-icon-anim.btn-facebook.fc-month-button.fc-state-default.fc-corner-left:before,
     button.btn-icon-anim.btn-facebook.fc-agendaWeek-button:before, .btn-icon-anim.btn-facebook.fc-prev-button:before, .btn-icon-anim.btn-facebook.fc-next-button:before, .btn-icon-anim.btn-facebook.fc-today-button:before {
@@ -1943,7 +1940,6 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   button.fancy-button.btn-primary.btn-0.fc-month-button.fc-state-default.fc-corner-left:hover,
   button.fancy-button.btn-primary.btn-0.fc-agendaWeek-button:hover, .fancy-button.btn-primary.btn-0.fc-prev-button:hover, .fancy-button.btn-primary.btn-0.fc-next-button:hover, .fancy-button.btn-primary.btn-0.fc-today-button:hover {
     color: #fff !important; }
-
   .btn.fancy-button.btn-danger.btn-0:before, .wizard > .actions a.fancy-button.btn-danger.btn-0:before, .dt-buttons .fancy-button.btn-danger.btn-0.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.fancy-button.btn-danger.btn-0:before, .sweet-alert button.fancy-button.btn-danger.btn-0:before, .owl-theme .owl-nav .fancy-button.btn-danger.btn-0[class*="owl-"]:before, button.fancy-button.btn-danger.btn-0.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
   button.fancy-button.btn-danger.btn-0.fc-month-button.fc-state-default.fc-corner-left:before,
   button.fancy-button.btn-danger.btn-0.fc-agendaWeek-button:before, .fancy-button.btn-danger.btn-0.fc-prev-button:before, .fancy-button.btn-danger.btn-0.fc-next-button:before, .fancy-button.btn-danger.btn-0.fc-today-button:before {
@@ -1963,7 +1959,7 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   .btn.fancy-button.btn-warning.btn-0:before, .wizard > .actions a.fancy-button.btn-warning.btn-0:before, .dt-buttons .fancy-button.btn-warning.btn-0.dt-button:before, .tablesaw-sortable th.tablesaw-sortable-head button.fancy-button.btn-warning.btn-0:before, .sweet-alert button.fancy-button.btn-warning.btn-0:before, .owl-theme .owl-nav .fancy-button.btn-warning.btn-0[class*="owl-"]:before, button.fancy-button.btn-warning.btn-0.fc-agendaDay-button.fc-state-default.fc-corner-right:before,
   button.fancy-button.btn-warning.btn-0.fc-month-button.fc-state-default.fc-corner-left:before,
   button.fancy-button.btn-warning.btn-0.fc-agendaWeek-button:before, .fancy-button.btn-warning.btn-0.fc-prev-button:before, .fancy-button.btn-warning.btn-0.fc-next-button:before, .fancy-button.btn-warning.btn-0.fc-today-button:before {
-    background: #487C5F; }
+    background: #f8b32d; }
   .btn.fancy-button.btn-warning.btn-0:hover, .wizard > .actions a.fancy-button.btn-warning.btn-0:hover, .dt-buttons .fancy-button.btn-warning.btn-0.dt-button:hover, .tablesaw-sortable th.tablesaw-sortable-head button.fancy-button.btn-warning.btn-0:hover, .sweet-alert button.fancy-button.btn-warning.btn-0:hover, .owl-theme .owl-nav .fancy-button.btn-warning.btn-0[class*="owl-"]:hover, button.fancy-button.btn-warning.btn-0.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
   button.fancy-button.btn-warning.btn-0.fc-month-button.fc-state-default.fc-corner-left:hover,
   button.fancy-button.btn-warning.btn-0.fc-agendaWeek-button:hover, .fancy-button.btn-warning.btn-0.fc-prev-button:hover, .fancy-button.btn-warning.btn-0.fc-next-button:hover, .fancy-button.btn-warning.btn-0.fc-today-button:hover {
@@ -2004,8 +2000,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
 .open .dropdown-toggle.btn.btn-primary, .open .wizard > .actions a.dropdown-toggle, .wizard > .actions .open a.dropdown-toggle, .open .dt-buttons .dropdown-toggle.dt-button, .dt-buttons .open .dropdown-toggle.dt-button, .open .tablesaw-sortable th.tablesaw-sortable-head button.dropdown-toggle.btn-primary, .tablesaw-sortable th.tablesaw-sortable-head .open button.dropdown-toggle.btn-primary, .open .sweet-alert button.dropdown-toggle.btn-primary, .sweet-alert .open button.dropdown-toggle.btn-primary, .open .owl-theme .owl-nav .dropdown-toggle.btn-primary[class*="owl-"], .owl-theme .owl-nav .open .dropdown-toggle.btn-primary[class*="owl-"], .open button.dropdown-toggle.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right,
 .open button.dropdown-toggle.btn-primary.fc-month-button.fc-state-default.fc-corner-left,
 .open button.dropdown-toggle.btn-primary.fc-agendaWeek-button, .open .dropdown-toggle.btn-primary.fc-prev-button, .open .dropdown-toggle.btn-primary.fc-next-button, .open .dropdown-toggle.btn-primary.fc-today-button {
-  background: #487C5F;
-  border: solid 1px #487C5F; }
+  background: #2196f3;
+  border: solid 1px #2196f3; }
   .open .dropdown-toggle.btn.btn-primary:hover, .open .wizard > .actions a.dropdown-toggle:hover, .wizard > .actions .open a.dropdown-toggle:hover, .open .dt-buttons .dropdown-toggle.dt-button:hover, .dt-buttons .open .dropdown-toggle.dt-button:hover, .open .tablesaw-sortable th.tablesaw-sortable-head button.dropdown-toggle.btn-primary:hover, .tablesaw-sortable th.tablesaw-sortable-head .open button.dropdown-toggle.btn-primary:hover, .open .sweet-alert button.dropdown-toggle.btn-primary:hover, .sweet-alert .open button.dropdown-toggle.btn-primary:hover, .open .owl-theme .owl-nav .dropdown-toggle.btn-primary[class*="owl-"]:hover, .owl-theme .owl-nav .open .dropdown-toggle.btn-primary[class*="owl-"]:hover, .open button.dropdown-toggle.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:hover,
   .open button.dropdown-toggle.btn-primary.fc-month-button.fc-state-default.fc-corner-left:hover,
   .open button.dropdown-toggle.btn-primary.fc-agendaWeek-button:hover, .open .dropdown-toggle.btn-primary.fc-prev-button:hover, .open .dropdown-toggle.btn-primary.fc-next-button:hover, .open .dropdown-toggle.btn-primary.fc-today-button:hover, .open .dropdown-toggle.btn.btn-primary:active, .open .wizard > .actions a.dropdown-toggle:active, .wizard > .actions .open a.dropdown-toggle:active, .open .dt-buttons .dropdown-toggle.dt-button:active, .dt-buttons .open .dropdown-toggle.dt-button:active, .open .tablesaw-sortable th.tablesaw-sortable-head button.dropdown-toggle.btn-primary:active, .tablesaw-sortable th.tablesaw-sortable-head .open button.dropdown-toggle.btn-primary:active, .open .sweet-alert button.dropdown-toggle.btn-primary:active, .sweet-alert .open button.dropdown-toggle.btn-primary:active, .open .owl-theme .owl-nav .dropdown-toggle.btn-primary[class*="owl-"]:active, .owl-theme .owl-nav .open .dropdown-toggle.btn-primary[class*="owl-"]:active, .open button.dropdown-toggle.btn-primary.fc-agendaDay-button.fc-state-default.fc-corner-right:active,
@@ -2191,8 +2187,8 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   .open button.dropdown-toggle.btn-warning.fc-prev-button.fc-agendaWeek-button, .open .dropdown-toggle.btn-outline.btn-warning.fc-next-button,
   .open button.dropdown-toggle.btn-warning.fc-next-button.fc-agendaWeek-button, .open .dropdown-toggle.btn-outline.btn-warning.fc-today-button,
   .open button.dropdown-toggle.btn-warning.fc-today-button.fc-agendaWeek-button {
-    color: #487C5F;
-    border: solid 1px #487C5F; }
+    color: #f8b32d;
+    border: solid 1px #f8b32d; }
   .open .dropdown-toggle.btn.btn-outline.btn-info, .open .wizard > .actions a.dropdown-toggle.btn-outline.btn-info, .wizard > .actions .open a.dropdown-toggle.btn-outline.btn-info, .open .wizard > .actions .note-editor a.dropdown-toggle.btn-info.note-btn.btn-sm, .wizard > .actions .note-editor .open a.dropdown-toggle.btn-info.note-btn.btn-sm, .open .note-editor .wizard > .actions a.dropdown-toggle.btn-info.note-btn.btn-sm, .note-editor .wizard > .actions .open a.dropdown-toggle.btn-info.note-btn.btn-sm, .open ul.wysihtml5-toolbar a.dropdown-toggle.btn.btn-info, ul.wysihtml5-toolbar .open a.dropdown-toggle.btn.btn-info, .open ul.wysihtml5-toolbar .wizard > .actions a.dropdown-toggle.btn-info, ul.wysihtml5-toolbar .wizard > .actions .open a.dropdown-toggle.btn-info, .open .wizard > .actions ul.wysihtml5-toolbar a.dropdown-toggle.btn-info, .wizard > .actions ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info, .open ul.wysihtml5-toolbar .dt-buttons a.dropdown-toggle.btn-info.dt-button, ul.wysihtml5-toolbar .dt-buttons .open a.dropdown-toggle.btn-info.dt-button, .open .dt-buttons ul.wysihtml5-toolbar a.dropdown-toggle.btn-info.dt-button, .dt-buttons ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info.dt-button, .open ul.wysihtml5-toolbar .owl-theme .owl-nav a.dropdown-toggle.btn-info[class*="owl-"], ul.wysihtml5-toolbar .owl-theme .owl-nav .open a.dropdown-toggle.btn-info[class*="owl-"], .open .owl-theme .owl-nav ul.wysihtml5-toolbar a.dropdown-toggle.btn-info[class*="owl-"], .owl-theme .owl-nav ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info[class*="owl-"], .open ul.wysihtml5-toolbar a.dropdown-toggle.btn-info.fc-prev-button, ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info.fc-prev-button, .open ul.wysihtml5-toolbar a.dropdown-toggle.btn-info.fc-next-button, ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info.fc-next-button, .open ul.wysihtml5-toolbar a.dropdown-toggle.btn-info.fc-today-button, ul.wysihtml5-toolbar .open a.dropdown-toggle.btn-info.fc-today-button, .open .note-editor .dropdown-toggle.btn.btn-info.note-btn.btn-sm, .note-editor .open .dropdown-toggle.btn.btn-info.note-btn.btn-sm, .open .note-editor .dt-buttons .dropdown-toggle.btn-info.note-btn.btn-sm.dt-button, .note-editor .dt-buttons .open .dropdown-toggle.btn-info.note-btn.btn-sm.dt-button, .open .dt-buttons .note-editor .dropdown-toggle.btn-info.note-btn.btn-sm.dt-button, .dt-buttons .note-editor .open .dropdown-toggle.btn-info.note-btn.btn-sm.dt-button, .open .note-editor .sweet-alert button.dropdown-toggle.btn-info.note-btn.btn-sm, .note-editor .sweet-alert .open button.dropdown-toggle.btn-info.note-btn.btn-sm, .open .sweet-alert .note-editor button.dropdown-toggle.btn-info.note-btn.btn-sm, .sweet-alert .note-editor .open button.dropdown-toggle.btn-info.note-btn.btn-sm, .open .note-editor .owl-theme .owl-nav .dropdown-toggle.btn-info.note-btn.btn-sm[class*="owl-"], .note-editor .owl-theme .owl-nav .open .dropdown-toggle.btn-info.note-btn.btn-sm[class*="owl-"], .open .owl-theme .owl-nav .note-editor .dropdown-toggle.btn-info.note-btn.btn-sm[class*="owl-"], .owl-theme .owl-nav .note-editor .open .dropdown-toggle.btn-info.note-btn.btn-sm[class*="owl-"],
   .open .note-editor button.dropdown-toggle.btn-info.note-btn.btn-sm.fc-agendaWeek-button,
   .note-editor .open button.dropdown-toggle.btn-info.note-btn.btn-sm.fc-agendaWeek-button, .open .note-editor .dropdown-toggle.btn-info.note-btn.btn-sm.fc-prev-button, .note-editor .open .dropdown-toggle.btn-info.note-btn.btn-sm.fc-prev-button, .open .note-editor .dropdown-toggle.btn-info.note-btn.btn-sm.fc-next-button, .note-editor .open .dropdown-toggle.btn-info.note-btn.btn-sm.fc-next-button, .open .note-editor .dropdown-toggle.btn-info.note-btn.btn-sm.fc-today-button, .note-editor .open .dropdown-toggle.btn-info.note-btn.btn-sm.fc-today-button, .open .dt-buttons .dropdown-toggle.btn-outline.btn-info.dt-button, .dt-buttons .open .dropdown-toggle.btn-outline.btn-info.dt-button,
@@ -2313,7 +2309,7 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
   bottom: 0;
   z-index: 100;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.35);
-  background-image: url("../../img/sidebar4.jpg");
+  background-image: url("../../../img/sidebar4.jpg");
   border-right: 1px solid #dedede;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -2358,7 +2354,6 @@ button.fc-agendaWeek-button, .fc-prev-button, .fc-next-button, .fc-today-button 
         -webkit-transition: 0.3s ease;
         -moz-transition: 0.3s ease;
         transition: 0.3s ease; }
-
         .fixed-sidebar-left .side-nav li a .pull-left > i {
           font-size: 18px;
           width: 18px; }
@@ -2541,7 +2536,7 @@ a#toggle_mobile_nav {
       font-size: 25px;
       padding-top: 9px;
       padding-left: 15px;
-      color: #487C5F;
+      color: #d6ae71;
       opacity: 0; }
     .setting-panel .theme-option-wrap > li.active-theme i {
       opacity: 1; }
@@ -2760,13 +2755,13 @@ a#toggle_mobile_nav {
   .wrapper.theme-1-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-green .fixed-sidebar-left .side-nav > li > a.active {
     color: #8BC34A; }
   .wrapper.theme-1-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-yellow .fixed-sidebar-left .side-nav > li > a.active {
-    color: #487C5F; }
+    color: #f8b32d; }
   .wrapper.theme-1-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active {
     color: #e7368d; }
   .wrapper.theme-1-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-orange .fixed-sidebar-left .side-nav > li > a.active {
     color: #ff6300; }
   .wrapper.theme-1-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-gold .fixed-sidebar-left .side-nav > li > a.active {
-    color: #487C5F; }
+    color: #d6ae71; }
   .wrapper.theme-1-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-2-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-3-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-4-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-5-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active, .wrapper.theme-6-active.pimary-color-silver .fixed-sidebar-left .side-nav > li > a.active {
     color: #83878d; }
 
@@ -2871,7 +2866,7 @@ a#toggle_mobile_nav {
         width: 43px;
         vertical-align: middle; }
       .navbar.navbar-inverse.navbar-fixed-top .nav > li > a .user-online-status {
-        background: #487C5F;
+        background: #d6ae71;
         border-radius: 50%;
         bottom: 10px;
         height: 10px;
@@ -3034,7 +3029,7 @@ a#toggle_mobile_nav {
         font-size: 24px;
         vertical-align: middle; }
       .navbar.navbar-inverse.navbar-fixed-top .nav.top-nav > li > a .top-nav-icon-badge {
-        background: #487C5F;
+        background: #2196F3;
         border-radius: 50%;
         color: #fff;
         font-size: 10px;
@@ -3222,7 +3217,7 @@ footer {
 .app-search .select2-container--default .select2-selection--single:focus,
 .select2-container--default .app-search .select2-selection--single:focus, .app-search .select2-selection.select2-selection--multiple:focus, .app-search .mce-floatpanel .mce-textbox:focus, .mce-floatpanel .app-search .mce-textbox:focus, .app-search .mce-floatpanel .mce-btn:focus, .mce-floatpanel .app-search .mce-btn:focus, .app-search .dataTables_wrapper .dataTables_filter input:focus, .dataTables_wrapper .dataTables_filter .app-search input:focus, .app-search .dataTables_wrapper .dataTables_length select:focus, .dataTables_wrapper .dataTables_length .app-search select:focus, .app-search .jsgrid-cell input:focus, .jsgrid-cell .app-search input:focus, .app-search .jsgrid-cell select:focus, .jsgrid-cell .app-search select:focus, .app-search .tablesaw-bar .btn-select select:focus, .tablesaw-bar .btn-select .app-search select:focus, .app-search .dd-handle:focus, .app-search .dd3-content:focus {
   border: 1px solid rgba(33, 33, 33, 0.12);
-  border-radius: 0;
+  border-radius: 6px;
   background-color: #fff;
   box-shadow: none;
   color: #212121;
@@ -3232,6 +3227,8 @@ footer {
     border-color: rgba(33, 33, 33, 0.3);
     box-shadow: none;
     outline: 0 none; }
+
+
   .form-control::-webkit-input-placeholder, .select2-container--default .select2-selection--single .select2-selection__rendered::-webkit-input-placeholder,
   .select2-container--default .select2-selection--single::-webkit-input-placeholder, .select2-selection.select2-selection--multiple::-webkit-input-placeholder, .wizard .content > .body input::-webkit-input-placeholder, .mce-floatpanel .mce-textbox::-webkit-input-placeholder, .mce-floatpanel .mce-btn::-webkit-input-placeholder, .dataTables_wrapper .dataTables_filter input::-webkit-input-placeholder, .dataTables_wrapper .dataTables_length select::-webkit-input-placeholder, .jsgrid-cell input::-webkit-input-placeholder, .jsgrid-cell select::-webkit-input-placeholder, .tablesaw-bar .btn-select select::-webkit-input-placeholder, .dd-handle::-webkit-input-placeholder, .dd3-content::-webkit-input-placeholder, .app-search .form-control:focus::-webkit-input-placeholder,
   .app-search .select2-container--default .select2-selection--single:focus::-webkit-input-placeholder,
@@ -3317,7 +3314,7 @@ footer {
   .has-warning .form-control:focus, .has-warning .select2-container--default .select2-selection--single .select2-selection__rendered:focus, .select2-container--default .select2-selection--single .has-warning .select2-selection__rendered:focus,
   .has-warning .select2-container--default .select2-selection--single:focus,
   .select2-container--default .has-warning .select2-selection--single:focus, .has-warning .select2-selection.select2-selection--multiple:focus, .has-warning .wizard .content > .body input:focus, .wizard .content > .body .has-warning input:focus, .has-warning .mce-floatpanel .mce-textbox:focus, .mce-floatpanel .has-warning .mce-textbox:focus, .has-warning .mce-floatpanel .mce-btn:focus, .mce-floatpanel .has-warning .mce-btn:focus, .has-warning .dataTables_wrapper .dataTables_filter input:focus, .dataTables_wrapper .dataTables_filter .has-warning input:focus, .has-warning .dataTables_wrapper .dataTables_length select:focus, .dataTables_wrapper .dataTables_length .has-warning select:focus, .has-warning .jsgrid-cell input:focus, .jsgrid-cell .has-warning input:focus, .has-warning .jsgrid-cell select:focus, .jsgrid-cell .has-warning select:focus, .has-warning .tablesaw-bar .btn-select select:focus, .tablesaw-bar .btn-select .has-warning select:focus, .has-warning .dd-handle:focus, .has-warning .dd3-content:focus {
-    border-color: #487C5F; }
+    border-color: #f8b32d; }
 
 .has-error .form-control, .has-error .select2-container--default .select2-selection--single .select2-selection__rendered, .select2-container--default .select2-selection--single .has-error .select2-selection__rendered,
 .has-error .select2-container--default .select2-selection--single,
@@ -3334,7 +3331,7 @@ footer {
 
 .has-warning .checkbox, .has-warning
 .checkbox-inline, .has-warning .control-label, .has-warning .help-block, .has-warning .radio, .has-warning .radio-inline, .has-warning.checkbox label, .has-warning.checkbox-inline label, .has-warning.radio label, .has-warning.radio-inline label {
-  color: #487C5F; }
+  color: #f8b32d; }
 
 .has-error .checkbox, .has-error
 .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
@@ -3354,7 +3351,7 @@ footer {
   color: #8BC34A; }
 
 .has-warning .form-control-feedback {
-  color: #487C5F; }
+  color: #f8b32d; }
 
 .has-error .form-control-feedback {
   color: #f33923; }
@@ -3567,14 +3564,14 @@ div.colorpicker {
   color: #878787; }
 .wizard .steps ul {
   display: table;
-  width: 200%; }
+  width: 100%; }
   .wizard .steps ul > li {
     display: table-cell;
     background: #dedede; }
     .wizard .steps ul > li.done {
-      background: #69a885; }
+      background: #8BC34A; }
     .wizard .steps ul > li.current {
-      background: #487C5F !important; }
+      background: #f8b32d !important; }
     .wizard .steps ul > li > a {
       margin: 0;
       padding: 14px 20px;
@@ -4019,12 +4016,12 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active, ul.wysihtml5-toolbar .wizar
     background: transparent;
     border-radius: 0; }
     .custom-tab-2 .nav-tabs > li > a:active, .custom-tab-2 .nav-tabs > li > a:focus, .custom-tab-2 .nav-tabs > li > a:hover {
-      color: #487C5F; }
+      color: #d6ae71; }
   .custom-tab-2 .nav-tabs > li.active > a, .custom-tab-2 .nav-tabs > li.open > a {
-    color: #487C5F;
+    color: #d6ae71;
     background: #f2f2f2; }
     .custom-tab-2 .nav-tabs > li.active > a:active, .custom-tab-2 .nav-tabs > li.active > a:focus, .custom-tab-2 .nav-tabs > li.active > a:hover, .custom-tab-2 .nav-tabs > li.open > a:active, .custom-tab-2 .nav-tabs > li.open > a:focus, .custom-tab-2 .nav-tabs > li.open > a:hover {
-      color: #487C5F;
+      color: #d6ae71;
       background: #f2f2f2; }
   .custom-tab-2 .nav-tabs > li:first-child > a, .custom-tab-2 .nav-tabs > li:last-child > a {
     border-radius: 0; }
@@ -4045,13 +4042,13 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active, ul.wysihtml5-toolbar .wizar
     border-radius: 0;
     text-transform: capitalize; }
     .nav-pills > li > a:active, .nav-pills > li > a:focus, .nav-pills > li > a:hover {
-      background: #487C5F;
+      background: #d6ae71;
       color: #fff; }
   .nav-pills > li.active > a, .nav-pills > li.open > a {
-    background: #487C5F;
+    background: #d6ae71;
     color: #fff; }
     .nav-pills > li.active > a:active, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover, .nav-pills > li.open > a:active, .nav-pills > li.open > a:focus, .nav-pills > li.open > a:hover {
-      background: #487C5F;
+      background: #d6ae71;
       color: #fff; }
   .nav-pills > li:last-child {
     margin-right: 0; }
@@ -4087,14 +4084,14 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active, ul.wysihtml5-toolbar .wizar
   border: 2px solid #f7f7f9;
   color: #878787; }
   .nav-pills-outline.nav-pills > li > a:hover, .nav-pills-outline.nav-pills > li > a:active, .nav-pills-outline.nav-pills > li > a:focus {
-    border-color: #487C5F;
+    border-color: #d6ae71;
     color: #212121; }
 .nav-pills-outline.nav-pills > li.active > a {
   background-color: transparent !important;
-  border: 2px solid #487C5F;
+  border: 2px solid #d6ae71;
   color: #212121; }
   .nav-pills-outline.nav-pills > li.active > a:hover, .nav-pills-outline.nav-pills > li.active > a:active, .nav-pills-outline.nav-pills > li.active > a:focus {
-    border: 2px solid #487C5F;
+    border: 2px solid #d6ae71;
     color: #212121; }
 
 /*Table*/
@@ -4222,8 +4219,8 @@ table.dataTable > caption + thead > tr:first-child > td, table.dataTable > capti
   height: 25px; }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:active, .dataTables_wrapper .dataTables_paginate .paginate_button:focus {
-  background: #487C5F;
-  border-color: #487C5F;
+  background: #8BC34A;
+  border-color: #8BC34A;
   color: #fff !important;
   box-shadow: none; }
 
@@ -4692,10 +4689,6 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
 .dd3-item > button {
   margin-left: 30px; }
 
-.pencil-Edit{
-  cursor: pointer;
-}
-
 .dd3-handle {
   position: absolute;
   margin: 0;
@@ -4764,7 +4757,7 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
   .alert.alert-danger {
     background: #f33923; }
   .alert.alert-warning {
-    background: #487C5F; }
+    background: #f8b32d; }
   .alert.alert-style-1 {
     padding-left: 70px;
     background: #fff;
@@ -4791,7 +4784,7 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
       color: #f33923;
       background: #f7f7f7; }
     .alert.alert-style-1.alert-warning i {
-      color: #487C5F;
+      color: #f8b32d;
       background: #f7f7f7; }
 
 .alert-dismissable .close, .alert-dismissible .close {
@@ -4804,7 +4797,7 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
     border-radius: 2px;
     margin: 0;
     font-family: "Roboto", sans-serif;
-    background: #487C5F; }
+    background: #d6ae71; }
     .jq-toast-wrap .jq-toast-single .jq-toast-loader {
       border-radius: 2px 2px 0 0;
       height: 3px; }
@@ -4834,7 +4827,7 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
       .jq-toast-wrap .jq-toast-single.jq-icon-success:before {
         content: "\e64c"; }
     .jq-toast-wrap .jq-toast-single.jq-icon-warning {
-      background: #487C5F;
+      background: #f8b32d;
       padding-left: 50px; }
       .jq-toast-wrap .jq-toast-single.jq-icon-warning:before {
         content: "\e6c5"; }
@@ -4919,8 +4912,8 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
 
 .checkbox-warning input[type="checkbox"]:checked + label::before,
 .checkbox-warning input[type="radio"]:checked + label::before {
-  background-color: #487C5F;
-  border-color: #487C5F; }
+  background-color: #f8b32d;
+  border-color: #f8b32d; }
 
 .checkbox-success input[type="checkbox"]:checked + label::before,
 .checkbox-success input[type="radio"]:checked + label::before {
@@ -4944,8 +4937,8 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
 
 .checkbox-warning input[type="checkbox"]:indeterminate + label::before,
 .checkbox-warning input[type="radio"]:indeterminate + label::before {
-  background-color: #487C5F;
-  border-color: #487C5F; }
+  background-color: #f8b32d;
+  border-color: #f8b32d; }
 
 .checkbox-success input[type="checkbox"]:indeterminate + label::before,
 .checkbox-success input[type="radio"]:indeterminate + label::before {
@@ -4980,13 +4973,13 @@ button.btn-small.btn-select.fc-agendaWeek-button, .btn-small.btn-select.fc-prev-
   background-color: #e7368d; }
 
 .radio-warning input[type="radio"] + label::after {
-  background-color: #487C5F; }
+  background-color: #f8b32d; }
 
 .radio-warning input[type="radio"]:checked + label::before {
-  border-color: #487C5F; }
+  border-color: #f8b32d; }
 
 .radio-warning input[type="radio"]:checked + label::after {
-  background-color: #487C5F; }
+  background-color: #f8b32d; }
 
 .radio-success input[type="radio"] + label::after {
   background-color: #8BC34A; }
@@ -5269,7 +5262,7 @@ a.compose-mail {
 .irs-bar,
 .irs-bar-edge,
 .irs-slider {
-  background: url("../../img/range/sprite-skin-modern.png"); }
+  background: url("../../../img/range/sprite-skin-modern.png"); }
 
 .irs-slider {
   background-position: 0 -120px; }
@@ -5450,16 +5443,13 @@ a.compose-mail {
   background-color: #e7368d; }
 
 .panel-danger > .panel-heading {
-  background-color: #FB2D11; }
-
-.panel-waring-yellow > .panel-heading {
-  background-color: #FBD411; }
+  background-color: #f33923; }
 
 .panel-warning > .panel-heading {
-  background-color: #487C5F; }
+  background-color: #f8b32d; }
 
 .panel-success > .panel-heading {
-  background-color: #8BC34A; }
+  background-color: #2a3e4c; }
 
 .panel-primary > .panel-heading {
   background-color: #2196F3; }
@@ -5632,7 +5622,7 @@ a.compose-mail {
     color: #fff !important; }
 
 .weather-warning .left-block-wrap {
-  background: #487C5F;
+  background: #f8b32d;
   color: #fff !important; }
   .weather-warning .left-block-wrap h5, .weather-warning .left-block-wrap .temprature {
     color: #fff !important; }
@@ -5716,9 +5706,9 @@ a.compose-mail {
   .label.label-danger, .label-danger.jvectormap-tip {
     background: #f33923; }
   .label.label-warning, .label-warning.jvectormap-tip {
-    background: #487C5F; }
+    background: #f8b32d; }
   .label.label-gold, .label-gold.jvectormap-tip {
-    background: #d6ae71; }
+    background: #2a3e4c; }
 
 /*Badge*/
 .badge {
@@ -5739,7 +5729,7 @@ a.compose-mail {
     background: #f33923;
     color: #fff; }
   .badge.badge-warning {
-    background: #487C5F;
+    background: #f8b32d;
     color: #fff; }
   .badge.badge-gold {
     background: #d6ae71;
@@ -5757,7 +5747,7 @@ a.compose-mail {
     .badge.transparent-badge.badge-danger {
       color: #f33923; }
     .badge.transparent-badge.badge-warning {
-      color: #487C5F; }
+      color: #f8b32d; }
 
 /*Task Panel*/
 .task-panel a.list-group-item {
@@ -5825,10 +5815,10 @@ a.compose-mail {
   background: #8BC34A; }
 
 .progress-bar-danger {
-  background: #f33923; }
+  background: #2a3e4c; }
 
 .progress-bar-warning {
-  background: #487C5F; }
+  background: #f8b32d; }
 
 .progress-bar-gold {
   background: #d6ae71; }
@@ -6006,7 +5996,7 @@ a.compose-mail {
     top: 37px;
     width: 10px; }
     .chat-list-wrap .chat-body .chat-data .status.away {
-      background: #487C5F; }
+      background: #f8b32d; }
     .chat-list-wrap .chat-body .chat-data .status.offline {
       background: #f33923; }
     .chat-list-wrap .chat-body .chat-data .status.online {
@@ -6174,7 +6164,7 @@ a.compose-mail {
 .profile-box .profile-cover-pic {
   position: relative;
   min-height: 197px;
-  background-image: url("../../img/gallery/mock6.jpg"); }
+  background-image: url("../../../img/gallery/mock6.jpg"); }
   .profile-box .profile-cover-pic .profile-image-overlay {
     position: absolute;
     height: 100%;
@@ -6329,7 +6319,7 @@ a.compose-mail {
         border-left-color: rgba(33, 33, 33, 0.05);
         content: " "; }
       .timeline > li > .timeline-panel.bg-yellow:after {
-        border-left-color: #487C5F; }
+        border-left-color: #f8b32d; }
       .timeline > li > .timeline-panel.bg-red:after {
         border-left-color: #f33923; }
       .timeline > li > .timeline-panel.bg-blue:after {
@@ -6361,7 +6351,7 @@ a.compose-mail {
         border-right-color: rgba(33, 33, 33, 0.05); }
       .timeline > li.timeline-inverted
       > .timeline-panel.bg-yellow:after {
-        border-right-color: #487C5F; }
+        border-right-color: #f8b32d; }
       .timeline > li.timeline-inverted
       > .timeline-panel.bg-pink:after {
         border-right-color: #e7368d; }
@@ -6904,10 +6894,6 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
   width: 400px; }
   .auth-form a.txt-danger:hover {
     color: #f33923; }
-.auth-form1 {
-  width: 600px; }
-.auth-form a.txt-danger:hover {
-  color: #f33923; }
 
 /*Error Page*/
 .error-page .brand-text {
@@ -6919,7 +6905,7 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
   line-height: 112px; }
 
 .error-bg-img {
-  background: url("../../img/errorbg.jpg");
+  background: url("../../../img/errorbg.jpg");
   background-size: cover; }
 
 /*Products*/
@@ -7355,7 +7341,7 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
         left: -10px;
         right: auto; }
       ul.timeline > li > .timeline-panel.bg-yellow:after {
-        border-right-color: #487C5F; }
+        border-right-color: #f8b32d; }
       ul.timeline > li > .timeline-panel.bg-pink:after {
         border-right-color: #e7368d; }
       ul.timeline > li > .timeline-panel.bg-red:after {
@@ -7386,11 +7372,6 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
 
   .clear-todo-btn {
     float: none !important; } }
-@media (max-width: 632px) {
-  .auth-form1 {
-    width: 100%;
-  }
-}
 @media (min-width: 768px) {
   .img-container {
     min-height: 469px; } }
@@ -7443,10 +7424,8 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
   .sp-header .form-group.pull-right span {
     display: none !important; } }
 @media (max-width: 458px) {
-  .auth-form, .auth-form1 {
-    width: 100%; }
-  .auth-form1 {
-    width: 100%; }}
+  .auth-form {
+    width: 100%; } }
 @media (max-width: 414px) {
   .navbar.navbar-inverse.navbar-fixed-top .nav > li .dropdown-menu.app-dropdown {
     width: 100%;
@@ -7480,10 +7459,4 @@ ul.inbox-nav li a:hover, ul.inbox-nav li.active a, ul.inbox-nav li a:focus {
   .form-actions button.fc-agendaWeek-button, .form-actions button.fc-prev-button, .form-actions button.fc-next-button, .form-actions button.fc-today-button {
     margin-bottom: 20px; } }
 
-.step{
-  display: none;
-}
-.step.active_one{
-  display: block;
-}
 /*# sourceMappingURL=style.css.map */
