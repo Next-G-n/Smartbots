@@ -312,7 +312,7 @@
                     </ul>
                 </li>
                 <li class="dropdown auth-drp">
-                    <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+                    <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
                     <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                         <li>
                             <a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
@@ -380,10 +380,10 @@
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">UI Elements</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Progress</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
+                <a href="javascript:void(0);" id="open_track" onclick="document.getElementById('messages_tab_btn').click();" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Track Progress</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart_dr"><div class="pull-left"><i class="zmdi zmdi-chart-donut mr-20"></i><span class="right-nav-text">Reports</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart_dr"><div class="pull-left"><i class="zmdi zmdi-copy mr-20"></i><span class="right-nav-text">Reports</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
             </li>
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><div class="pull-left"><i class="zmdi zmdi-format-size mr-20"></i><span class="right-nav-text">Tables</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
@@ -427,7 +427,7 @@
                 <div  class="tab-struct custom-tab-1">
                     <ul role="tablist" class="nav nav-tabs" id="right_sidebar_tab">
                         <li class="active" role="presentation"><a aria-expanded="false"  data-toggle="tab" role="tab" id="chat_tab_btn" href="#chat_tab" >Emails</a></li>
-                        <li role="presentation" class=""><a  data-toggle="tab" id="messages_tab_btn" role="tab" href="#messages_tab" aria-expanded="false">Notification</a></li>
+                        <li role="presentation" class=""><a  data-toggle="tab" id="messages_tab_btn" role="tab" href="#messages_tab" aria-expanded="false">Track</a></li>
                         <li role="presentation" class=""><a  data-toggle="tab" id="todo_tab_btn" role="tab" href="#todo_tab" aria-expanded="true">Profile</a></li>
                     </ul>
                     <div class="tab-content" id="right_sidebar_content">
@@ -655,110 +655,43 @@
                                     <a href="javascript:void(0)" class="inline-block txt-grey">
                                         <i class="zmdi zmdi-more"></i>
                                     </a>
-                                    <span class="inline-block txt-dark">messages</span>
+                                    <span class="inline-block txt-dark">Track Progress</span>
                                     <a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-search"></i></a>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="set-height-wrap">
-                                    <div class="streamline message-box nicescroll-bar">
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item unread-message">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Clay Masse</span>
-                                                    <span class="inline-block font-11  pull-right message-time">12:28 AM</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject"> message sent via your monster market profile</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsu messm quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user1.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Evie Ono</span>
-                                                    <span class="inline-block font-11  pull-right message-time">1 Feb</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject">Pogody theme support</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user2.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Madalyn Rascon</span>
-                                                    <span class="inline-block font-11  pull-right message-time">31 Jan</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject">Congratulations from design nominees</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                                    <div class="col-xs-12">
+                                        <div class="panel panel-default card-view">
+                                            <div class="panel-wrapper collapse in">
+                                                <div class="panel-body sm-data-box-1">
+                                                    <span class="uppercase-font weight-500 font-15 block text-center txt-dark">TRACKING</span>
+                                                    <div class="cus-sat-stat weight-500 txt-grey text-center mt-5">
+                                                        <span class="counter-anim">${Track[0].position}</span><span>/${Track[0].total}</span>
+                                                    </div>
+                                                    <div class="progress-anim mt-20">
+                                                        <div class="progress">
+                                                            <div class="progress-bar progress-bar-gold wow animated progress-animated" role="progressbar" aria-valuenow="93.12" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="flex-stat mt-5">
+                                                        <li>
+                                                            <span class="block">Previous</span>
+                                                            <span class="block txt-dark weight-500 font-15">98</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="block">Change</span>
+                                                            <span class="block txt-dark weight-500 font-15">+4</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="block">Trend</span>
+                                                            <span class="block">
+												<i class="zmdi zmdi-trending-up txt-success font-20"></i>
+											</span>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item unread-message">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user3.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Ezequiel Merideth</span>
-                                                    <span class="inline-block font-11  pull-right message-time">29 Jan</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject"> item support message</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item unread-message">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user4.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Jonnie Metoyer</span>
-                                                    <span class="inline-block font-11  pull-right message-time">27 Jan</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject">Help with beavis contact form</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Priscila Shy</span>
-                                                    <span class="inline-block font-11  pull-right message-time">19 Jan</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject">Your uploaded theme is been selected</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div class="sl-item">
-                                                <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                    <img class="img-responsive img-circle" src="img/user1.png" alt="avatar"/>
-                                                </div>
-                                                <div class="sl-content">
-                                                    <span class="inline-block capitalize-font   pull-left message-per">Linda Stack</span>
-                                                    <span class="inline-block font-11  pull-right message-time">13 Jan</span>
-                                                    <div class="clearfix"></div>
-                                                    <span class=" truncate message-subject"> A new rating has been received</span>
-                                                    <p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -789,14 +722,14 @@
                                                         </div>
                                                         <div class="profile-info text-center">
                                                             <div class="profile-img-wrap">
-                                                                <img class="inline-block mb-10" src="../img/mock1.jpg" alt="user"/>
+                                                                <img class="inline-block mb-10" src="img/mock1.jpg" alt="user"/>
                                                                 <div class="fileupload btn btn-default">
                                                                     <span class="btn-text">edit</span>
                                                                     <input class="upload" type="file">
                                                                 </div>
                                                             </div>
                                                             <h5 class="block mt-10 mb-5 weight-500 capitalize-font txt-gold">Kaone Rascon</h5>
-                                                            <h6 class="block capitalize-font pb-20">Client</h6>
+                                                            <h6 class="block capitalize-font pb-20 txt-grey ">Client</h6>
                                                         </div>
                                                         <div class="social-info">
                                                             <div class="row">
@@ -853,7 +786,7 @@
 
             <!-- Row -->
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-xs-12">
                     <div class="panel panel-default card-view">
                         <div class="panel-heading">
                             <div class="pull-left">
@@ -870,7 +803,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-xs-12">
                     <div class="panel panel-default card-view">
                         <div class="panel-wrapper collapse in">
                             <div class="panel-body sm-data-box-1">
