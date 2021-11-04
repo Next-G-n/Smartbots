@@ -823,7 +823,7 @@
 
                                         <tr>
                                             <td><code>Qualification</code></td>
-                                            <td class="Email">${specificRequest.Qualification_Requirements}</td>
+                                            <td class="Email">${specificRequest.qualification_Requirements}</td>
                                         </tr>
                                         <tr>
                                             <td><code></code> Duty Station</td>
@@ -894,7 +894,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="panel-wrapper collapse in" onclick="location.href='${CompanyDetailsLink}'">
+                            <div class="panel-wrapper collapse in">
                                 <div class="panel-body row">
                                     <div class="user-others-details pl-15 pr-15">
                                         <div class="mb-15">
@@ -955,10 +955,11 @@
                                                                 <form method="post" action="ServletSmartBots">
                                                                     <div class="form-body overflow-hide">
                                                                         <input type="hidden" name="command" value="acceptApplication">
+                                                                        <input type="hidden" name="command" value="Admin">
                                                                         <input type="hidden" name="user_id" value="${tempUser.user_id}">
                                                                         <input type="hidden" name="Request_id" value="${specificRequest.request_Id}">
                                                                         <input type="hidden" name="position" value="${specificRequest.number_Of_Positions_Required}">
-                                                                        <input type="hidden" name="company_id" value="${specificCompany.number_Of_Positions_Required}">
+                                                                        <input type="hidden" name="company_id" value="${specificCompany.companyId}">
                                                                         <div class="form-group">
                                                                             <label for="Commencement Date" class="col-sm-3 control-label">Commencement Date:</label>
                                                                             <div class="col-sm-9">

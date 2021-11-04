@@ -67,7 +67,44 @@ public class ServletSmartBots extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String theCommand = request.getParameter("command");
 
+            System.out.println("this Command: "+theCommand);
+            if (theCommand == null) {
+
+                theCommand = "display_List";
+            }
+            switch (theCommand) {
+                case "Registering User":
+                    user_Registration(request,response);
+                    break;
+                case "Login":
+                    login(request,response);
+                    break;
+                case "Company Registration":
+                    registerCompany(request,response);
+                    break;
+                case "Application":
+                    applicationGraduate(request,response);
+                    break;
+                case "getRequest":
+                    getRequest(request,response);
+                    break;
+                case "Request":
+                    Request(request,response);
+                    break;
+                case "acceptApplication":
+                    AcceptRequest(request,response);
+                    break;
+            }
+
+        }
+
+        catch (Exception exc) {
+            exc.printStackTrace();
+
+        }
     }
 
     @Override
@@ -154,7 +191,7 @@ public class ServletSmartBots extends HttpServlet {
 
 
     private void getRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+        System.out.println("this worked");
         HttpSession session=request.getSession();
         int Request_id= Integer.parseInt(request.getParameter("Request_id"));
         int company_id= Integer.parseInt(request.getParameter("company_id"));
@@ -168,14 +205,14 @@ public class ServletSmartBots extends HttpServlet {
         session.setAttribute("specificCompany", getCompanyInfo);
         session.setAttribute("specificRequest", getReqest);
         session.setAttribute("SpecificUser", users);
+        System.out.println("this worked");
         if(action.equals("CompanyAdmin")){
             AcceptDate acceptDate=connectionUtil.getAccepted(Request_id);
+            session.setAttribute("SpecificDates", acceptDate);
             request.getRequestDispatcher("MYSC_Request_detail.jsp").forward(request, response);
         }else{
             request.getRequestDispatcher("MYSC_Request_detail.jsp").forward(request, response);
         }
-
-
 
     }
 
@@ -290,7 +327,9 @@ public class ServletSmartBots extends HttpServlet {
         String action=request.getParameter("action");
         System.out.println(action);
         List<User> loginUser=connectionUtil.loginUser(email,password,action);
+
         if(!loginUser.isEmpty()){
+            System.out.println("User :"+loginUser.get(0).getUserType());
             if(loginUser.get(0).getUserType().equals("Graduate")){
                 session.setAttribute("UserInfo", loginUser);
 
@@ -308,7 +347,8 @@ public class ServletSmartBots extends HttpServlet {
                 MyCompanyRequest(request,response,loginUser.get(0).getUser_id());
                 request.getRequestDispatcher("companyForm.jsp").forward(request, response);
             }else if(loginUser.get(0).getUserType().equals("MYSC")){
-
+                session.setAttribute("UserInfo", loginUser);
+                System.out.println("Admin login");
                 CompanyRequest(request,response);
                 request.getRequestDispatcher("MYSC_Home.jsp").forward(request, response);
 
@@ -326,6 +366,7 @@ public class ServletSmartBots extends HttpServlet {
     private void CompanyRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session=request.getSession();
         List<Companyinfo> requests=connectionUtil.getRequest();
+        System.out.println("This Id: "+requests.get(0).getRequest_id());
         session.setAttribute("Requests", requests);
     }
 
