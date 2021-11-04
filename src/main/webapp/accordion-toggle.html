@@ -507,7 +507,7 @@
 						<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 						<ul id="form_dr" class="collapse collapse-level-1 two-col-list">
 							<li>
-								<a href="ApplicationForm.jsp">Basic Forms</a>
+								<a href="form-element.html">Basic Forms</a>
 							</li>
 							<li>
 								<a href="form-layout.html">form Layout</a>
@@ -1180,7 +1180,59 @@
 						<!-- /Breadcrumb -->
 					</div>
 					<!-- /Title -->
-
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">one open</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="panel-group accordion-struct" id="accordion_1" role="tablist" aria-multiselectable="true">
+											<div class="panel panel-default">
+												<div class="panel-heading activestate" role="tab" id="heading_1">
+													<a role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_1" aria-expanded="true">collapse one</a> 
+												</div>
+												<div id="collapse_1" class="panel-collapse collapse in" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer la. </div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_2">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_2" aria-expanded="false">collapse two </a>
+												</div>
+												<div id="collapse_2" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, </div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_3">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_3" aria-expanded="false" >collapse three</a>
+												</div>
+												<div id="collapse_3" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_4">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapse_4" aria-expanded="false"> collapse four</a>
+												</div>
+												<div id="collapse_4" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+					</div>
+					<!-- /Row -->
 					
 					<!-- Row -->
 					<div class="row">
@@ -1195,50 +1247,51 @@
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
 										<div class="panel-group accordion-struct"  role="tablist" aria-multiselectable="true">
-
-
 											<div class="panel panel-default">
 												<div class="panel-heading activestate" role="tab" id="heading_5">
-												<a role="button" data-toggle="collapse" href="#collapse_5" aria-expanded="true" >Week one<p style="float:right" onclick="toggleModal()" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
-												<div class="clearfix"></div>
+													<a role="button" data-toggle="collapse" href="#collapse_5" aria-expanded="true" >week one <p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
+
+													<script>
+														function myFunction() {
+															document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+														}
+													</script>
 												</div>
 												<div id="collapse_5" class="panel-collapse collapse in" role="tabpanel">
 													<div class="panel-body pa-15">
-														<p id="test">
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
+
+														<ul>
+															<li>* Anim pariatur cliche reprehenderit,</li>
+															<li>* enim eiusmod high life accusamus terry richardson ad squid.</li>
+															<li>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</li>
+															<li>* Food truck quinoa nesciunt laborum eiusmod.</li>
+															<li>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
+															<li>* Nihil anim keffiyeh helvetica, craft beer la.</li>
+														</ul>
 													</div>
 												</div>
 											</div>
-
-
 											<div class="panel panel-default">
 												<div class="panel-heading" role="tab" id="heading_6">
-													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse_6" aria-expanded="false" >week two<p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p> </a>
+													<a class="collapsed" role="button" data-toggle="collapse" href="#collapse_6" aria-expanded="false" >week two<p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p> </a>
+													<script>
+														function myFunction() {
+															document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+														}
+													</script>
 												</div>
 												<div id="collapse_6" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body pa-15">
-														<p>
-															* Anim pariatur cliche reprehenderit,
-															<br>* enim eiusmod high life accusamus terry richardson ad squid.
-															<br>* 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
-															<br>* Food truck quinoa nesciunt laborum eiusmod.
-															<br>* Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</li>
-															<br>* Nihil anim keffiyeh helvetica, craft beer la.
-														</p>
-													</div>
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, </div>
 												</div>
 											</div>
-
-
 											<div class="panel panel-default">
 												<div class="panel-heading" role="tab" id="heading_7">
 													<a class="collapsed" role="button" data-toggle="collapse"  href="#collapse_7" aria-expanded="false">week three <p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
+													<script>
+														function myFunction() {
+															document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+														}
+													</script>
 												</div>
 												<div id="collapse_7" class="panel-collapse collapse" role="tabpanel">
 													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
@@ -1248,20 +1301,39 @@
 											<div class="panel panel-default">
 												<div class="panel-heading" role="tab" id="heading_8">
 													<a class="collapsed" role="button" data-toggle="collapse"
-													 href="#collapse_8" aria-expanded="false" > week four  <p style="float:right"  data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
+													 href="#collapse_8" aria-expanded="false" > week four  <p style="float:right" id="demo" data-toggle="modal" data-target="#responsive-modal" >Edit.</p></a>
+													<script>
+														function myFunction() {
+															document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+														}
+													</script>
 												</div>
 												<div id="collapse_8" class="panel-collapse collapse" role="tabpanel">
 													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
 												</div>
 											</div>
 
-											<div class="checkbox checkbox-primary">
-												<input id="checkbox2" type="checkbox" checked="">
-												<label for="checkbox2">
-													I Agree that the report i have submitted are the weekly tasks that i have been doing
-												</label>
-											</div>
-											<button class="btn  btn-success" style="float: right">Submit</button>
+											<input type="checkbox" id="Agree" name="Check" value="Do you agree that..."/>
+											<label>I Agree that the report i have submitted are the weekly tasks that i have been doing</label>
+
+
+
+											<style>
+												button{
+												background-color: #6CBB3C;
+												border: none;
+												color: white;
+												padding: 5px 10px;
+												text-align: center;
+												text-decoration: none;
+												display: inline-block;
+												font-size: 16px;
+												margin: 4px 2px;
+												float:right;
+												cursor: pointer;
+											}
+											</style>
+											<button class="button">Submit</button>
 										</div>
 
 
@@ -1282,11 +1354,11 @@
 							</div>
 							<div class="modal-body">
 								<form>
-									<div class="form-group">
-										<label class="control-label mb-10 text-left">Tasks (required):</label>
-										<textarea class="form-control" id="test1" rows="13"></textarea>
-									</div>
 
+									<div class="form-group" form action="/action_page.php" method="get">
+										<label for="message-text" class="control-label mb-10">tasks:</label>
+										<textarea class="form-control" id="message-text"></textarea>
+									</div>
 								</form>
 							</div>
 							<div class="modal-footer">
@@ -1297,16 +1369,60 @@
 						</div>
 					</div>
 				</div>
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">one open</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="panel-group accordion-struct accordion-style-1" id="accordion_2" role="tablist" aria-multiselectable="true">
+											<div class="panel panel-default">
+												<div class="panel-heading activestate" role="tab" id="heading_10">
+													<a role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_10" aria-expanded="true" ><div class="icon-ac-wrap pr-20"><span class="plus-ac"><i class="ti-plus"></i></span><span class="minus-ac"><i class="ti-minus"></i></span></div>collapse one</a>
 
-				<script>
-					function toggleModal() {
-
-						const Region = document.getElementById('test').innerHTML;
-						document.getElementById('test1').value = Region.replace('\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>*', '');
-
-					}
-				</script>
-
+												</div>
+												<div id="collapse_10" class="panel-collapse collapse in" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer la. </div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_11">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_11" aria-expanded="false"  ><div class="icon-ac-wrap pr-20"><span class="plus-ac"><i class="ti-plus"></i></span><span class="minus-ac"><i class="ti-minus"></i></span></div>collapse two </a>
+												</div>
+												<div id="collapse_11" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, </div>
+												</div>
+											</div>f
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_12">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_12" aria-expanded="false" ><div class="icon-ac-wrap pr-20"><span class="plus-ac"><i class="ti-plus"></i></span><span class="minus-ac"><i class="ti-minus"></i></span></div>collapse three</a>
+												</div>
+												<div id="collapse_12" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading" role="tab" id="heading_13">
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_13" aria-expanded="false" ><div class="icon-ac-wrap pr-20"><span class="plus-ac"><i class="ti-plus"></i></span><span class="minus-ac"><i class="ti-minus"></i></span></div>collapse four</a>
+												</div>
+												<div id="collapse_13" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body pa-15"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, inable VHS. </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+					</div>
+					<!-- /Row -->
 				</div>
 				
 				<!-- Footer -->
@@ -1328,10 +1444,10 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../vendors/bower_components/jquery/dist/jquery.min.js"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="dist/js/modal-data.js"></script>
 		
 		<!-- Slimscroll JavaScript -->
@@ -1341,10 +1457,10 @@
 		<script src="dist/js/dropdown-bootstrap-extended.js"></script>
 		
 		<!-- Owl JavaScript -->
-		<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="../vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 		
 		<!-- Switchery JavaScript -->
-		<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+		<script src="../vendors/bower_components/switchery/dist/switchery.min.js"></script>
 		
 		<!-- Init JavaScript -->
 		<script src="dist/js/init.js"></script>

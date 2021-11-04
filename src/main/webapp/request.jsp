@@ -1,74 +1,76 @@
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>DWMPC</title>
-    <meta name="description" content="Zapily is a Dashboard & Admin Site Responsive Template by hencework." />
-    <meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Zapily Admin, Zapilyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
-    <meta name="author" content="hencework"/>
-
-    <!-- jquery-steps css -->
-    <link rel="stylesheet" href="vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+    <title> </title>
+    <meta name="description" content="DWMPC created by next-gen." />
+    <meta name="keywords" content="DWMPC" />
+    <meta name="author" content="Next-gen"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
 
     <!--alerts CSS -->
     <link href="vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
 
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <!-- vector map CSS -->
+    <link href="vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap Colorpicker CSS -->
+    <link href="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css"/>
 
-    <!-- Data table CSS -->
-    <link href="vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap Datetimepicker CSS -->
+    <link href="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
 
-    <!-- Toast CSS -->
-    <link href="vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Daterangepicker CSS -->
+    <link href="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
+
+    <!-- select2 CSS -->
+    <link href="vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
     <!-- bootstrap-select CSS -->
     <link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
 
-    <!-- Calendar CSS -->
-    <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("select").change(function(){
+                $(this).find("option:selected").each(function(){
+                    var optionValue = $(this).attr("value");
+                    if(optionValue){
+                        $(".box").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else{
+                        $(".box").hide();
+                    }
+                });
+            }).change();
+        });
+    </script>
 
-    <!-- bootstrap-touchspin CSS -->
-    <link href="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/>
 
-
+    <!-- Footable CSS -->
+    <link href="vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet" type="text/css">
-    <style>
-        #example_paginate, #example_info{
-            display: none;
-        }
-        .pa-01:hover {
-            cursor: pointer;
-            background-color: #f6f7f6;
-        }
-        .bg-dark-green:hover{
-            cursor: pointer;
-            background-color: #5a896f;
-        }
-    </style>
 </head>
-
 <body>
-<!-- Preloader -->
+<!--Preloader-->
 <div class="preloader-it">
     <div class="la-anim-1"></div>
 </div>
-<!-- /Preloader -->
-<div class="wrapper theme-1-active pimary-color-green">
+<!--/Preloader-->
+<div class="wrapper theme-1-active pimary-color-gold">
 
     <!-- Top Menu Items -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="mobile-only-brand pull-left">
             <div class="nav-header pull-left">
                 <div class="logo-wrap">
-                    <a href="${pageContext.request.contextPath}/MYSC_Home.jsp">
+                    <a href="${pageContext.request.contextPath}/Home.jsp">
                         <img class="brand-img" src="img/logo2.png" alt="brand"/>
                     </a>
                 </div>
@@ -294,13 +296,13 @@
                 <a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i>Home<span class="right-nav-text"></span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a id="open_right_sidebar" href="#" onclick="document.getElementById('chat_tab_btn').click();" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="zmdi zmdi-email mr-20"></i><span class="right-nav-text">Emails</span></div><div class="pull-right"><span class="label label-warning">3</span></div><div class="clearfix"></div></a>
+                <a href="#" id="open_right_sidebar" onclick="document.getElementById('chat_tab_btn').click();" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="zmdi zmdi-email mr-20"></i><span class="right-nav-text">Emails</span></div><div class="pull-right"><span class="label label-warning">3</span></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a href="" id="open_profile" onclick="document.getElementById('todo_tab_btn').click();" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-account mr-20"></i><span class="right-nav-text">Profile</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
+                <a href="#" id="open_profile" onclick="document.getElementById('todo_tab_btn').click();" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="zmdi zmdi-account mr-20"></i><span class="right-nav-text">Profile</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a href="" class="tst2" ><div class="pull-left"><i class="zmdi zmdi-notifications mr-20"></i><span class="right-nav-text">Notification</span></div><div class="pull-right"><span class="label label-warning">8</span></div><div class="clearfix"></div></a>
+                <a href="#" class="tst2"><div class="pull-left"><i class="zmdi zmdi-notifications mr-20"></i><span class="right-nav-text">Notification</span></div><div class="pull-right"><span class="label label-warning">8</span></div><div class="clearfix"></div></a>
             </li>
             <li><hr class="light-grey-hr mb-10"/></li>
             <li class="navigation-header">
@@ -308,19 +310,28 @@
                 <i class="zmdi zmdi-more"></i>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/companyForm.jsp" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">Add Company</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="zmdi zmdi-smartphone-setup mr-20"></i><span class="right-nav-text">${CompanyName}</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
+                <ul id="ui_dr" class="collapse collapse-level-1 two-col-list">
+                    <li class="active" role="presentation">
+                        <a onclick="document.getElementById('Company_information').submit()" data-toggle="tab"  role="tab" aria-expanded="true">Information</a>
+                    </li>
+                    <li >
+                        <a onclick="document.getElementById('Vehicle_info').submit()" aria-expanded="false"  data-toggle="tab" role="tab">Vehicles</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('Employee_info').submit()">Employees</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><div class="pull-left"><i class="zmdi zmdi-edit mr-20"></i><span class="right-nav-text">Forms</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
+
             <li>
-                <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart_dr"><div class="pull-left"><i class="zmdi zmdi-chart-donut mr-20"></i><span class="right-nav-text">Charts </span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistics</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
             </li>
             <li>
-                <a href="javascript:void(0);"  class="tst2" data-toggle="collapse" data-target="#table_dr"><div class="pull-left"><i class="zmdi zmdi-trending-up mr-20"></i><span class="right-nav-text">Statistics</span></div><div class="pull-right"><i></i></div><div class="clearfix"></div></a>
-            </li>
-            <li>
-                <a href="" class="tst2" data-toggle="collapse" data-target="#icon_dr"><div class="pull-left"><i class="zmdi zmdi-file mr-20"></i><span class="right-nav-text">File Manager</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#icon_dr"><div class="pull-left"><i class="zmdi zmdi-file mr-20"></i><span class="right-nav-text">File Manager</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#maps_dr"><div class="pull-left"><i class="zmdi zmdi-map mr-20"></i><span class="right-nav-text">maps</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
@@ -336,7 +347,7 @@
                 <i class="zmdi zmdi-more"></i>
             </li>
             <li>
-                <a href="javascript:void(0);" class="tst2" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-settings mr-20"></i><span class="right-nav-text">Settings</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
+                <a href="" class="tst2" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="zmdi zmdi-settings mr-20"></i><span class="right-nav-text">Settings</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
             <li>
                 <a href="Contact-us.jsp"><div class="pull-left"><i class="zmdi zmdi-phone mr-20"></i><span class="right-nav-text">Contact Us</span></div><div class="clearfix"></div></a>
@@ -345,6 +356,19 @@
                 <a href="javascript:void(0);" onclick="LogOut()" data-toggle="collapse" data-target="#dropdown_dr_lv1"><div class="pull-left"><i class="zmdi zmdi-power mr-20"></i><span class="right-nav-text">Log out</span></div><div class="pull-right"><i class=""></i></div><div class="clearfix"></div></a>
             </li>
         </ul>
+        <form method="post" id="Employee_info" action="ServletDwmpc">
+            <input type="hidden" name="command" value="EmployeesDetail">
+            <input type="hidden" name="company_id" value="${Company_info.company_Id}">
+        </form>
+        <form method="post" id="Vehicle_info" action="ServletDwmpc">
+            <input type="hidden" name="command" value="VehicleDetail">
+            <input type="hidden" name="company_id" value="${Company_info.company_Id}">
+        </form>
+        <form method="post" id="Company_information" action="ServletDwmpc">
+            <input type="hidden" name="command" value="getCompany">
+            <input type="hidden" name="UserType" value="Client">
+            <input type="hidden" name="company_id" value="${Company_info.company_Id}">
+        </form>
     </div>
     <!-- /Left Sidebar Menu -->
 
@@ -767,201 +791,220 @@
             <!-- Title -->
             <div class="row heading-bg">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h5 class="txt-dark">Companies Registered</h5>
+                    <h5 class="txt-dark">foo table</h5>
                 </div>
                 <!-- Breadcrumb -->
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <ol class="breadcrumb">
-                        <li><a href="CompanyInfo.jsp">Home</a></li>
-                        <li class="active"><span>Companies Registered</span></li>
-                    </ol>
-                </div>
+
                 <!-- /Breadcrumb -->
             </div>
             <!-- /Title -->
 
+
+
             <!-- Row -->
             <div class="row">
-<c:set var="countDate" scope="page" value="0" />
-<c:forEach var="tempCompany" items="${Requests}">
-    <c:url var="CompanyDetailsLink" value="ServletSmartBots">
-        <c:param name="command" value="getRequest"/>
-        <c:param name="Request_id" value="${tempCompany.request_id}"/>
-        <c:param name="action" value="Admin"/>
-        <c:param name="company_id" value="${tempCompany.companyId}"/>
-    </c:url>
-    <c:set value="${countDate+1}" scope="page" var="countDate"/>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="panel panel-warning contact-card card-view">
+                <div class="col-sm-12">
+                    <div class="panel panel-default card-view">
                         <div class="panel-heading">
                             <div class="pull-left">
-                                <div class="pull-left user-img-wrap mr-15">
-                                    <img class="card-user-img img-circle pull-left" src="img/user.png" alt="user"/>
-                                </div>
-                                <div class="pull-left user-detail-wrap">
-											<span class="block card-user-name">
-                                                    ${tempCompany.companyName}
-											</span>
-                                    <span class="block card-user-desn">
-                                        None
-											</span>
-                                </div>
-                            </div>
-                            <div class="pull-right">
-                                <a class="pull-left inline-block mr-15" href="#">
-                                    <i class="zmdi zmdi-edit txt-light"></i>
-                                </a>
-                                <a class="pull-left inline-block mr-15" href="#">
-                                    <i class="zmdi zmdi-delete txt-light"></i>
-                                </a>
-                                <div class="pull-left inline-block dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert txt-light"></i></a>
-                                    <ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Full Info</a></li>
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Send Message</a></li>
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Follow</a></li>
-                                    </ul>
-                                </div>
+                                <h6 class="panel-title txt-dark">Editing Table</h6>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="panel-wrapper collapse in" onclick="location.href='${CompanyDetailsLink}'">
-                            <div class="panel-body row">
-                                <div class="user-others-details pl-15 pr-15">
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-email-open inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark">${tempCompany.position}</span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-phone inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-print inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-my-location inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-local-post-office inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div>
-                                        <i class="zmdi zmdi zmdi-bookmark inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                </div>
-                                <hr class="light-grey-hr mt-20 mb-20"/>
-                                <div class="emp-detail pl-15 pr-15">
-                                    <div class="mb-5">
-                                        <span class="inline-block capitalize-font mr-5">joininig date:</span>
-                                        <span class="txt-dark"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-</c:forEach>
-                <div class="col-lg-4 col-md-4 col-xs-12">
-                    <div class="panel panel-warning card-view">
-                        <div class="panel-heading">
-                            <div class="pull-left">
-                                <h6 style="text-align: center" class="panel-title block txt-light">No Companies Registered</h6>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div  class="panel-wrapper collapse in">
-                            <div  class="panel-body">
-                                <img src="img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-close">
+                        <div class="panel-wrapper collapse in">
+                            <div class="panel-body">
+                                <div class="table-wrap">
+                                    <table id="footable_2" class="table" data-paging="true" data-filtering="true" data-sorting="true">
+                                        <thead>
+                                        <tr>
+                                            <th data-name="id" data-breakpoints="xs" data-type="number">ID</th>
+                                            <th data-name="NumberOfPositionsRequired">Number Of Positions Required</th>
+                                            <th data-name="QualificationRequirements">Qualification Requirements</th>
+                                            <th data-name="DutyStation" data-breakpoints="xs">Duty Station</th>
+                                            <th data-name="DepartmentDivision" data-breakpoints="xs">Department / Division</th>
+                                            <th data-name="BriefDescription" data-breakpoints="xs">Brief Description</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+
+                                    </table>
+
+                                    <!--Editor-->
+                                    <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+
+                                        <div class="modal-dialog" role="document">
+                                            <form class="modal-content form-horizontal" id="editor" action="ServletSmartBots" method="post">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h5 class="modal-title" id="editor-title">Add Row</h5>
+                                                </div>
+                                                <div class="modal-body">
+
+
+                                                    <input type="hidden" name="command" value="Request">
+                                                    <input type="hidden" name="action" id="sub" value="">
+                                                    <input type="hidden" name="Request_Id" id="req" value="">
+                                                    <input type="hidden" name="company_Id" value="1">
+                                                    <div class="form-group required">
+                                                        <label for="NumberOfPositionsRequired" class="col-sm-3 control-label">Number Of Positions Required</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="NumberOfPositionsRequired" name="Number_Of_Positions_Required" placeholder="Number Of Positions Required" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="QualificationRequirements" class="col-sm-3 control-label">Qualification Requirements</label>
+                                                        <div class="col-sm-9">
+
+                                                            <textarea class="form-control QualificationRequirements" id="QualificationRequirements" name="Qualification_Requirements" placeholder="Qualification Requirements" required></textarea>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label for="DutyStation" class="col-sm-3 control-label">Duty Station</label>
+                                                        <div class="col-sm-9">
+
+                                                            <textarea class="form-control DutyStation" id="DutyStation" name="Duty_Station" placeholder="Duty Station" required></textarea>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group required">
+                                                        <label for="DepartmentDivision" class="col-sm-3 control-label">Level (request)</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="selectpicker" id="level" name="level" data-style="form-control btn-default btn-outline" >
+                                                                <option value="Certificate">Certificate</option>
+                                                                <option value="Diploma">Diploma</option>
+                                                                <option value="Degree">Degree</option>
+                                                                <option value="Degree">(Hons)Degree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label for="DepartmentDivision" class="col-sm-3 control-label">Field (request):</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="selectpicker" id="field" name="field" data-style="form-control btn-default btn-outline" >
+                                                                <option value="Architecture and engineering">Architecture and engineering</option>
+                                                                <option value="Business, management and administration">Business, management and administration</option>
+                                                                <option value="Communications">Communications</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label for="DepartmentDivision" class="col-sm-3 control-label">Department Division</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="DepartmentDivision" name="Department_Division" placeholder="Department Division" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        <label for="BriefDescription" class="col-sm-3 control-label">Brief Description</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="form-control BriefDescription" id="BriefDescription" name="Brief_Description" placeholder="Brief Description" required></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--/Editor-->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Row -->
+            <!-- /Row -->
 
-            <!-- form -->
-            <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h5 class="modal-title" id="myModalLabel">Edit Profile</h5>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Row -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="">
-                                        <div class="panel-wrapper collapse in">
-                                            <div class="panel-body pa-0">
-                                                <div class="col-sm-12 col-xs-12">
-                                                    <div class="form-wrap">
-                                                        <form action="#">
-                                                            <div class="form-body overflow-hide">
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputuname_1">Name</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-user"></i></div>
-                                                                        <input type="text" class="form-control" id="exampleInputuname_1" placeholder="willard bryant">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputEmail_1">Email address</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                                                        <input type="email" class="form-control" id="exampleInputEmail_1" placeholder="xyz@gmail.com">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputContact_1">Contact number</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-phone"></i></div>
-                                                                        <input type="email" class="form-control" id="exampleInputContact_1" placeholder="+102 9388333">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputpwd_1">Password</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
-                                                                        <input type="password" class="form-control" id="exampleInputpwd_1" placeholder="Enter pwd" value="password">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10">Gender</label>
-                                                                    <div>
-                                                                        <div class="radio">
-                                                                            <input type="radio" name="radio1" id="radio_1" value="option1" checked="">
-                                                                            <label for="radio_1">
-                                                                                M
-                                                                            </label>
-                                                                        </div>
-                                                                        <div class="radio">
-                                                                            <input type="radio" name="radio1" id="radio_2" value="option2">
-                                                                            <label for="radio_2">
-                                                                                F
-                                                                            </label>
+
+
+
+                <!-- form -->
+                <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h5 class="modal-title" id="myModalLabel">Edit Profile</h5>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="">
+                                            <div class="panel-wrapper collapse in">
+                                                <div class="panel-body pa-0">
+                                                    <div class="col-sm-12 col-xs-12">
+                                                        <div class="form-wrap">
+                                                            <form action="#">
+                                                                <div class="form-body overflow-hide">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10" for="exampleInputuname_1">Name</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                                            <input type="text" class="form-control" id="exampleInputuname_1" placeholder="willard bryant">
                                                                         </div>
                                                                     </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10" for="exampleInputEmail_1">Email address</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                                                            <input type="email" class="form-control" id="exampleInputEmail_1" placeholder="xyz@gmail.com">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10" for="exampleInputContact_1">Contact number</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon"><i class="icon-phone"></i></div>
+                                                                            <input type="email" class="form-control" id="exampleInputContact_1" placeholder="+102 9388333">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10" for="exampleInputpwd_1">Password</label>
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon"><i class="icon-lock"></i></div>
+                                                                            <input type="password" class="form-control" id="exampleInputpwd_1" placeholder="Enter pwd" value="password">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10">Gender</label>
+                                                                        <div>
+                                                                            <div class="radio">
+                                                                                <input type="radio" name="radio1" id="radio_1" value="option1" checked="">
+                                                                                <label for="radio_1">
+                                                                                    M
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="radio">
+                                                                                <input type="radio" name="radio1" id="radio_2" value="option2">
+                                                                                <label for="radio_2">
+                                                                                    F
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label mb-10">Country</label>
+                                                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                            <option value="Category 1">USA</option>
+                                                                            <option value="Category 2">Austrailia</option>
+                                                                            <option value="Category 3">India</option>
+                                                                            <option value="Category 4">UK</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10">Country</label>
-                                                                    <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                        <option value="Category 1">USA</option>
-                                                                        <option value="Category 2">Austrailia</option>
-                                                                        <option value="Category 3">India</option>
-                                                                        <option value="Category 4">UK</option>
-                                                                    </select>
+                                                                <div class="form-actions mt-10">
+                                                                    <button type="submit" class="btn btn-success mr-10 mb-30">Update profile</button>
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-actions mt-10">
-                                                                <button type="submit" class="btn btn-success mr-10 mb-30">Update profile</button>
-                                                            </div>
-                                                        </form>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -969,30 +1012,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success waves-effect" data-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success waves-effect" data-dismiss="modal">Save</button>
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
-                        </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <!-- /.modal-content -->
+                    <!-- /.modal-dialog -->
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /form -->
+
             </div>
-            <!-- /form -->
+
+            <!-- Footer -->
+            <footer class="footer container-fluid pl-30 pr-30">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>2018 &copy; Zapily. Pampered by Hencework</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- /Footer -->
 
         </div>
-
-        <!-- Footer -->
-        <footer class="footer container-fluid pl-30 pr-30">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>2018 &copy; Zapily. Pampered by Hencework</p>
-                </div>
-            </div>
-        </footer>
-        <!-- /Footer -->
-
     </div>
     <!-- /Main Content -->
 
@@ -1001,90 +1044,109 @@
 
 <!-- JavaScript -->
 
-<form method="post" id="LogOut_Session" action="ServletDwmpc">
-    <input type="hidden" name="command" value="LogOut Session">
-    <input type="hidden" name="action" value="Sign Out Session">
-</form>
-<script>
-    function LogOut(){
-        document.getElementById("LogOut_Session").submit();
-    }
-</script>
-
-
 <!-- jQuery -->
 <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
-<script src="vendors/bower_components/bootstrap-validator/dist/validator.min.js"></script>
-<script src="dist/js/modal-data.js"></script>
-
-<!-- Bootstrap Touchspin JavaScript -->
-<script src="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
-
 
 <!-- Data table JavaScript -->
 <script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="vendors/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendors/bower_components/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="vendors/bower_components/jszip/dist/jszip.min.js"></script>
-<script src="vendors/bower_components/pdfmake/build/pdfmake.min.js"></script>
-<script src="vendors/bower_components/pdfmake/build/vfs_fonts.js"></script>
+<script src="vendors/bower_components/editable-table/mindmup-editabletable.js"></script>
+<script src="dist/js/Monthly-Report-numeric-input.js"></script>
+<script src="dist/js/editable-table-data.js"></script>
 
-<script src="vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="dist/js/export-table-data.js"></script>
+<!-- Data table JavaScript -->
+<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
+<script src="dist/js/CompanyRequest-footable.js"></script>
 
 <!-- Slimscroll JavaScript -->
 <script src="dist/js/jquery.slimscroll.js"></script>
 
-<!-- EChartJS JavaScript -->
-<script src="vendors/bower_components/echarts/dist/echarts-en.min.js"></script>
-<script src="vendors/echarts-liquidfill.min.js"></script>
-<script src="vendors/ecStat.min.js"></script>
-
-<!-- Toast JavaScript -->
-<script src="vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
-
-<!-- Progressbar Animation JavaScript -->
-<script src="vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
-
 <!-- Fancy Dropdown JS -->
 <script src="dist/js/dropdown-bootstrap-extended.js"></script>
-
-<!-- Sparkline JavaScript -->
-<script src="vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
 
 <!-- Owl JavaScript -->
 <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 
-<!-- Calender JavaScripts -->
-<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-<script src="vendors/jquery-ui.min.js"></script>
-<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-<script src="dist/js/fullcalendar-data.js"></script>
-
 <!-- Switchery JavaScript -->
 <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
 
-<!-- Bootstrap Select JavaScript -->
-<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<!-- Bootstrap Datetimepicker JavaScript -->
+<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
+<!-- Bootstrap Daterangepicker JavaScript -->
+<script src="vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<!-- Form Picker Init JavaScript -->
+<script src="dist/js/form-picker-data.js"></script>
+
+
+<!-- Bootstrap Colorpicker JavaScript -->
+<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+
+<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <!-- Init JavaScript -->
-<script src="dist/js/dashboard4-data.js"></script>
 <script src="dist/js/init.js"></script>
 <script src="dist/js/toast-data.js"></script>
 
-<!-- Sweet-Alert  -->
-<script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
-<script src="dist/js/sweetalert-data.js"></script>
+<script>
 
+    var form = $('#editor');
+    form.submit(function () {
 
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            fail: function (data){
 
+            },
+            success: function (data) {
+            }
+        });
 
+        return false;
+    });
+
+</script>
+<script>
+    $(".DutyStation").focus(function() {
+        if(document.getElementById('DutyStation').value === ''){
+            document.getElementById('DutyStation').value +='• ';
+        }
+    });
+    $(".DutyStation").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('DutyStation').value +='• ';
+        }
+        var txtval = document.getElementById('DutyStation').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('DutyStation').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
+
+</script>
+
+<script>
+    $(".QualificationRequirements").focus(function() {
+        if(document.getElementById('QualificationRequirements').value === ''){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+    });
+    $(".QualificationRequirements").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+        var txtval = document.getElementById('QualificationRequirements').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('QualificationRequirements').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
+
+</script>
 </body>
-
 </html>

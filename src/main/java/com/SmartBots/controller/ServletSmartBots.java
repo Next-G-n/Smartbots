@@ -2,11 +2,8 @@ package com.SmartBots.controller;
 
 import com.SmartBots.model.DAO.ConnectionUtil;
 import com.SmartBots.model.DAO.hash;
-import com.SmartBots.model.bean.Application;
-import com.SmartBots.model.bean.Companyinfo;
-import com.SmartBots.model.bean.User;
+import com.SmartBots.model.bean.*;
 
-import com.SmartBots.model.bean.UserTracker;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.annotation.Resource;
@@ -99,6 +96,12 @@ public class ServletSmartBots extends HttpServlet {
                 case "getRequest":
                     getRequest(request,response);
                     break;
+                case "Request":
+                    Request(request,response);
+                    break;
+                case "acceptApplication":
+                    AcceptRequest(request,response);
+                    break;
             }
 
         }
@@ -109,13 +112,70 @@ public class ServletSmartBots extends HttpServlet {
         }
     }
 
+    private void AcceptRequest(HttpServletRequest request, HttpServletResponse response) throws  Exception {
+        int user_Id= Integer.parseInt(request.getParameter("user_id"));
+        int request_id= Integer.parseInt(request.getParameter("Request_id"));
+        String end_Date=request.getParameter("end_Date");
+        String Start_date=request.getParameter("Start_date");
+        int position= Integer.parseInt(request.getParameter("position"));
+        String status="Working";
+
+        AcceptDate acceptDate=new AcceptDate(0,user_Id,request_id,Start_date,end_Date,status);
+        connectionUtil.Accept(acceptDate,position);
+        getRequest(request,response);
+    }
+
+    private void Request(HttpServletRequest request, HttpServletResponse response)throws Exception {
+        int companyId=Integer.parseInt(request.getParameter("company_Id"));
+        int numberOfPositionsRequired=Integer.parseInt(request.getParameter("Number_Of_Positions_Required"));
+        String qualificatonRequirements=request.getParameter("Qualification_Requirements");
+        String dutyStaton=request.getParameter("Duty_Station");
+        String department=request.getParameter("Department_Division");
+        String briefDescription=request.getParameter("Brief_Description");
+        String field=request.getParameter("field");
+        String level=request.getParameter("level");
+        String dateUnix="nothing";
+        String status="request";
+        String action=request.getParameter("action");
+        int requestId=0;
+        if (action.equals("Edit")) {
+            requestId=Integer.parseInt(request.getParameter("Request_Id"));
+
+        }
+        Request requestInfo = new Request(requestId,companyId,
+                numberOfPositionsRequired,qualificatonRequirements,
+                dutyStaton,department,
+                briefDescription,dateUnix,status,level,field);
+        System.out.println(qualificatonRequirements);
+        String requestResult=connectionUtil.request(requestInfo,action);
+        System.out.println(qualificatonRequirements);
+
+    }
+
+
     private void getRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        HttpSession session=request.getSession();
         int Request_id= Integer.parseInt(request.getParameter("Request_id"));
         int company_id= Integer.parseInt(request.getParameter("company_id"));
+        String action=request.getParameter("action");
         Companyinfo getCompanyInfo=connectionUtil.getCompanyInfo(company_id);
-        Companyinfo getReqest=connectionUtil.getRequestSp(Request_id);
 
-        List<User> users=connectionUtil.loginUser(,"Nothing","Admin");
+        Request getReqest=connectionUtil.getRequestSp(Request_id);
+
+        List<User> users=connectionUtil.loginUser(getReqest.getField()+"_"+getReqest.getNumber_Of_Positions_Required(),getReqest.getLevel(),action);
+
+        session.setAttribute("specificCompany", getCompanyInfo);
+        session.setAttribute("specificRequest", getReqest);
+        session.setAttribute("SpecificUser", users);
+        if(action.equals("CompanyAdmin")){
+            AcceptDate acceptDate=connectionUtil.getAccepted(Request_id);
+            request.getRequestDispatcher("MYSC_Request_detail.jsp").forward(request, response);
+        }else{
+            request.getRequestDispatcher("MYSC_Request_detail.jsp").forward(request, response);
+        }
+
+
 
     }
 
@@ -245,6 +305,7 @@ public class ServletSmartBots extends HttpServlet {
 
             } else if(loginUser.get(0).getUserType().equals("Company Representative")){
                 session.setAttribute("UserInfo", loginUser);
+                MyCompanyRequest(request,response,loginUser.get(0).getUser_id());
                 request.getRequestDispatcher("companyForm.jsp").forward(request, response);
             }else if(loginUser.get(0).getUserType().equals("MYSC")){
 
@@ -253,6 +314,13 @@ public class ServletSmartBots extends HttpServlet {
 
             }
         }
+    }
+
+    private void MyCompanyRequest(HttpServletRequest request, HttpServletResponse response, int user_id) throws Exception {
+        HttpSession session=request.getSession();
+        List<Request> requests=connectionUtil.getMyRequest(user_id);
+        session.setAttribute("MyRequests", requests);
+
     }
 
     private void CompanyRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {

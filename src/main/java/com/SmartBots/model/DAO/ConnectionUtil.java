@@ -98,12 +98,25 @@ public class ConnectionUtil {
         PreparedStatement myStmt=null;
         ResultSet myRS=null;
         String em=null;
+        int Count=0;
+        String[] pos=email.split("_");
         try {
             myConn = dataSource.getConnection();
             String sql;
-            if (action.equals("Admin")) {
+            if (action.equals("CompanyAdmin")) {
                 em="Admin";
-                sql = "select * from user where not `User Type`='Client'";
+                sql = "SELECT * FROM smartbots.user u left join smartbots.Aplication a on u.`User Id`=a.`User Id` where" +
+                        " a.`Status`='Working'";
+                myStmt = myConn.prepareStatement(sql);
+            }
+            else
+            if (action.equals("Admin")) {
+
+                em="Admin";
+                sql = "SELECT * FROM smartbots.user u left join smartbots.Aplication a on u.`User Id`=a.`User Id` where" +
+                        " a.`field`=" +pos[0]+
+                        " and a.`Level`=" +password+
+                        " and a.`Status`='Pending' ;";
                 myStmt = myConn.prepareStatement(sql);
             } else {
                 em="Users";
@@ -129,7 +142,16 @@ public class ConnectionUtil {
 
                 User login2;
 
+                if (action.equals("Admin")) {
+                    System.out.println("testing ");
+                    Count=Count+1;
+                    int position= Integer.parseInt(pos[1]);
+                    login2 = new User(id, firstName, lastName, password,email,omang,contact ,gender, location,userType);
+                    if (Count<=position){
+                        login.add(login2);
+                    }
 
+                } else
                     if(password.equals("None")){
                         login2 = new User(id, firstName, lastName, email, userType,omang,password , contact, location, "just");
                         login.add(login2);
@@ -154,6 +176,51 @@ public class ConnectionUtil {
 
     }
 
+    public String request(Request requestInfo, String action) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        String error = "Successful";
+        try {
+            myConn = dataSource.getConnection();
+            String sql3;
+            System.out.println(requestInfo.getQualification_Requirements());
+            if (action.equals("Submit")) {
+                sql3 = "INSERT INTO `smartbots`.`request` (`Company Id`,`Number Of Positions Required`, `Qualification Requirements`, `Duty Station`, `Department / Division`, `Brief Description`," +
+                        " `Date Unix`, `Status`, `Field`, `level`)" +
+                        " VALUES('"+requestInfo.getCompany_Id()+"',?,?,?,?,?,?,?)";
+                myStmt = myConn.prepareStatement(sql3);
+
+
+            }else if(action.equals("Edit")){
+                sql3= "Update request set `Company Id`,`Number Of Positions Required`=?, `Qualification Requirements`=?, `Duty Station`=?, `Department / Division`=?, `Brief Description`=?, `Date Unix`=?,`Status`=? , `Field`=?, `level`=? where `Request Id`=?";
+                myStmt = myConn.prepareStatement(sql3);
+                myStmt.setInt(8, requestInfo.getRequest_Id());
+
+
+            }
+
+            myStmt.setInt(1, requestInfo.getNumber_Of_Positions_Required());
+            myStmt.setString(2, requestInfo.getQualification_Requirements());
+            myStmt.setString(3, requestInfo.getDuty_Station());
+            myStmt.setString(4, requestInfo.getDepartment_Division());
+            myStmt.setString(5, requestInfo.getBrief_Description());
+            myStmt.setString(6, requestInfo.getDate_Unix());
+            myStmt.setString(7, requestInfo.getStatus());
+            myStmt.setString(8, requestInfo.getField());
+            myStmt.setString(9, requestInfo.getLevel());
+
+            myStmt.execute();
+
+        } catch (Exception ex) {
+            System.out.println("There is an error" + ex);
+        }finally {
+            close(myConn,myStmt,null);
+        }
+        System.out.println("error "+error);
+        return error;
+    }
+
+
 
     public String registerCompany(Companyinfo companyinfo, String action) throws  Exception{
         Connection myConn=null;
@@ -165,8 +232,8 @@ public class ConnectionUtil {
             sql2= "INSERT INTO `smartbots`.`company_information` (`Company Name`," +
                     " `Company Email`, `Sector`," +
                     " `Organization Registration Number`, " +
-                    "`Physical Address`, `Telephone`) VALUES " +
-                    "(?,?,?,?,?,?)";
+                    "`Physical Address`, `Telephone`, `user_Id`, `vat`, `city`) VALUES " +
+                    "(?,?,?,?,?,?,?)";
             myStmt = myConn.prepareStatement(sql2);
             myStmt.setString(1, companyinfo.getCompanyName());
             myStmt.setString(2, companyinfo.getEmail());
@@ -174,6 +241,9 @@ public class ConnectionUtil {
             myStmt.setString(4, companyinfo.getRegistration_Number());
             myStmt.setString(5, companyinfo.getPhysical_address());
             myStmt.setString(6, companyinfo.getTel());
+            myStmt.setInt(7, companyinfo.getUser_id());
+            myStmt.setString(5, companyinfo.getVat());
+            myStmt.setString(6, companyinfo.getCity());
             myStmt.execute();
 
         }finally {
@@ -350,14 +420,14 @@ public class ConnectionUtil {
 
             while (myRS.next()) {
                 int User_id=myRS.getInt("User Id");
-                String companyName= myRS.getString("");
-                String city= myRS.getString("");
-                String email= myRS.getString("");
-                String sector= myRS.getString("");
-                String vat= myRS.getString("");
-                String registration_Number= myRS.getString("");
-                String physical= myRS.getString("");
-                String tel= myRS.getString("");
+                String companyName= myRS.getString("Company Name");
+                String city= myRS.getString("city");
+                String email= myRS.getString("Company Email");
+                String sector= myRS.getString("Sector");
+                String vat= myRS.getString("vat");
+                String registration_Number= myRS.getString("Organization Registration Number");
+                String physical= myRS.getString("Physical Address");
+                String tel= myRS.getString("Telephone");
 
                 companyinfo=new Companyinfo(company_id,User_id
                         ,companyName,city,email,
@@ -368,13 +438,138 @@ public class ConnectionUtil {
             }
 
         }finally {
-
+            close(myConn,myStmt,myRS);
         }
         return companyinfo;
     }
 
-    public Companyinfo getRequestSp(int request_id) throws Exception {
-        Companyinfo test=new Companyinfo(1,"ths",2,5);
-        return test;
+    public Request getRequestSp(int request_id) throws Exception {
+        Connection myConn=null;
+        PreparedStatement myStmt=null;
+        ResultSet myRS=null;
+        Request request=null;
+        try {
+            myConn = dataSource.getConnection();
+            String sql="select * from smartbots.request where `Request Id`="+request_id;
+            myStmt = myConn.prepareStatement(sql);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()) {
+                int companyId=myRS.getInt("Company Id");
+                int numberOfPositionsRequired=myRS.getInt("Company Id");
+                String qualificatonRequirements=myRS.getString("Qualification Requirements");
+                String dutyStaton=myRS.getString("Duty Station");
+                String department=myRS.getString("Department / Division");
+                String briefDescription=myRS.getString("Brief Description");
+                String field=myRS.getString("Field");
+                String level=myRS.getString("level");
+                String dateUnix=myRS.getString("Date Unix");
+                String status=myRS.getString("Status");
+                request = new Request(request_id,companyId,
+                        numberOfPositionsRequired,qualificatonRequirements,
+                        dutyStaton,department,
+                        briefDescription,dateUnix,status,level,field);
+
+
+            }
+
+            } finally {
+            close(myConn,myStmt,myRS);
+        }
+
+        return request;
+    }
+
+    public void Accept(AcceptDate acceptDate,int pos) throws Exception {
+        Connection myConn=null;
+        PreparedStatement myStmt=null;
+        String error="Successful";
+        try {
+            myConn = dataSource.getConnection();
+            String sql2;
+            sql2 = "INSERT INTO `smartbots`.`AcceptedApplication` (`User_id`, `Requst_id`, `Start date`, `End date`, `status`) VALUES " +
+                    "(?,?,?,?,?)";
+            myStmt = myConn.prepareStatement(sql2);
+            myStmt.setInt(1, acceptDate.getUser_id());
+            myStmt.setInt(2, acceptDate.getRequest_id());
+            myStmt.setString(3, acceptDate.getStart_date());
+            myStmt.setString(4, acceptDate.getEnd_date());
+            myStmt.setString(5, acceptDate.getStatus());
+            myStmt.execute();
+
+            sql2="UPDATE `smartbots`.`Aplication` SET  `Status` = '"+acceptDate.getStatus()+"' WHERE (`User Id` = '"+acceptDate.getUser_id()+"');";
+            myStmt = myConn.prepareStatement(sql2);
+            myStmt.execute();
+            int new_pos=pos-1;
+
+            sql2="UPDATE `smartbots`.`request` SET `Number Of Positions Required` = "+new_pos+" WHERE (`Request Id` = '"+acceptDate.getRequest_id()+"');;";
+            myStmt = myConn.prepareStatement(sql2);
+            myStmt.execute();
+
+        }finally {
+            close(myConn,myStmt,null);
+        }
+    }
+
+    public List<Request> getMyRequest(int user_id) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+
+        List<Request> tracker= new ArrayList<>();
+        try {
+            myConn = dataSource.getConnection();
+            String sql="SELECT * FROM smartbots.company_information where `user_Id`="+user_id;
+            myStmt = myConn.prepareStatement(sql);
+            myRS = myStmt.executeQuery();
+
+            while (myRS.next()) {
+                int companyId=myRS.getInt("Company Id");
+                String sql2 = "SELECT * FROM smartbots.request where `Company Id`="+companyId;
+                myStmt = myConn.prepareStatement(sql2);
+                myRS = myStmt.executeQuery();
+                while (myRS.next()) {
+                    int request_id=myRS.getInt("Request Id");
+                    int numberOfPositionsRequired=myRS.getInt("Company Id");
+                    String qualificatonRequirements=myRS.getString("Qualification Requirements");
+                    String dutyStaton=myRS.getString("Duty Station");
+                    String department=myRS.getString("Department / Division");
+                    String briefDescription=myRS.getString("Brief Description");
+                    String field=myRS.getString("Field");
+                    String level=myRS.getString("level");
+                    String dateUnix=myRS.getString("Date Unix");
+                    String status=myRS.getString("Status");
+                    Request request = new Request(request_id,companyId,
+                            numberOfPositionsRequired,qualificatonRequirements,
+                            dutyStaton,department,
+                            briefDescription,dateUnix,status,level,field);
+
+                    tracker.add(request);
+                }
+            }
+
+
+        } finally {
+            close(myConn,myStmt,myRS);
+        }
+        return tracker;
+    }
+
+    public AcceptDate getAccepted(int request_id) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        AcceptDate acceptDate=null;
+        try{
+            myConn = dataSource.getConnection();
+            String sql="SELECT * FROM smartbots.AcceptedApplication";
+            myStmt = myConn.prepareStatement(sql);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()){
+
+            }
+        }finally {
+
+        }
+        return acceptDate;
     }
 }

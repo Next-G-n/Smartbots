@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: NITRO5
+  Date: 11/4/2021
+  Time: 8:18 AM
+  To change this template use File | Settings | File Templates.
+--%>
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -781,91 +788,227 @@
             <!-- /Title -->
 
             <!-- Row -->
-            <div class="row">
-<c:set var="countDate" scope="page" value="0" />
-<c:forEach var="tempCompany" items="${Requests}">
-    <c:url var="CompanyDetailsLink" value="ServletSmartBots">
-        <c:param name="command" value="getRequest"/>
-        <c:param name="Request_id" value="${tempCompany.request_id}"/>
-        <c:param name="action" value="Admin"/>
-        <c:param name="company_id" value="${tempCompany.companyId}"/>
-    </c:url>
-    <c:set value="${countDate+1}" scope="page" var="countDate"/>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="panel panel-warning contact-card card-view">
+            <div   class=" row">
+
+                <div id="Company_info"  class="tab-pane fade in active tab-content col-lg-9 col-md-6 col-sm-12 col-xs-12">
+                    <div class=" panel panel-warning card-view" role="tabpanel">
                         <div class="panel-heading">
                             <div class="pull-left">
-                                <div class="pull-left user-img-wrap mr-15">
-                                    <img class="card-user-img img-circle pull-left" src="img/user.png" alt="user"/>
-                                </div>
-                                <div class="pull-left user-detail-wrap">
-											<span class="block card-user-name">
-                                                    ${tempCompany.companyName}
-											</span>
-                                    <span class="block card-user-desn">
-                                        None
-											</span>
-                                </div>
-                            </div>
-                            <div class="pull-right">
-                                <a class="pull-left inline-block mr-15" href="#">
-                                    <i class="zmdi zmdi-edit txt-light"></i>
-                                </a>
-                                <a class="pull-left inline-block mr-15" href="#">
-                                    <i class="zmdi zmdi-delete txt-light"></i>
-                                </a>
-                                <div class="pull-left inline-block dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert txt-light"></i></a>
-                                    <ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Full Info</a></li>
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Send Message</a></li>
-                                        <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Follow</a></li>
-                                    </ul>
-                                </div>
+                                <c:if test="${Company_info!=null}">
+                                    <h6 class="panel-title txt-light">${specificCompany.company_Name}</h6>
+                                </c:if>
+                                <c:if test="${Company_info==null}">
+                                    <h6 class="panel-title txt-light">Company Information</h6>
+                                </c:if>
+
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="panel-wrapper collapse in" onclick="location.href='${CompanyDetailsLink}'">
-                            <div class="panel-body row">
-                                <div class="user-others-details pl-15 pr-15">
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-email-open inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark">${tempCompany.position}</span>
+                        <div id="refresh-script" class="panel-wrapper collapse in">
+                            <div  class="panel-body  pagination-lg">
+
+                                <c:if test="${specificCompany!=null}">
+                                    <table class="table table-bordered m-0">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 20%;"></th>
+                                            <th>Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><code>Position</code> </td>
+                                            <td class="Region">${specificRequest.number_Of_Positions_Required}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><code>Qualification</code></td>
+                                            <td class="Email">${specificRequest.Qualification_Requirements}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code></code> Duty Station</td>
+                                            <td class="Street-Address">${specificRequest.duty_Station}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>level</code></td>
+                                            <td class="Company-status">${specificRequest.level}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>Field</code></td>
+                                            <td class="Company-status">${specificRequest.field}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </c:if>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /Row -->
+
+            <!-- Row -->
+            <div class="row">
+                <c:set var="countDate" scope="page" value="0" />
+                <c:forEach var="tempUser" items="${SpecificUser}">
+                    <c:url var="CompanyDetailsLink" value="ServletSmartBots">
+                        <c:param name="command" value="getApplication"/>
+                        <c:param name="User_id" value="${tempUser.user_id}"/>
+                    </c:url>
+                    <c:set value="${countDate+1}" scope="page" var="countDate"/>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="panel panel-warning contact-card card-view">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <div class="pull-left user-img-wrap mr-15">
+                                        <img class="card-user-img img-circle pull-left" src="img/user.png" alt="user"/>
                                     </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-phone inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-print inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-my-location inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div class="mb-15">
-                                        <i class="zmdi zmdi-local-post-office inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
-                                    </div>
-                                    <div>
-                                        <i class="zmdi zmdi zmdi-bookmark inline-block mr-10"></i>
-                                        <span class="inline-block txt-dark"></span>
+                                    <div class="pull-left user-detail-wrap">
+											<span class="block card-user-name">
+                                                    ${tempUser.first_Name} ${tempUser.last_name}
+                                            </span>
+                                        <span class="block card-user-desn">
+                                        None
+											</span>
                                     </div>
                                 </div>
-                                <hr class="light-grey-hr mt-20 mb-20"/>
-                                <div class="emp-detail pl-15 pr-15">
-                                    <div class="mb-5">
-                                        <span class="inline-block capitalize-font mr-5">joininig date:</span>
-                                        <span class="txt-dark"></span>
+                                <div class="pull-right">
+                                    <a class="pull-left inline-block mr-15" href="#">
+                                        <i class="zmdi zmdi-edit txt-light"></i>
+                                    </a>
+                                    <a class="pull-left inline-block mr-15" href="#">
+                                        <i class="zmdi zmdi-delete txt-light"></i>
+                                    </a>
+                                    <div class="pull-left inline-block dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert txt-light"></i></a>
+                                        <ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
+                                            <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Full Info</a></li>
+                                            <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Send Message</a></li>
+                                            <li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Follow</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-wrapper collapse in" onclick="location.href='${CompanyDetailsLink}'">
+                                <div class="panel-body row">
+                                    <div class="user-others-details pl-15 pr-15">
+                                        <div class="mb-15">
+                                            <i class="zmdi zmdi-email-open inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark">${tempUser.phone_number}</span>
+                                        </div>
+                                        <div class="mb-15">
+                                            <i class="zmdi zmdi-phone inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark"></span>
+                                        </div>
+                                        <div class="mb-15">
+                                            <i class="zmdi zmdi-print inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark"></span>
+                                        </div>
+                                        <div class="mb-15">
+                                            <i class="zmdi zmdi-my-location inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark"></span>
+                                        </div>
+                                        <div class="mb-15">
+                                            <i class="zmdi zmdi-local-post-office inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark"></span>
+                                        </div>
+                                        <div>
+                                            <i class="zmdi zmdi zmdi-bookmark inline-block mr-10"></i>
+                                            <span class="inline-block txt-dark"></span>
+                                        </div>
+                                    </div>
+                                    <hr class="light-grey-hr mt-20 mb-20"/>
+                                    <div class="emp-detail pl-15 pr-15">
+                                        <div class="mb-5">
+                                            <span class="inline-block capitalize-font mr-5">joininig date:</span>
+                                            <span class="txt-dark"></span>
+                                            <button class="btn btn-gold btn-block  btn-anim mt-40" data-toggle="modal" data-target="#${tempUser.user_id}"><i class="fa fa-pencil"></i><span class="btn-text">Approve</span></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-</c:forEach>
+                    <!-- form -->
+                    <div id="${tempUser.user_id}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h5 class="modal-title">Edit Profile</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Row -->
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="">
+                                                <div class="panel-wrapper collapse in">
+                                                    <div class="panel-body pa-0">
+                                                        <div class="col-sm-12 col-xs-12">
+                                                            <div class="form-wrap">
+                                                                <form method="post" action="ServletSmartBots">
+                                                                    <div class="form-body overflow-hide">
+                                                                        <input type="hidden" name="command" value="acceptApplication">
+                                                                        <input type="hidden" name="user_id" value="${tempUser.user_id}">
+                                                                        <input type="hidden" name="Request_id" value="${specificRequest.request_Id}">
+                                                                        <input type="hidden" name="position" value="${specificRequest.number_Of_Positions_Required}">
+                                                                        <input type="hidden" name="company_id" value="${specificCompany.number_Of_Positions_Required}">
+                                                                        <div class="form-group">
+                                                                            <label for="Commencement Date" class="col-sm-3 control-label">Commencement Date:</label>
+                                                                            <div class="col-sm-9">
+                                                                                <div class='input-group date' id='Commencement Date'>
+                                                                                    <input type='text' name="Start_date" class="form-control" />
+                                                                                    <span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="Exit Date" class="col-sm-3 control-label">Exit Date:</label>
+                                                                            <div class="col-sm-9">
+                                                                                <div class='input-group date' id='Exit Date'>
+                                                                                    <input type='text' name="end_Date" class="form-control" />
+                                                                                    <span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="form-actions mt-10">
+                                                                        <button type="submit" id="Profile_Submit" class="btn btn-success mr-10 mb-30">Update profile</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="document.getElementById('Profile_Submit').click()" class="btn btn-success waves-effect" data-dismiss="modal">Save</button>
+                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /form -->
+
+
+                </c:forEach>
                 <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="panel panel-warning card-view">
                         <div class="panel-heading">

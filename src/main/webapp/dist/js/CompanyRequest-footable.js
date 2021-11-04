@@ -17,6 +17,7 @@ $(function () {
 					$modal.removeData('row');
 					$editor[0].reset();
 					$editorTitle.text('Add a new row');
+					$editor.find("#sub").val("Submit");
 					$modal.modal('show');
 				},
 				editRow: function(row){
@@ -24,11 +25,12 @@ $(function () {
 					$editor.find('#id').val(values.id);
 					$editor.find('#NumberOfPositionsRequired').val(values.NumberOfPositionsRequired);
 					$("#WasteType").selectpicker("refresh");
+					$editor.find("#sub").val("Edit");
 					$editor.find('#QualificationRequirements').val(values.QualificationRequirements);
 					$editor.find('#DutyStation').val(values.DutyStation);
 					$editor.find('#DepartmentDivision').val(values.DepartmentDivision);
 					$editor.find('#BriefDescription').val(values.BriefDescription);
-
+					$editor.find('#req').val(values.id);
 
 
 					$modal.data('row', row);
@@ -42,7 +44,7 @@ $(function () {
 				}
 			}
 		}),
-		uid = 10;
+		uid = 1;
 
 
 	$editor.on('submit', function(e){
