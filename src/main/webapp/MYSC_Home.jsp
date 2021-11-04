@@ -782,6 +782,7 @@
 
             <!-- Row -->
             <div class="row">
+                ${Requests[0].request_id}
 <c:set var="countDate" scope="page" value="0" />
 <c:forEach var="tempCompany" items="${Requests}">
     <c:url var="CompanyDetailsLink" value="ServletSmartBots">

@@ -114,8 +114,8 @@ public class ConnectionUtil {
 
                 em="Admin";
                 sql = "SELECT * FROM smartbots.user u left join smartbots.Aplication a on u.`User Id`=a.`User Id` where" +
-                        " a.`field`=" +pos[0]+
-                        " and a.`Level`=" +password+
+                        " a.`field`='" +pos[0]+"'"+
+                        " and a.`Level`='" +password+"'"+
                         " and a.`Status`='Pending' ;";
                 myStmt = myConn.prepareStatement(sql);
             } else {
@@ -126,7 +126,7 @@ public class ConnectionUtil {
                 myStmt.setString(1, email);
             }
 
-
+            System.out.println(myStmt);
             myRS = myStmt.executeQuery();
             while (myRS.next()) {
                 int id = myRS.getInt("User Id");
@@ -389,7 +389,7 @@ public class ConnectionUtil {
         List<Companyinfo> tracker= new ArrayList<>();
         try {
             myConn = dataSource.getConnection();
-            String sql2 = "SELECT * FROM smartbots.request r left join smartbots.company_information c on c.`Company Id`=r.`Company Id` where not `Number Of Positions Required`=0;'";
+            String sql2 = "SELECT * FROM smartbots.request r left join smartbots.company_information c on c.`Company Id`=r.`Company Id` where not `Number Of Positions Required`=0;";
             myStmt = myConn.prepareStatement(sql2);
             myRS = myStmt.executeQuery();
             while (myRS.next()) {
@@ -419,7 +419,7 @@ public class ConnectionUtil {
             myRS = myStmt.executeQuery();
 
             while (myRS.next()) {
-                int User_id=myRS.getInt("User Id");
+                int User_id=myRS.getInt("user_Id");
                 String companyName= myRS.getString("Company Name");
                 String city= myRS.getString("city");
                 String email= myRS.getString("Company Email");
@@ -561,14 +561,20 @@ public class ConnectionUtil {
         AcceptDate acceptDate=null;
         try{
             myConn = dataSource.getConnection();
-            String sql="SELECT * FROM smartbots.AcceptedApplication";
+            String sql="SELECT * FROM smartbots.AcceptedApplication where `Requst_id`="+request_id;
             myStmt = myConn.prepareStatement(sql);
             myRS = myStmt.executeQuery();
             while (myRS.next()){
+                int user_Id= myRS.getInt("User_id");
+                int accp_id= myRS.getInt("Accept Appliaction");
+                String end_Date=myRS.getString("End date");
+                String Start_date=myRS.getString("Start date");
+                String status=myRS.getString("Start date");
+                acceptDate=new AcceptDate(accp_id,user_Id,request_id,Start_date,end_Date,status);
 
             }
         }finally {
-
+            close(myConn,myStmt,myRS);
         }
         return acceptDate;
     }
