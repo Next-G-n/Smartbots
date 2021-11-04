@@ -51,6 +51,7 @@
         });
     </script>
 
+
     <!-- Footable CSS -->
     <link href="vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- Custom CSS -->
@@ -857,13 +858,18 @@
                                                     <div class="form-group">
                                                         <label for="QualificationRequirements" class="col-sm-3 control-label">Qualification Requirements</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="QualificationRequirements" name="Qualification_Requirements" placeholder="Qualification Requirements">
+
+                                                            <textarea class="form-control QualificationRequirements" id="QualificationRequirements" name="Qualification_Requirements" placeholder="Qualification Requirements" required></textarea>
+
+
                                                         </div>
                                                     </div>
                                                     <div class="form-group required">
                                                         <label for="DutyStation" class="col-sm-3 control-label">Duty Station</label>
                                                         <div class="col-sm-9">
-                                                            <input type="text" class="form-control" id="DutyStation" name="Duty_Station" placeholder="Duty Station" required>
+
+                                                            <textarea class="form-control DutyStation" id="DutyStation" name="Duty_Station" placeholder="Duty Station" required></textarea>
+
                                                         </div>
                                                     </div>
 
@@ -876,7 +882,7 @@
                                                     <div class="form-group required">
                                                         <label for="BriefDescription" class="col-sm-3 control-label">Brief Description</label>
                                                         <div class="col-sm-9">
-                                                            <textarea class="form-control" id="BriefDescription" name="Brief_Description" placeholder="Brief Description" required></textarea>
+                                                            <textarea class="form-control BriefDescription" id="BriefDescription" name="Brief_Description" placeholder="Brief Description" required></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1084,6 +1090,42 @@
     });
 
 </script>
+<script>
+    $(".DutyStation").focus(function() {
+        if(document.getElementById('DutyStation').value === ''){
+            document.getElementById('DutyStation').value +='• ';
+        }
+    });
+    $(".DutyStation").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('DutyStation').value +='• ';
+        }
+        var txtval = document.getElementById('DutyStation').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('DutyStation').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
 
+</script>
+
+<script>
+    $(".QualificationRequirements").focus(function() {
+        if(document.getElementById('QualificationRequirements').value === ''){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+    });
+    $(".QualificationRequirements").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+        var txtval = document.getElementById('QualificationRequirements').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('QualificationRequirements').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
+
+</script>
 </body>
 </html>

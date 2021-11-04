@@ -63,5 +63,6 @@
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.69" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="javax.servlet.jstl" level="project" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>
