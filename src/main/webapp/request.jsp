@@ -28,6 +28,9 @@
 
     <!-- vector map CSS -->
     <link href="vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css"/>
+    <!-- Footable CSS -->
+    <link href="vendors/bower_components/FooTable/compiled/footable.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
 
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet" type="text/css">
@@ -801,6 +804,8 @@
                                             <th data-name="NumberOfPositionsRequired">Number Of Positions Required</th>
                                             <th data-name="QualificationRequirements">Qualification Requirements</th>
                                             <th data-name="DutyStation" data-breakpoints="xs">Duty Station</th>
+                                            <th data-name="field">Field</th>
+                                            <th data-name="level" data-breakpoints="xs">Level</th>
                                             <th data-name="DepartmentDivision" data-breakpoints="xs">Department / Division</th>
                                             <th data-name="BriefDescription" data-breakpoints="xs">Brief Description</th>
 
@@ -811,6 +816,7 @@
                                         </tbody>
 
                                     </table>
+                                    <input type="text" id="count" value="${Count_Id}">
 
                                     <!--Editor-->
                                     <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
@@ -827,7 +833,7 @@
                                                     <input type="hidden" name="command" value="Request">
                                                     <input type="hidden" name="action" id="sub" value="">
                                                     <input type="hidden" name="Request_Id" id="req" value="">
-                                                    <input type="hidden" name="company_Id" value="1">
+                                                    <input type="hidden" name="company_Id" value="${myCompanyInfo.companyId}">
                                                     <div class="form-group required">
                                                         <label for="NumberOfPositionsRequired" class="col-sm-3 control-label">Number Of Positions Required</label>
                                                         <div class="col-sm-9">
@@ -837,10 +843,7 @@
                                                     <div class="form-group">
                                                         <label for="QualificationRequirements" class="col-sm-3 control-label">Qualification Requirements</label>
                                                         <div class="col-sm-9">
-
                                                             <textarea class="form-control QualificationRequirements" id="QualificationRequirements" name="Qualification_Requirements" placeholder="Qualification Requirements" required></textarea>
-
-
                                                         </div>
                                                     </div>
                                                     <div class="form-group required">
@@ -903,104 +906,6 @@
             <!-- /Row -->
 
 
-
-
-            <!-- form -->
-            <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h5 class="modal-title" id="myModalLabel">Edit Profile</h5>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Row -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="">
-                                        <div class="panel-wrapper collapse in">
-                                            <div class="panel-body pa-0">
-                                                <div class="col-sm-12 col-xs-12">
-                                                    <div class="form-wrap">
-                                                        <form action="#">
-                                                            <div class="form-body overflow-hide">
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputuname_1">Name</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-user"></i></div>
-                                                                        <input type="text" class="form-control" id="exampleInputuname_1" placeholder="willard bryant">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputEmail_1">Email address</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                                                        <input type="email" class="form-control" id="exampleInputEmail_1" placeholder="xyz@gmail.com">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputContact_1">Contact number</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-phone"></i></div>
-                                                                        <input type="email" class="form-control" id="exampleInputContact_1" placeholder="+102 9388333">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10" for="exampleInputpwd_1">Password</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
-                                                                        <input type="password" class="form-control" id="exampleInputpwd_1" placeholder="Enter pwd" value="password">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10">Gender</label>
-                                                                    <div>
-                                                                        <div class="radio">
-                                                                            <input type="radio" name="radio1" id="radio_1" value="option1" checked="">
-                                                                            <label for="radio_1">
-                                                                                M
-                                                                            </label>
-                                                                        </div>
-                                                                        <div class="radio">
-                                                                            <input type="radio" name="radio1" id="radio_2" value="option2">
-                                                                            <label for="radio_2">
-                                                                                F
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label mb-10">Country</label>
-                                                                    <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                        <option value="Category 1">USA</option>
-                                                                        <option value="Category 2">Austrailia</option>
-                                                                        <option value="Category 3">India</option>
-                                                                        <option value="Category 4">UK</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-actions mt-10">
-                                                                <button type="submit" class="btn btn-success mr-10 mb-30">Update profile</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success waves-effect" data-dismiss="modal">Save</button>
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /form -->
 
         </div>
 
@@ -1072,6 +977,11 @@ Bootstrap Core JavaScript -->
 <script src="vendors/bower_components/echarts/dist/echarts-en.min.js"></script>
 <script src="vendors/echarts-liquidfill.min.js"></script>
 
+<!-- Data table JavaScript -->
+<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
+<script src="dist/js/CompanyRequest-footable.js"></script>
+
 <!-- Toast JavaScript -->
 <script src="vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 
@@ -1084,6 +994,63 @@ Bootstrap Core JavaScript -->
 <!-- Init JavaScript -->
 <script src="dist/js/init.js"></script>
 <script src="dist/js/dashboard2-data.js"></script>
+<script>
+
+    var form = $('#editor');
+    form.submit(function () {
+
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            fail: function (data){
+
+            },
+            success: function (data) {
+            }
+        });
+
+        return false;
+    });
+
+</script>
+<script>
+    $(".DutyStation").focus(function() {
+        if(document.getElementById('DutyStation').value === ''){
+            document.getElementById('DutyStation').value +='• ';
+        }
+    });
+    $(".DutyStation").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('DutyStation').value +='• ';
+        }
+        var txtval = document.getElementById('DutyStation').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('DutyStation').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
+
+</script>
+
+<script>
+    $(".QualificationRequirements").focus(function() {
+        if(document.getElementById('QualificationRequirements').value === ''){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+    });
+    $(".QualificationRequirements").keyup(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            document.getElementById('QualificationRequirements').value +='• ';
+        }
+        var txtval = document.getElementById('QualificationRequirements').value;
+        if(txtval.substr(txtval.length - 1) == '\n'){
+            document.getElementById('QualificationRequirements').value = txtval.substring(0,txtval.length - 1);
+        }
+    });
+
+</script>
 </body>
 
 </html>

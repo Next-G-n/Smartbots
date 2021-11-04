@@ -44,5 +44,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="javax.servlet.jstl" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="jquery-3.5.1" level="application" />
   </component>
 </module>

@@ -343,9 +343,22 @@ public class ServletSmartBots extends HttpServlet {
                 }
 
             } else if(loginUser.get(0).getUserType().equals("Company Representative")){
-                session.setAttribute("UserInfo", loginUser);
-                MyCompanyRequest(request,response,loginUser.get(0).getUser_id());
-                request.getRequestDispatcher("companyForm.jsp").forward(request, response);
+                List<Request> requests=connectionUtil.getMyRequest(loginUser.get(0).getUser_id());
+                if(!requests.isEmpty()){
+                    System.out.println("This :"+loginUser.get(0).getUserType());
+                    session.setAttribute("UserInfo", loginUser);
+                    MyCompanyRequest(request,response,loginUser.get(0).getUser_id());
+                    request.getRequestDispatcher("companyForm.jsp").forward(request, response);
+                }else{
+                    int count =connectionUtil.getCount();
+                    System.out.println("This Guy: "+count);
+                    session.setAttribute("Count_Id", count);
+                    Companyinfo companyinfo=connectionUtil.getCompanyInfo2(loginUser.get(0).getUser_id());
+                    session.setAttribute("myCompanyInfo", companyinfo);
+                    MyCompanyRequest(request,response,loginUser.get(0).getUser_id());
+                    request.getRequestDispatcher("request.jsp").forward(request, response);
+                }
+
             }else if(loginUser.get(0).getUserType().equals("MYSC")){
                 session.setAttribute("UserInfo", loginUser);
                 System.out.println("Admin login");
@@ -360,6 +373,7 @@ public class ServletSmartBots extends HttpServlet {
         HttpSession session=request.getSession();
         List<Request> requests=connectionUtil.getMyRequest(user_id);
         session.setAttribute("MyRequests", requests);
+
 
     }
 

@@ -233,7 +233,7 @@ public class ConnectionUtil {
                     " `Company Email`, `Sector`," +
                     " `Organization Registration Number`, " +
                     "`Physical Address`, `Telephone`, `user_Id`, `vat`, `city`) VALUES " +
-                    "(?,?,?,?,?,?,?)";
+                    "(?,?,?,?,?,?,?,?,?)";
             myStmt = myConn.prepareStatement(sql2);
             myStmt.setString(1, companyinfo.getCompanyName());
             myStmt.setString(2, companyinfo.getEmail());
@@ -242,8 +242,8 @@ public class ConnectionUtil {
             myStmt.setString(5, companyinfo.getPhysical_address());
             myStmt.setString(6, companyinfo.getTel());
             myStmt.setInt(7, companyinfo.getUser_id());
-            myStmt.setString(5, companyinfo.getVat());
-            myStmt.setString(6, companyinfo.getCity());
+            myStmt.setString(8, companyinfo.getVat());
+            myStmt.setString(9, companyinfo.getCity());
             myStmt.execute();
 
         }finally {
@@ -443,6 +443,41 @@ public class ConnectionUtil {
         return companyinfo;
     }
 
+    public Companyinfo getCompanyInfo2(int user_id) throws Exception{
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        Companyinfo companyinfo = null;
+        try {
+            myConn = dataSource.getConnection();
+            String sql2 = "SELECT * FROM smartbots.company_information where `user_Id`="+user_id;
+            myStmt = myConn.prepareStatement(sql2);
+            myRS = myStmt.executeQuery();
+
+            while (myRS.next()) {
+                int company_id=myRS.getInt("Company Id");
+                String companyName= myRS.getString("Company Name");
+                String city= myRS.getString("city");
+                String email= myRS.getString("Company Email");
+                String sector= myRS.getString("Sector");
+                String vat= myRS.getString("vat");
+                String registration_Number= myRS.getString("Organization Registration Number");
+                String physical= myRS.getString("Physical Address");
+                String tel= myRS.getString("Telephone");
+
+                companyinfo=new Companyinfo(company_id,user_id
+                        ,companyName,city,email,
+                        sector,vat,registration_Number,
+                        physical,tel);
+
+
+            }
+
+        }finally {
+            close(myConn,myStmt,myRS);
+        }
+        return companyinfo;
+    }
     public Request getRequestSp(int request_id) throws Exception {
         Connection myConn=null;
         PreparedStatement myStmt=null;
@@ -577,5 +612,27 @@ public class ConnectionUtil {
             close(myConn,myStmt,myRS);
         }
         return acceptDate;
+    }
+
+    public int getCount() throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRS = null;
+        int count=0;
+        try{
+            myConn = dataSource.getConnection();
+            String sql="SELECT * FROM request order by `Request Id` DESC LIMIT 1";
+            myStmt = myConn.prepareStatement(sql);
+            myRS = myStmt.executeQuery();
+            while (myRS.next()){
+                count=myRS.getInt("Request Id");
+                count=count+1;
+            }
+        }finally {
+            close(myConn,myStmt,myRS);
+        }
+
+        return count;
+
     }
 }
